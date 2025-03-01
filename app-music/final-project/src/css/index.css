@@ -1,0 +1,26 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  
+  --background-color: #2B2B2B;
+  --primary: #EEAA6F;
+  --secondary: rgba(238,170,111,0.1);
+
+  --text: #EAE3E3;
+  --text-secondary: #CDC9C9;
+
+  font-size: 14px;
+ 
+}
+
+
+.Body{
+  background-color: var(--background-color);
+  color: var(--text);
+}
