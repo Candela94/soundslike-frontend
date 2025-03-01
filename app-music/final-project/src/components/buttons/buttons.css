@@ -1,0 +1,55 @@
+
+
+
+.btnClass{
+
+    font-size: 14px;
+    background: none;
+    color: var(--text);
+    padding:0.7rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    
+}
+
+
+.btnClass:active{
+    transform: scale(0.9);
+}
+
+
+.btn-focus{
+    background-color: var(--primary);
+    border: none;
+    color: var(--background-color);
+}
+
+
+
+.btn-primary{
+   border:  0.5px solid var(--primary);
+   background-color: var(--secondary);
+   
+}
+
+
+.btn-secondary{
+
+    border:  0.5px solid var(--text);
+
+}
+
+
+.btn-danger{
+    background-color: rgb(211, 88, 88);
+    border: none;
+
+}
+
+
+.btn-disabled{
+    color: rgb(156, 154, 154);
+    border: 0.5px solid var(--text-secondary);
+    background-color: rgb(100, 98, 98);
+}
