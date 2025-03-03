@@ -8,7 +8,8 @@
 :root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   
-  --background-color: #2B2B2B;
+  --background-color: #201f1f;
+  --background-secondary:#282727;
   --primary: #EEAA6F;
   --secondary: rgba(238,170,111,0.1);
 

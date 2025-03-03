@@ -1,0 +1,33 @@
+
+
+
+.Header{
+    padding: 2rem 3rem;
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color);
+}
+
+.Header-nav{}
+
+.Header-ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.Header-li{
+    list-style: none;
+}
+
+.Header-icon{
+    font-size: 28px;
+    color: var(--text);
+    cursor:pointer;
+    transition: transform 0.2s ease;
+
+}
+
+.Header-icon:active{
+    transform: scale(0.9);
+}

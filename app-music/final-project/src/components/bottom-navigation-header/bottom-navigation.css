@@ -1,8 +1,8 @@
 
 
 .Footer{
-    padding: 2.5rem 3rem;
-    background-color: var(--secondary);
+    padding: 2rem 3rem;
+    background-color: var(--background-secondary);
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -28,7 +28,7 @@
 }
 
 
-.Footer-btn{
+.Footer-li svg{
     border: none;
     background: none;
     cursor: pointer;
@@ -36,7 +36,7 @@
 }
 
 
-.Footer-btn:active{
+.Footer-li svg:active{
     transform: scale(0.8);
 }
 
