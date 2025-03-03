@@ -1,8 +1,8 @@
 
 import './log-in.css'
 import { Button } from '../../components/buttons/Button';
-import { useState, useContext } from 'react';
-import {userContext} from '../../context/UserContext.jsx'
+import { useState, useContext, useEffect } from 'react';
+import {UserContext} from '../../context/UserContext.jsx'
 
 
 
@@ -16,27 +16,33 @@ const LogIn = () => {
     const [repeatPassword, setRepeatPassword] = useState("")
     const [user,setUser] = useState("")
 
+    
+    const userData = {nombre, email, password, user}
+
+   
+
     const handleEnviar = (e) => {
         e.preventDefault();
+        LogIn(userData)
     }
 
     return (
         <>
 
         <main className="Main-login">
-            <form action="GET" className="Formulario">
+            <form action="GET" onSubmit={handleEnviar} className="Formulario">
 
             <h1>Log in</h1>
 
-                <input value={nombre} type="text" className="Formulario-nombre Formulario-input" placeholder="Nombre" />
-                <input value={} type="mail" className="Formulario-mail Formulario-input" placeholder="email" />
-                <input value={} type="text" className="Formulario-userName Formulario-input" placeholder="Nombre de usuario" />
-                <input value={} type="password" className="Formulario-password Formulario-input" placeholder="Contraseña" />
-
-                <input type="password" className="Formulario-password Formulario-input" placeholder="Repite la contraseña" />
+                <input onChange={(e) => setNombre(e.target.value) } value={nombre} type="text" className="Formulario-nombre Formulario-input" placeholder="Nombre" />
+                <input onChange={(e) => setEmail(e.target.value)} value={email} type="mail" className="Formulario-mail Formulario-input" placeholder="email" />
+                <input onChange={(e) => setUser(e.target.value)} value={user} type="text" className="Formulario-userName Formulario-input" placeholder="Nombre de usuario" />
+                <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" className="Formulario-password Formulario-input" placeholder="Contraseña" />
+ 
+                <input onChange={(e) => setRepeatPassword(e.target.value)} value={repeatPassword} type="password" className="Formulario-password Formulario-input" placeholder="Repite la contraseña" />
 
                 <div className="Formulario-botones">
-                    <Button variant='primary'>Registrarme</Button>
+                    <Button type='submit' variant='primary'>Registrarme</Button>
                 </div>
 
             </form>

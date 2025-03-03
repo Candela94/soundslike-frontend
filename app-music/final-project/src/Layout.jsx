@@ -13,6 +13,7 @@ import { Outlet } from 'react-router'
 
 
 import LogIn from './pages/log-in/Log-in.jsx'
+import { UserContextProvider } from './context/UserContext.jsx'
 
 
 
@@ -24,8 +25,9 @@ function Layout() {
   return (
     <>
     <Header />
-  {/* <Outlet /> */}
-  <LogIn />
+  <Outlet />
+
+
     <BottomNavigation />
   
     </>
