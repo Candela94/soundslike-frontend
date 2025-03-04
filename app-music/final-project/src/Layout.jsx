@@ -14,7 +14,7 @@ import { Outlet } from 'react-router'
 
 import LogIn from './pages/log-in/Log-in.jsx'
 import { UserContextProvider } from './context/UserContext.jsx'
-
+import { CardTendencias } from './components/cards/Cards.jsx'
 
 
 
@@ -30,7 +30,7 @@ function Layout() {
 
     <BottomNavigation />
   
-    </>
+    </> 
   )
 }
 

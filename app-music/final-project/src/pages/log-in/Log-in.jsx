@@ -34,15 +34,15 @@ const LogIn = () => {
 
             <h1>Log in</h1>
 
-                <input onChange={(e) => setNombre(e.target.value) } value={nombre} type="text" className="Formulario-nombre Formulario-input" placeholder="Nombre" />
+                <input onChange={(e) => setNombre(e.target.value) } value={nombre} type="text" className="Formulario-nombre Formulario-input" placeholder="Name" />
                 <input onChange={(e) => setEmail(e.target.value)} value={email} type="mail" className="Formulario-mail Formulario-input" placeholder="email" />
-                <input onChange={(e) => setUser(e.target.value)} value={user} type="text" className="Formulario-userName Formulario-input" placeholder="Nombre de usuario" />
-                <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" className="Formulario-password Formulario-input" placeholder="Contraseña" />
+                <input onChange={(e) => setUser(e.target.value)} value={user} type="text" className="Formulario-userName Formulario-input" placeholder="Username" />
+                <input onChange={(e) => setPassword(e.target.value)} value={password} type="password" className="Formulario-password Formulario-input" placeholder="Password" />
  
-                <input onChange={(e) => setRepeatPassword(e.target.value)} value={repeatPassword} type="password" className="Formulario-password Formulario-input" placeholder="Repite la contraseña" />
+                <input onChange={(e) => setRepeatPassword(e.target.value)} value={repeatPassword} type="password" className="Formulario-password Formulario-input" placeholder="Repeat password" />
 
                 <div className="Formulario-botones">
-                    <Button type='submit' variant='primary'>Registrarme</Button>
+                    <Button type='submit' variant='primary'>Create account</Button>
                 </div>
 
             </form>

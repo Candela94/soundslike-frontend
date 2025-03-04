@@ -6,8 +6,8 @@
     font-size: 14px;
     background: none;
     color: var(--text);
-    padding:0.7rem 1rem;
-    border-radius: 4px;
+    padding:0.9rem 1rem;
+    border-radius: 20px;
     cursor: pointer;
     transition: transform 0.2s ease;
     
@@ -47,6 +47,11 @@
 
 }
 
+.btn-solid{
+    background-color: var(--primary);
+    color: var(--background-color);
+    border: none;
+}
 
 .btn-disabled{
     color: rgb(156, 154, 154);

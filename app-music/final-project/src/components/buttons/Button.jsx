@@ -14,6 +14,7 @@ export const Button = ({variant, children}) => {
             case 'secondary' : return 'btn-secondary';
             case 'danger' : return 'btn-danger';
             case 'disabled' : return 'btn-disabled';
+            case 'solid' : return 'btn-solid';
 
             default: return 'primary'
 
