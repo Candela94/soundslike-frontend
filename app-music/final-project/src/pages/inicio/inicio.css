@@ -1,0 +1,56 @@
+
+
+
+
+.Main-inicio{
+    display: flex;
+   position: relative;
+    flex-direction: column;
+    justify-content: center;
+    height: 75vh;
+    align-items: center;
+    
+}
+
+.Intro-texto{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 1rem;
+    z-index: 1;
+    align-items: center;
+    background-color: rgba(0, 0, 0,  0.3);
+    width: 100%;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+
+.Texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+}
+
+
+
+.Main-h1Intro{
+    font-size: 4rem;
+    color: var(--text);
+    letter-spacing: 5px;
+  
+}
+.Main-intro{
+    margin-top: 4rem;
+    width: 60%;
+}
+.Inicio-img {
+
+   width: 100%;
+   object-fit: cover;
+   height: 100vh;
+   opacity: 0.5;
+    
+}
