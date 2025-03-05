@@ -67,7 +67,7 @@ const cardClass = card();
     <div className={`Card-animo ${cardClass}`}>
 
     <div className="Card-animoIcon">{icon} 
-     <h3 className="text">{children}</h3></div>
+     <h5 className="text">{children}</h5></div>
      </div>
 
 

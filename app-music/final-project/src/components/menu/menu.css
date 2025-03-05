@@ -1,0 +1,60 @@
+
+
+.Menu-lateral {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    position: fixed;
+    top: 70px;
+    left: -250px; 
+
+    width: 200px;
+    height: 40%;
+
+    background-color: var(--background-secondary);
+    box-shadow: 3px 3px 8px var(--background-secondary);
+    z-index: 1;
+    color: white;
+
+    transition: left 1s ease;
+    border-radius: 0 20px 20px 0;
+
+  }
+  
+
+
+  .Menu-lateral.open{
+    left: 1px;
+    z-index: 1;
+
+  }
+
+
+
+  .Menu-lateralUl li{
+    list-style: none;
+
+  }
+
+  .Menu-lateral li a{
+    text-decoration: none;
+    
+  }
+
+
+  .Nav-content{
+    display: flex;
+    align-items: center;
+    color: var(--text);
+    padding: 1rem;
+    gap: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+
+  .Nav-content:active{
+    transform: scale(0.9);
+  }

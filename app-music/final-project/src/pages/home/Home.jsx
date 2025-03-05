@@ -12,6 +12,8 @@ import { MdNightlight } from "react-icons/md";
 import { FaRegLightbulb } from "react-icons/fa";
 import { Button } from '../../components/buttons/Button';
 import { MdOutlineNorthEast } from "react-icons/md";
+import { FiArrowRightCircle } from "react-icons/fi";
+
 
 
 import { NavLink } from 'react-router';
@@ -28,7 +30,7 @@ const Home = () => {
                 <h1 className='Main-intro'> ¡Hola, ... ! ¿Qué te gustaría escuchar hoy?</h1>
 
                 <section className="Seccion-tendencias">
-                    <h2>Lo último en TSUENA</h2>
+                    <h2>Lo último en SOUNDsLike</h2>
                     <div className="Galeria">
                         <CardTendencias />
                         <CardTendencias />
@@ -69,16 +71,17 @@ const Home = () => {
                 </section>
 
 
-                <section className="Seccion-tsuena">
+                <section className="Seccion-imagen">
+           
                     <div className="Tsuena-cta">
                         <h1 className='TsuenaH1'>¿Todavía no has entrado en nuestra red?</h1>
                         <div className="Tsuena-enlace">
-                            <p>Entrar</p>
-                            <MdOutlineNorthEast />
+                        
+                          <NavLink to = '/soundslike'> <FiArrowRightCircle className='ctaButton'/> </NavLink> 
                         </div>
                        
                     </div>
-                   <img src="../../public/img/cta.jpg" alt="" className="Seccion-tsuenaImagen" />
+                    
                 </section>
 
 

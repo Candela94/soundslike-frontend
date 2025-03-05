@@ -1,0 +1,49 @@
+
+
+
+.Main-bibliotecas{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 1rem;
+}
+
+
+.Subheader-nav{
+    padding: 1.5rem 1rem;
+}
+
+
+.Subheader-ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.Subheader-li{
+    list-style: none;
+}
+
+
+.Subheader-p{
+    text-align: center;
+}
+
+
+.Subheader-content{
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 0.6rem;
+    background-color: var(--background-secondary);
+    gap: 0.6rem;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+}
+
+
+.Subheader-content:active{
+    transform: scale(0.9);
+}

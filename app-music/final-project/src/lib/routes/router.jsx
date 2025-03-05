@@ -60,7 +60,7 @@ const router = createBrowserRouter([{
 
 
         {
-            path:"/groove",
+            path:"/soundslike",
             element: <Groove />
         },
 

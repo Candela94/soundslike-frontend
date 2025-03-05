@@ -1,8 +1,9 @@
 
 
 .Footer{
-    padding: 2rem 3rem;
+    padding: 1.4rem 3rem;
     background-color: var(--background-secondary);
+    z-index: 1;
     position: fixed;
     bottom: 0;
     width: 100%;
