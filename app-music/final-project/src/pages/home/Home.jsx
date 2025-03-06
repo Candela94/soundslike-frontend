@@ -4,6 +4,7 @@ import './home.css'
 
 import { CardTendencias } from '../../components/cards/Cards';
 
+
 import { CardAnimo } from '../../components/cards/Cards';
 import { IoMdHappy } from "react-icons/io";
 import { GoHeart } from "react-icons/go";

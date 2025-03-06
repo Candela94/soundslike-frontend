@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { MenuLateral } from '../menu/Menu';
 import { NavLink } from 'react-router';
 
+
 export const Header = () => {
 
     const [opened, setOpened] = useState(false)
@@ -31,6 +32,7 @@ export const Header = () => {
                 <li className="Header-li"><NavLink to = '/bibliotecas'><BsMusicNoteList className='Header-icon'  /></NavLink></li>
             </ul>
         </nav>
+
     </header>
     <MenuLateral opened = {opened} />
 

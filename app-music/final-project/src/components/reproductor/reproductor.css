@@ -1,0 +1,25 @@
+
+
+.Reproductor{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    padding-bottom: 2rem;
+    z-index: 1;
+    width: 100%;
+    background-color:var(--background-secondary);
+   position: fixed;
+   border-radius: 50px 50px 0 0 ;
+   bottom: 40px;
+   left: 0;
+
+}
+
+
+
+
+
+
+

@@ -2,6 +2,7 @@
 
 import { NavLink } from 'react-router';
 import './bottom-navigation.css'
+import { Reproductor } from '../../components/reproductor/Reproductor';
 
 
 
@@ -13,9 +14,11 @@ export const BottomNavigation = () => {
         <>
 
             <footer className="Footer">
-
+            <Reproductor />
 
                 <nav className="Footer-nav">
+
+                 
 
 
                     <ul className="Footer-ul">
