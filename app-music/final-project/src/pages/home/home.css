@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-bottom: 6rem;
+    margin-bottom: 12rem;
    
 }
 
@@ -78,7 +78,7 @@
     position: relative;
     min-height: 200px; /* Asegúrate de que la sección tenga altura suficiente */
     border-radius: 10px;
-    filter: brightness(0.7);
+    filter: brightness(0.8);
     background-image: url('../../public/img/cta.jpg');
     background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
     background-position: center; /* Centra la imagen */

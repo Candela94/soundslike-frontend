@@ -8,6 +8,8 @@ import { FaPlay } from "react-icons/fa6";
 import { TbMoodHappy } from "react-icons/tb";
 import { ImSleepy } from "react-icons/im";
 
+
+// Aqui tengo que poner props, esto es una prueba {img,h3,nombre}
 export const CardTendencias = () => {
     return ( 
         <>
@@ -19,9 +21,10 @@ export const CardTendencias = () => {
                 <h3 className="Card-nombre">Nombre</h3>
                 <p className="Card-grupo">Grupo</p>
             </div>
+
             <div className="Boton">
 
-           <Button className='btnCard' variant='solid'><FaPlay /> </Button>
+           <Button  variant='solid'><FaPlay className='Boton-icon'/> </Button>
            </div>
         </div>
         </>
@@ -72,6 +75,27 @@ const cardClass = card();
 
 
 
+        </>
+     );
+}
+
+
+
+
+
+export const CardRecomendaciones = ({h3, img, mix}) => {
+    return ( 
+        <>
+        <div className="CardRecomendaciones">
+         
+            <img src="../../../public/img/sensenra.jpg" alt="img" className="CardRecomendaciones-img" />
+          
+            
+            <div className="titulo">
+
+                <h4>Mix {mix}</h4>
+            </div>
+        </div>
         </>
      );
 }

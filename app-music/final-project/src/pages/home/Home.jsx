@@ -14,7 +14,7 @@ import { FaRegLightbulb } from "react-icons/fa";
 import { Button } from '../../components/buttons/Button';
 import { MdOutlineNorthEast } from "react-icons/md";
 import { FiArrowRightCircle } from "react-icons/fi";
-
+import { CardRecomendaciones } from '../../components/cards/Cards';
 
 
 import { NavLink } from 'react-router';
@@ -29,6 +29,8 @@ const Home = () => {
             <main className="Main-home">
 
                 <h1 className='Main-intro'> ¡Hola, ... ! ¿Qué te gustaría escuchar hoy?</h1>
+
+                {/* Aquí haremos un map de la base de datos */}
 
                 <section className="Seccion-tendencias">
                     <h2>Lo último en SOUNDsLike</h2>
@@ -69,6 +71,22 @@ const Home = () => {
                     
                     </div>
 
+                </section>
+
+
+                <section className="Recomendaciones">
+                    <h2>Hecho para ti</h2>
+
+                    <div className="Galeria">
+
+                    {/* Aquí irá un map de mi base de datos */}
+
+                
+                    <CardRecomendaciones/>
+                    <CardRecomendaciones/>
+                     <CardRecomendaciones/>
+                     <CardRecomendaciones/>
+                     </div>
                 </section>
 
 

@@ -13,8 +13,8 @@ export const BottomNavigation = () => {
 
         <>
 
-            <footer className="Footer">
             <Reproductor />
+            <footer className="Footer">
 
                 <nav className="Footer-nav">
 

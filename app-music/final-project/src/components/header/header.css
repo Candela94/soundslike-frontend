@@ -2,10 +2,13 @@
 
 
 .Header{
-    padding: 2rem 3rem;
+    padding: 1rem 3rem;
     position: sticky;
     top: 0;
     background-color: var(--background-color);
+    opacity: 0.9;
+    border-radius: 0 0 60px 60px; 
+    z-index: 1;
 }
 
 .Header-nav{}

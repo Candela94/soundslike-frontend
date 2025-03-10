@@ -1,0 +1,18 @@
+
+
+
+.Cancion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background-color: var(--background-secondary);
+    border-radius: 4px;
+}
+
+.Cancion-imgTexto{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
