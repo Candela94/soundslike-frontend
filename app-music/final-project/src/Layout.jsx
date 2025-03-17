@@ -12,11 +12,10 @@ import { Header } from './components/header/Header'
 import { Outlet } from 'react-router'
 
 
-import LogIn from './pages/log-in/Log-in.jsx'
 import { UserContextProvider } from './context/UserContext.jsx'
 import { CardTendencias } from './components/cards/Cards.jsx'
 import ReproductorPage from './pages/reproductor/ReproductorPage.jsx'
-
+import Error from './pages/error/Error.jsx'
 
 
 function Layout() {
@@ -24,11 +23,13 @@ function Layout() {
 
   return (
     <>
-    <Header />
+  
+  
   <Outlet />
 
-    {/* <ReproductorPage />     */}
-    <BottomNavigation />
+
+ 
+  
   
     </> 
   )

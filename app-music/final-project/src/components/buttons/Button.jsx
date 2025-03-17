@@ -16,7 +16,7 @@ export const Button = ({variant, children}) => {
             case 'disabled' : return 'btn-disabled';
             case 'solid' : return 'btn-solid';
 
-            default: return 'primary'
+            default: return 'btn-primary'
 
 
 
@@ -29,7 +29,7 @@ export const Button = ({variant, children}) => {
 
 
         <>
-         <button className={`btnClass ${btnClass()}`}>{children}</button>
+         <button className={`btn ${btnClass()}`}>{children}</button>
 
 </>
     )

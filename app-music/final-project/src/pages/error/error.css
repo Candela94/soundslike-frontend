@@ -1,0 +1,26 @@
+.Main-error{
+  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+}
+
+
+
+.Error-gif{
+    width: 50%;
+}
+
+.Error-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.Error-p{
+    text-align: center;
+}

@@ -1,0 +1,74 @@
+
+
+
+.Main{
+padding: 1rem;
+}
+
+
+.Ficha-usuario{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    position: relative;
+}
+
+
+
+.Nombre-usuario{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+}
+
+.Usuario-img{
+    border: solid 1px white;
+    width: 35px;
+    height: 35px;
+    border-radius: 2px;
+}
+
+
+
+
+
+.Publicacion-img{
+    width: 100%;
+    max-height: 50%;
+    border-radius: 6px;
+
+}
+
+
+.Info-artista{
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    position: absolute;
+    bottom: 39px;
+    width: 100%;
+    border-radius: 0 0 6px 6px;
+}
+
+.Ficha-iconos{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1rem;
+    
+}
+
+.Iconos-likeShare{
+    display: flex;
+    gap: 1.5rem;
+}
+
+
+.icons-publicaciones{
+    font-size: 20px;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.icons-publicaciones:active{
+    transform: scale(0.9);
+}

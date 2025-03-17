@@ -1,7 +1,7 @@
 
 
 
-.btnClass{
+.btn{
 
     font-size: 14px;
     background: none;
@@ -14,7 +14,7 @@
 }
 
 
-.btnClass:active{
+.btn:active{
     transform: scale(0.9);
 }
 

@@ -6,18 +6,19 @@ import { MdOutlinePayments } from "react-icons/md";
 import { FaEdit } from "react-icons/fa";
 import { FaUserPen } from "react-icons/fa6";
 
-
-
+import { Header } from '../../components/header/Header';
+import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
 
 
 
 const Perfil = () => {
     return (
         <>
+        <Header />
 
             <div className="Main-perfil">
 
-                <h1>Perfil</h1>
+              
 
                 <div className="Perfil">
              
@@ -95,6 +96,8 @@ const Perfil = () => {
 
 
             </div>
+
+            <BottomNavigation />
         </>
     );
 }

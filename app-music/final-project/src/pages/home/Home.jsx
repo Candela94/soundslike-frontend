@@ -3,7 +3,8 @@
 import './home.css'
 
 import { CardTendencias } from '../../components/cards/Cards';
-
+import { Header } from '../../components/header/Header';
+import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
 
 import { CardAnimo } from '../../components/cards/Cards';
 import { IoMdHappy } from "react-icons/io";
@@ -26,6 +27,7 @@ import { NavLink } from 'react-router';
 const Home = () => {
     return (
         <>
+        <Header />
             <main className="Main-home">
 
                 <h1 className='Main-intro'> ¡Hola, ... ! ¿Qué te gustaría escuchar hoy?</h1>
@@ -107,6 +109,7 @@ const Home = () => {
 
 
             </main>
+            <BottomNavigation />
         </>
     );
 }

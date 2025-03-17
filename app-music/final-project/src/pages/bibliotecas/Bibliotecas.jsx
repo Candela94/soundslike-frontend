@@ -26,7 +26,7 @@ const Bibliotecas = ({ icon, biblioteca }) => {
         <>
 
 
-            <h1>Mis bibliotecas</h1>
+        
 
             <header className="SubHeader">
                 <nav className="Subheader-nav">

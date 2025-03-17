@@ -4,11 +4,13 @@ import { createBrowserRouter } from "react-router";
 import Layout from "../../Layout.jsx";
 import Home from '../../pages/home/Home.jsx'
 import Bibliotecas from '../../pages/bibliotecas/Bibliotecas.jsx'
-import Groove from '../../pages/groove/Groove.jsx'
+import Sound from "../../pages/sLike/SoundsLike.jsx";
 import Inicio from '../../pages/inicio/Inicio.jsx'
-import LogIn from '../../pages/log-in/Log-in.jsx'
+import Login from "../../pages/login/LogIn.jsx";
 import Perfil from '../../pages/perfil/Perfil.jsx'
-import Registro from '../../pages/registro/Registro.jsx'
+import Registro from "../../pages/registro/Registro.jsx";
+import Error from "../../pages/error/Error.jsx";
+import Buscador from "../../pages/buscador/Buscador.jsx";
 
 
 const router = createBrowserRouter([{
@@ -33,7 +35,7 @@ const router = createBrowserRouter([{
 
         {
             path:"/login",
-            element: <LogIn />
+            element: <Login />
         },
 
 
@@ -43,6 +45,13 @@ const router = createBrowserRouter([{
             path:"/registro",
             element: <Registro />
         },
+
+
+        {
+            path:"/buscar",
+            element: <Buscador />
+        },
+
 
 
 
@@ -61,7 +70,7 @@ const router = createBrowserRouter([{
 
         {
             path:"/soundslike",
-            element: <Groove />
+            element: <Sound />
         },
 
         {
