@@ -6,7 +6,7 @@
 }
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-family: roboto, inter, poppins;
   
   --background-color: #201f1f;
   --background-secondary:#282727;
@@ -24,4 +24,34 @@
 .Body{
   background-color: var(--background-color);
   color: var(--text);
+}
+
+
+
+
+
+
+
+/* ---------------- */
+/*     Fuentes      */
+/* ---------------- */
+
+
+@font-face {
+  font-family: roboto;
+  src: url(../../public/fonts/Roboto_SemiCondensed-ExtraLight.ttf);
+}
+
+
+
+
+@font-face {
+  font-family: roboto-medium;
+  src: url(../../public/fonts/Roboto_Condensed-Medium.ttf);
+}
+
+
+@font-face {
+  font-family: roboto-black;
+  src: url(../../public/fonts/Roboto_Condensed-Black.ttf);
 }
