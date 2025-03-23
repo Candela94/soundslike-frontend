@@ -6,7 +6,7 @@
 }
 
 :root {
-  font-family: roboto, inter, poppins;
+  font-family:  inter-regular, poppins;
   
   --background-color: #201f1f;
   --background-secondary:#282727;
@@ -42,20 +42,26 @@ a{
 
 
 @font-face {
-  font-family: roboto;
-  src: url(../../public/fonts/Roboto_SemiCondensed-ExtraLight.ttf);
+  font-family: inter-black;
+  src: url(../../public/fonts/black.ttf);
 }
 
 
 
 
 @font-face {
-  font-family: roboto-medium;
-  src: url(../../public/fonts/Roboto_Condensed-Medium.ttf);
+  font-family: inter-oblique;
+  src: url(../../public/fonts/black-oblique.ttf);
 }
 
 
 @font-face {
-  font-family: roboto-black;
-  src: url(../../public/fonts/Roboto_Condensed-Black.ttf);
+  font-family: inter-regular;
+  src: url(../../public/fonts/regular.ttf);
+}
+
+
+@font-face {
+  font-family: inter-regular;
+  src: url(../../public/fonts/light.ttf);
 }

@@ -8,9 +8,9 @@
     flex-direction: column;
     
     justify-content: center;
-    height: 90vh;
+    height: 100vh;
     align-items: center;
-    background-image: url('../../public/img/vinilo.jpg');
+    background-image: url('../../public/img/portada.jpg');
     background-size: cover; /* Ajusta la imagen para que cubra todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat;
@@ -21,18 +21,19 @@
     display: flex;
     flex-direction: column;
     position: absolute;
-    gap: 1.5rem;
+    gap: 2rem;
     z-index: 1;
     align-items: center;
     background-color: rgba(0, 0, 0,  0.3);
     width: 100%;
     justify-content: center;
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 
 .Texto{
     display: flex;
+    gap: 1.5rem;
     flex-direction: column;
     align-items: center;
 
@@ -43,8 +44,9 @@
 
 .Main-h1Intro{
     font-size: 4rem;
+    font-family: inter-oblique;
     color: var(--text);
-    letter-spacing: 5px;
+    letter-spacing: 7px;
   
 }
 .Main-intro{
@@ -63,4 +65,9 @@
 .Intro-botones{
     display: flex;
     gap: 2rem;
+}
+
+
+.Intro-btn{
+    font-family: inter-regular;
 }

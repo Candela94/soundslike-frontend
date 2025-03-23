@@ -1,13 +1,10 @@
 
 
-import { TbPlayerTrackPrevFilled } from "react-icons/tb";
-import { TbPlayerTrackNextFilled } from "react-icons/tb";
-import { TbPlayerPlayFilled } from "react-icons/tb";
 
 import { Header } from "../../components/header/Header";
 import'./reproductorpage.css'
 
-
+import { BarraReproduccion } from "../../components/barra-reproduccion/BarraReproduccion";
 
 
 
@@ -28,23 +25,15 @@ const ReproductorPage = () => {
             <div className="Reproductor-card">
                 <img src="./img/sensenra.jpg" alt="imagen" className="Reproductor-imagen" />
 
+            <BarraReproduccion />
             </div>
+
 
         </main>
 
 
 
-        {/* <div className="Reproductor-page">
-        <TbPlayerTrackPrevFilled />
-
-
-        <TbPlayerPlayFilled />
-
-
-        <TbPlayerTrackNextFilled />
-
-
-        </div> */}
+       
         </>
 
     );

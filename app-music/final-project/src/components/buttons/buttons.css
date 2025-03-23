@@ -7,7 +7,7 @@
     background: none;
     color: var(--text);
     padding:0.9rem 1rem;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     transition: transform 0.2s ease;
     
@@ -28,7 +28,7 @@
 
 
 .btn-primary{
-   border:  0.5px solid var(--primary);
+  border: none;
    background-color: var(--secondary);
    
 }

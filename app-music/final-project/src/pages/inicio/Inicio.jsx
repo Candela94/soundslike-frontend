@@ -28,8 +28,8 @@ const Inicio = () => {
                     </div>
 
                     <div className="Intro-botones">
-                        <NavLink to='/registro' ><Button>Regístrate</Button></NavLink>
-                        <NavLink to='/login' ><Button variant='solid'>Iniciar sesión</Button></NavLink>
+                        <NavLink to='/registro' ><Button className = 'Intro-btn'>Regístrate</Button></NavLink>
+                        <NavLink to='/login' ><Button className = 'Intro-btn' variant='solid'>Iniciar sesión</Button></NavLink>
                     </div>
 
                     <NavLink to='/home'><p>Entrar como invitado</p></NavLink>
