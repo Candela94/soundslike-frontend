@@ -1,7 +1,7 @@
 
+/* card cancion */
 
-
-.Cancion{
+.Cancion , .Lista{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -11,7 +11,7 @@
     position: relative;
 }
 
-.Cancion-imgTexto{
+.Cancion-imgTexto, .Imagen-titulo {
     display: flex;
     align-items: center;
     gap: 1.5rem;
@@ -65,3 +65,16 @@
 .MenuOpened-contenido:active{
     transform: scale(0.9);
 }
+
+
+
+
+/* card lista */
+
+
+.Lista{
+
+
+}
+
+

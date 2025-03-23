@@ -75,9 +75,33 @@ export const Cancion = ({titulo, artista,img}) => {
 
 
 
-export const Listas = () => {
+export const Listas = ({nombre,img}) => {
+
+
+    const [openMenu, setOpenMenu] = useState(false)
+
+
+    const handleOpenMenu = () => {
+        setOpenMenu(!openMenu)
+    }
+
     return ( 
+
+
         <>
+
+        <div className="Lista">
+<div className="Imagen-titulo">
+        <img src={img} alt="imagen-lista" className="Lista-imagen" />
+        <h4>{nombre}Nombre</h4>
+        </div>
+
+        
+<CiMenuKebab className="Cancion-icono"/>
+
+        </div>
+
+        
         </>
      );
 }

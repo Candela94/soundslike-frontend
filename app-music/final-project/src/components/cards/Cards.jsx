@@ -99,3 +99,9 @@ export const CardRecomendaciones = ({h3, img, mix}) => {
         </>
      );
 }
+
+
+
+
+
+

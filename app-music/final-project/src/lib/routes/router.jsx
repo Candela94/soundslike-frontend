@@ -11,6 +11,7 @@ import Perfil from '../../pages/perfil/Perfil.jsx'
 import Registro from "../../pages/registro/Registro.jsx";
 import Error from "../../pages/error/Error.jsx";
 import Buscador from "../../pages/buscador/Buscador.jsx";
+import ReproductorPage from "../../pages/reproductor/ReproductorPage.jsx";
 
 
 const router = createBrowserRouter([{
@@ -72,6 +73,14 @@ const router = createBrowserRouter([{
             path:"/soundslike",
             element: <Sound />
         },
+
+
+
+        {
+            path:"/reproductor",
+            element: <ReproductorPage />
+        },
+
 
         {
             path:"*",

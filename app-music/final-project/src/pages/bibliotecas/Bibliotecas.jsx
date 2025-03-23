@@ -6,7 +6,10 @@ import './bibliotecas.css'
 import { useState } from 'react';
 import { BsMusicNoteList } from "react-icons/bs";
 import { GoHeart } from "react-icons/go";
-import { Cancion } from '../../components/cancion/Cancion';
+import { Cancion , Listas} from '../../components/cancion/Cancion';
+import { Header } from '../../components/header/Header';
+import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
+
 
 const Bibliotecas = ({ icon, biblioteca }) => {
 
@@ -25,7 +28,7 @@ const Bibliotecas = ({ icon, biblioteca }) => {
     return (
         <>
 
-
+<Header />
         
 
             <header className="SubHeader">
@@ -71,6 +74,7 @@ const Bibliotecas = ({ icon, biblioteca }) => {
 
                     <div className="Bibliotecas">
                         <h1>Bibliotecas</h1>
+                        <Listas /> 
                     </div>
 
 
@@ -104,6 +108,7 @@ const Bibliotecas = ({ icon, biblioteca }) => {
 
 
             </main>
+            <BottomNavigation />
         </>
     );
 }
