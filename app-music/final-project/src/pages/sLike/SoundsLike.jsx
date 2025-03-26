@@ -14,9 +14,11 @@ const Sound = () => {
 
 
     <>
-
+ <div className="Header-main">
 
       <Header />
+
+
       <main className="Main">
 
         <div className="Ficha-usuario">
@@ -61,7 +63,7 @@ const Sound = () => {
 
 
       </main>
-
+</div>
 
       <BottomNavigation />
 

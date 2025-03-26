@@ -27,9 +27,10 @@ const Bibliotecas = ({ icon, biblioteca }) => {
 
     return (
         <>
-
+ <div className="Header-main">
 <Header />
         
+        <div className="Contenidp">
 
             <header className="SubHeader">
                 <nav className="Subheader-nav">
@@ -108,6 +109,8 @@ const Bibliotecas = ({ icon, biblioteca }) => {
 
 
             </main>
+            </div>
+            </div>
             <BottomNavigation />
         </>
     );

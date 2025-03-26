@@ -24,3 +24,41 @@
 
 
 
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .Footer{
+        display: none;
+    }
+
+
+    .Reproductor{
+        position: fixed;
+        bottom: 0;
+        padding: 2rem 3;
+        padding-bottom: 1rem;
+    }
+        
+    }
+    
+    
+    
+    /* Escritorio */
+    
+    @media (min-width: 1025px) {
+    
+       .Footer{
+        display: none;
+       }
+
+
+       .Reproductor{
+        position: fixed;
+        bottom: 0;
+        padding: 2rem 3rem;
+       
+       }
+    }

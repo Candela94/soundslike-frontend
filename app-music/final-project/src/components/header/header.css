@@ -34,3 +34,74 @@
 .Header-icon:active{
     transform: scale(0.9);
 }
+
+.Logo{
+    display: flex;
+    align-items: center;
+    
+}
+
+.h4{
+    font-family: inter-oblique;
+    letter-spacing: 1px;
+}
+
+.Bottom-li{
+    display: none;
+}
+
+
+
+
+
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+ 
+
+
+}
+
+
+
+/* Escritorio */
+
+@media (min-width: 1025px) {
+
+    .Header{
+        width: auto;
+        height: 80vh;
+        border-radius: 0 0 60px 0;
+        background-color: var(--background-secondary);
+        padding: 3rem 1;
+       
+    }
+
+    .Header-nav{
+        height: 100%;
+    }
+    .Header-ul
+    {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        align-items: start;
+        justify-content: space-between;
+        z-index: 1;
+        opacity: 1;
+        
+    }
+
+
+
+
+
+    .Bottom-li{
+        display: block;
+    }
+
+}

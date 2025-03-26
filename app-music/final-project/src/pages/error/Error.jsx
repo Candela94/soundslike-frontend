@@ -8,7 +8,7 @@ import { Header } from '../../components/header/Header';
 const Error = () => {
     return (
         <>
-
+ <div className="Header-main">
         <Header />
 
        
@@ -26,6 +26,8 @@ const Error = () => {
 
                 <NavLink to= '/home'><Button>Volver al inicio</Button></NavLink>
 
+            </div>
+            
             </div>
             < BottomNavigation/>
         </>

@@ -22,27 +22,71 @@
     
 }
 
+.Formulario-h1{
+    font-family: inter-black;
+    font-size: 3rem;
+    letter-spacing: 3px;
+}
+
 .Formulario-input{
-   width: 80%;
+    width: 80%;
     padding: 0.9rem;
-    border-radius: 20px;
-    border: 1px solid var(--secondary);
+    border: none;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid var(--secondary);
     background: none ;
     color: var(--text);
-    transition: box-shadow 0.5s ease, color 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 
 .Formulario-input:focus{
     color: var(--text);
     outline: none;
-    box-shadow: 1px 1px 6px var(--primary);
+    background-color: rgb(45, 43, 43);
 }
 
 .Formulario-botones{
     display: flex;
+    gap: 3rem;
     width: 80%;
     justify-content: end;
 
    
+}
+
+
+
+
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .Formulario{
+        width: 65%;
+    }
+
+    .Formulario-input{
+        width: 70%;
+    }
+
+}
+
+
+
+
+/* Escritorio */
+@media (min-width: 1025px) {
+
+    .Formulario{
+        width: 65%;
+    }
+
+    .Formulario-input{
+        width: 70%;
+    }
+
 }

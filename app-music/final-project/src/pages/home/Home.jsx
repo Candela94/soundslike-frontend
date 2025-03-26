@@ -27,6 +27,7 @@ import { NavLink } from 'react-router';
 const Home = () => {
     return (
         <>
+        <div className="Header-main">
         <Header />
             <main className="Main-home">
 
@@ -35,7 +36,7 @@ const Home = () => {
                 {/* Aquí haremos un map de la base de datos */}
 
                 <section className="Seccion-tendencias">
-                    <h2>Lo último en SOUNDsLike</h2>
+                    <h2 className= 'Main-subheading'>Lo último en SOUNDsLike</h2>
                     <div className="Galeria">
                         <CardTendencias />
                         <CardTendencias />
@@ -46,7 +47,7 @@ const Home = () => {
                 </section>
 
                 <section className="Seccion-animo">
-                    <h3>Elige el estado en el que vibras hoy</h3>
+                    <h2 className= 'Main-subheading'>Elige el estado en el que vibras hoy</h2>
 
                     <div className="Galeria-animo">
 
@@ -77,9 +78,9 @@ const Home = () => {
 
 
                 <section className="Recomendaciones">
-                    <h2>Hecho para ti</h2>
+                    <h2 className= 'Main-subheading'>Hecho para ti</h2>
 
-                    <div className="Galeria">
+                    <div className="Galeria Galeria-recomendaciones">
 
                     {/* Aquí irá un map de mi base de datos */}
 
@@ -94,9 +95,9 @@ const Home = () => {
 
                 <section className="Seccion-imagen">
            
-                    <div className="Tsuena-cta">
-                        <h1 className='TsuenaH1'>¿Todavía no has entrado en nuestra red?</h1>
-                        <div className="Tsuena-enlace">
+                    <div className="Sounds-cta">
+                        <h1 className='SoundsH1'>¿Todavía no has entrado en nuestra red?</h1>
+                        <div className="Sounds-enlace">
                         
                           <NavLink to = '/soundslike'> <FiArrowRightCircle className='ctaButton'/> </NavLink> 
                         </div>
@@ -108,8 +109,9 @@ const Home = () => {
 
 
 
-            </main>
             <BottomNavigation />
+            </main>
+            </div>
         </>
     );
 }

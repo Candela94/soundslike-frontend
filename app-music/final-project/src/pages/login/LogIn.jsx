@@ -23,11 +23,12 @@ const LogIn = () => {
 
     return (
         <>
+         <div className="Header-main">
 <Header />
         <main className="Main-login">
             <form action="GET" onSubmit={handleEnviar} className="Formulario">
 
-            <h1>Log in</h1>
+            <h1 className="Formulario-h1">Log in</h1>
 
               
                 <input onChange={(e) => setEmail(e.target.value)} value={email} type="mail" className="Formulario-mail Formulario-input" placeholder="email" />
@@ -37,12 +38,13 @@ const LogIn = () => {
                 <input onChange={(e) => setRepeatPassword(e.target.value)} value={repeatPassword} type="password" className="Formulario-password Formulario-input" placeholder="Repeat password" />
 
                 <div className="Formulario-botones">
+                    <Button variant='secondary'>Todavía no soy usuario</Button>
                     <Button type='submit' variant='primary'>Iniciar sesión</Button>
                 </div>
 
             </form>
             </main>
-
+</div>
             <BottomNavigation />
             </>
     )

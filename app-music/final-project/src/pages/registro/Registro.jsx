@@ -28,11 +28,12 @@ const Registro = () => {
 
     return (
         <>
+         <div className="Header-main">
 <Header />
         <main className="Main-login">
             <form action="GET" onSubmit={handleEnviar} className="Formulario">
 
-            <h1>Registro</h1>
+            <h1 className='Formulario-h1'>Registro</h1>
 
                 <input onChange={(e) => setNombre(e.target.value) } value={nombre} type="text" className="Formulario-nombre Formulario-input" placeholder="Name" />
                 <input onChange={(e) => setEmail(e.target.value)} value={email} type="mail" className="Formulario-mail Formulario-input" placeholder="email" />
@@ -47,7 +48,7 @@ const Registro = () => {
 
             </form>
             </main>
-
+</div>
             <BottomNavigation />
         </>
     );

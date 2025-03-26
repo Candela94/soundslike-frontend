@@ -17,6 +17,7 @@ const ReproductorPage = () => {
     return (  
 
         <>
+         <div className="Header-main">
         <Header />
         
         <main className="Main-reproductor">
@@ -31,7 +32,7 @@ const ReproductorPage = () => {
 
         </main>
 
-
+</div>
 
        
         </>
