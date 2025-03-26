@@ -4,6 +4,7 @@
 .btn{
 
     font-size: 14px;
+    font-family: apfel-regular;
     background: none;
     color: var(--text);
     padding:0.9rem 1rem;
