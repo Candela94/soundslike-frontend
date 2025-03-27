@@ -6,6 +6,7 @@ import { Button } from './components/buttons/Button'
 
 import Inicio from './pages/inicio/Inicio'
 import { Header } from './components/header/Header'
+import { ReproductorContextProvider } from './context/ReproductorContext'
 
 
 
@@ -21,8 +22,9 @@ function Layout() {
   return (
     <>
   
-  
+  <ReproductorContextProvider>
   <Outlet />
+  </ReproductorContextProvider>
 
 
  

@@ -5,12 +5,13 @@
 import './cards.css'
 import { Button } from '../buttons/Button';
 import { FaPlay } from "react-icons/fa6";
-import { TbMoodHappy } from "react-icons/tb";
-import { ImSleepy } from "react-icons/im";
+
 
 
 // Aqui tengo que poner props, esto es una prueba {img,h3,nombre}
 export const CardTendencias = () => {
+
+    
     return ( 
         <>
 

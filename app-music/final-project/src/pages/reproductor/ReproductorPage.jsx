@@ -6,7 +6,7 @@ import'./reproductorpage.css'
 
 import { BarraReproduccion } from "../../components/barra-reproduccion/BarraReproduccion";
 
-
+import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
 
 
 
@@ -31,7 +31,7 @@ const ReproductorPage = () => {
 
 
         </main>
-
+<BottomNavigation/>
 </div>
 
        
