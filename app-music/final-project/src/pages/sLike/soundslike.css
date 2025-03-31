@@ -3,6 +3,8 @@
 
 .Main{
 padding: 1rem;
+position: relative;
+
 }
 
 
@@ -11,6 +13,7 @@ padding: 1rem;
     flex-direction: column;
     gap: 0.7rem;
     position: relative;
+    
 }
 
 
@@ -32,7 +35,6 @@ padding: 1rem;
 
 
 
-
 .Publicacion-img{
     width: 100%;
     max-height: 50%;
@@ -41,13 +43,25 @@ padding: 1rem;
 }
 
 
-.Info-artista{
-    background-color: rgba(0, 0, 0, 0.6);
+
+.Imagen-cancion{
+    background-color: var(--secondary);
     padding: 1rem;
     position: absolute;
-    bottom: 39px;
+    bottom: 29px;
     width: 100%;
     border-radius: 0 0 6px 6px;
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+
+
+.Info-artista{
+    display: flex;
+    flex-direction: column;
 }
 
 .Ficha-iconos{
@@ -55,6 +69,22 @@ padding: 1rem;
     justify-content: space-between;
     padding: 0 1rem;
     
+}
+
+
+.Post-btn{
+    border: none;
+    background: none;
+    color: var(--text);
+    font-size: 22px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+
+
+.Post-btn:active{
+    transform: scale(0.9);
 }
 
 .Iconos-likeShare{
@@ -71,4 +101,36 @@ padding: 1rem;
 
 .icons-publicaciones:active{
     transform: scale(0.9);
+}
+
+
+
+
+.MenuOpened-add{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+
+    position: fixed;     
+    right: 0;
+    left: 0;     
+    bottom: 0; 
+    z-index: 1;
+ 
+    background-color: var(--background-secondary);
+
+   
+    border-radius: 80px 80px 0 0;
+    padding:  2rem;
+    width: 100%;
+    height: 50vh;
+   
+
+}
+
+
+.MenuOpened-addIcon{
+    font-size: 24px;
+    cursor: pointer;
 }

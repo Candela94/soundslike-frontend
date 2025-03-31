@@ -20,6 +20,7 @@ const Inicio = () => {
 
             <main className="Main-inicio">
 
+                <img src="../img/portada-rosa.jpg" alt="portada" className="Inicio-img" />
 
                 <div className="Intro-texto">
                     <div className="Texto">
@@ -28,8 +29,8 @@ const Inicio = () => {
                     </div>
 
                     <div className="Intro-botones">
-                        <NavLink to='/registro' ><Button className = 'Intro-btn'>Regístrate</Button></NavLink>
-                        <NavLink to='/login' ><Button className = 'Intro-btn' variant='solid'>Iniciar sesión</Button></NavLink>
+                        <NavLink to='/registro' ><Button className='Intro-btn'>Regístrate</Button></NavLink>
+                        <NavLink to='/login' ><Button className='Intro-btn' variant='solid'>Iniciar sesión</Button></NavLink>
                     </div>
 
                     <NavLink to='/home'><p>Entrar como invitado</p></NavLink>
@@ -40,7 +41,7 @@ const Inicio = () => {
 
             </main>
 
-         
+
         </>
 
 

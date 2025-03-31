@@ -1,7 +1,7 @@
 
 
 .Footer{
-    padding: 1.4rem 3rem;
+    padding: 1.4rem 5rem;
     background-color: var(--background-secondary);
     z-index: 2;
     position: fixed;
@@ -46,8 +46,36 @@
 
 
 
+.Footer-ulSounds{
+
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    
+}
 
 
+.Btn-publicacion{
+
+    font-size: 46px;
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+
+}
+
+
+.Footer-icons{
+    width: 24px;
+    fill: var(--text);
+   
+}
+
+.Logo{
+    stroke: var(--primary);
+}
 
 
 /* media queries */

@@ -3,23 +3,14 @@
 
 
 
-
-.Main-buscador{
-    margin: 1rem;
-}
-
-
-
-
-
 .Input-buscador{
     padding: 0.9rem;
     border-radius: 6px;
     background: none;
-    border: 0.5px solid var(--text);
+    border: 0.5px solid var(--text-secondary);
     transition: box-shadow 0.3s ease;
     width: 70%;
-    color: var(--text);
+    color: var(--text-secondary);
 }
 
 

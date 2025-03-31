@@ -16,7 +16,7 @@ export const CardTendencias = () => {
         <>
 
         <div className="Card">
-            <img src="../../../public/img/img1.png" alt="" className="Card-img" />
+            <img src="../img/img1.png" alt="" className="Card-img" />
 
             <div className="Card-informacion">
                 <h3 className="Card-nombre">Nombre</h3>

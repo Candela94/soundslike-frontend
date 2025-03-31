@@ -8,12 +8,12 @@
 :root {
   font-family:  apfel-regular, poppins;
   
-  --background-color: #201f1f;
-  --background-secondary:#282727;
-  --primary: #EEAA6F;
-  --secondary: rgba(238,170,111,0.1);
+  --background-color: #212021;
+  --background-secondary:#383537;
+  --primary: #fdbad0;
+  --secondary: rgba(217, 121, 208, 0.1);
 
-  --text: #EAE3E3;
+  --text: #f1ebdd;
   --text-secondary: #CDC9C9;
 
   font-size: 14px;

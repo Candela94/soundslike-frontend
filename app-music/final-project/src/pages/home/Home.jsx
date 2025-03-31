@@ -51,7 +51,7 @@ const Home = () => {
 
                     <div className="Galeria-animo">
 
-                        <div className="Galeria-options">
+                      
                             <CardAnimo variant='energy' 
                             children = 'Energía' 
                             icon= {<FaBoltLightning />}/>
@@ -60,16 +60,16 @@ const Home = () => {
                              children = 'Melancólica' 
                              icon= {<GoHeart />}
                             variant='melancoly' />
-                        </div>
+                      
 
-                        <div className="Galeria-options">
+                        
                             <CardAnimo variant='relax'
                              children = 'Relax' 
                              icon= {<MdNightlight />} />
                             <CardAnimo variant='concentrated'
                              children = 'Concentrada' 
                              icon= {<FaRegLightbulb />} />
-                        </div>
+                      
 
                     
                     </div>
@@ -95,6 +95,7 @@ const Home = () => {
 
                 <section className="Seccion-imagen">
            
+                        <img src="../img/imagen-cta.jpg" alt="" className="Img-cta" />
                     <div className="Sounds-cta">
                         <h1 className='SoundsH1'>¿Todavía no has entrado en nuestra red?</h1>
                         <div className="Sounds-enlace">
@@ -109,8 +110,8 @@ const Home = () => {
 
 
 
-            <BottomNavigation />
             </main>
+            <BottomNavigation />
             </div>
         </>
     );

@@ -1,6 +1,6 @@
 
 
-import { createContext, useState, useRef } from "react";
+import { createContext, useState, useRef, useEffect } from "react";
 import { BarraReproduccion } from "../components/barra-reproduccion/BarraReproduccion.jsx";
 
 
@@ -62,6 +62,23 @@ export const ReproductorContextProvider = ({children}) => {
           setDuration(audioRef.current.duration);
         }
       };
+
+      useEffect(() => {
+        const audio = audioRef.current;
+        if (audio) {
+            // Actualizar el progreso cada vez que se actualiza el tiempo del audio
+            audio.addEventListener('timeupdate', handleProgress);
+
+            // Ejecutar una vez cuando el audio carga su metadata para obtener la duración
+            audio.addEventListener('loadedmetadata', handleDuration);
+
+            return () => {
+                // Limpiar los eventos cuando el componente se desmonte
+                audio.removeEventListener('timeupdate', handleProgress);
+                audio.removeEventListener('loadedmetadata', handleDuration);
+            };
+        }
+    }, []);
 
 
     return(
