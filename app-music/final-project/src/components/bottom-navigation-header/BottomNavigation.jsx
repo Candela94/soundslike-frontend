@@ -93,7 +93,7 @@ export const BottomNavigationSounds = () => {
                         </li>
 
 
-                        <li className="Footer-li"> <NavLink to='/soundslike'>
+                        <li className="Footer-li"> <NavLink to='/publicacion'>
                         <FaCirclePlus className='Btn-publicacion '/>
                         </NavLink>
                            

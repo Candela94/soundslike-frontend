@@ -15,6 +15,8 @@ import ReproductorPage from "../../pages/reproductor/ReproductorPage.jsx";
 import HomeSounds from "../../pages/home-sounds/HomeSounds.jsx";
 import BuscadorPag from "../../pages/buscador/BuscadorPag.jsx";
 
+import Publicacion from "../../pages/formulario-publicacion/Publicacion.jsx";
+
 
 const router = createBrowserRouter([{
 
@@ -89,6 +91,11 @@ const router = createBrowserRouter([{
             element: <ReproductorPage />
         },
 
+
+        {
+            path:"/publicacion",
+            element: <Publicacion />
+        },
 
         {
             path:"*",

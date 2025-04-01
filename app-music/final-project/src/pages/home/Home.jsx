@@ -100,7 +100,7 @@ const Home = () => {
                         <h1 className='SoundsH1'>¿Todavía no has entrado en nuestra red?</h1>
                         <div className="Sounds-enlace">
                         
-                          <NavLink to = '/soundslike'> <FiArrowRightCircle className='ctaButton'/> </NavLink> 
+                          <NavLink to = '/soundslike/home'> <FiArrowRightCircle className='ctaButton'/> </NavLink> 
                         </div>
                        
                     </div>

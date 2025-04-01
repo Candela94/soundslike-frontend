@@ -21,7 +21,7 @@ const HomeSounds = () => {
 
                 <div className="Main-texto">
                     <h1 className='Eslogan'>Descubre la música de una manera única</h1>
-                   <NavLink to='/soundslike'> <Button variant='solid'>Entra</Button></NavLink>
+                   <NavLink to='/soundslike'> <Button variant='solid'>Entrar en SoundsLike</Button></NavLink>
                 </div>
 
             </main>
