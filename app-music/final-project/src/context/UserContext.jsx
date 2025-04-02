@@ -20,6 +20,8 @@ const LogOut = () => setUser(null)
 
 
     return(
-        <UserContext.Provider value={{user, LogIn, LogOut}}></UserContext.Provider>
+        <UserContext.Provider value={{user, LogIn, LogOut}}>
+            {children}
+        </UserContext.Provider>
     )
 }

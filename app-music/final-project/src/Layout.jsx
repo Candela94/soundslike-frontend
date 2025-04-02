@@ -7,6 +7,7 @@ import { Button } from './components/buttons/Button'
 import Inicio from './pages/inicio/Inicio'
 import { Header } from './components/header/Header'
 import { ReproductorContextProvider } from './context/ReproductorContext'
+import { UserContextProvider } from './context/UserContext'
 
 
 
@@ -21,11 +22,11 @@ function Layout() {
 
   return (
     <>
-  
+  <UserContextProvider>
   <ReproductorContextProvider>
   <Outlet />
   </ReproductorContextProvider>
-
+  </UserContextProvider>
 
  
   

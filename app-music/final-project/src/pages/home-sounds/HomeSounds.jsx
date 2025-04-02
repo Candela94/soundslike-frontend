@@ -16,7 +16,7 @@ const HomeSounds = () => {
 
 
             <main className="Main-sounds">
-                <img src="../img/soundsportada.jpg" alt="sounds" className="Main-imagenSounds" />
+                {/* <img src="../img/soundsportada.jpg" alt="sounds" className="Main-imagenSounds" /> */}
 
 
                 <div className="Main-texto">
