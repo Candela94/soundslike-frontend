@@ -98,3 +98,9 @@ a{
   font-family: apfel-black;
   src: url(../fonts/apfel-black.otf);
 }
+
+
+@font-face {
+  font-family: genius;
+  src: url(../fonts/geniustechno-regular.otf);
+}
