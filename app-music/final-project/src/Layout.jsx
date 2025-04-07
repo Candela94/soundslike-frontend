@@ -8,6 +8,7 @@ import Inicio from './pages/inicio/Inicio'
 import { Header } from './components/header/Header'
 import { ReproductorContextProvider } from './context/ReproductorContext'
 import { UserContextProvider } from './context/UserContext'
+import { NotificacionesContextProvider } from './context/NotificacionesContext'
 
 
 
@@ -22,11 +23,13 @@ function Layout() {
 
   return (
     <>
+    <NotificacionesContextProvider>
   <UserContextProvider>
   <ReproductorContextProvider>
   <Outlet />
   </ReproductorContextProvider>
   </UserContextProvider>
+  </NotificacionesContextProvider>
 
  
   

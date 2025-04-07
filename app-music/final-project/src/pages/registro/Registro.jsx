@@ -6,57 +6,101 @@ import { UserContext } from '../../context/UserContext.jsx'
 
 import { Header } from '../../components/header/Header.jsx';
 import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation.jsx';
-import { useFetch } from '../../../hooks/useFetch.jsx';
+// import { useFetch } from '../../../hooks/useFetch.jsx';
+import { NotificacionesContext } from '../../context/NotificacionesContext.jsx';
+import { Notificaciones } from '../../components/notificaciones-success-error/Notificaciones.jsx';
 
 
 const Registro = () => {
 
    
+    const VITE_URL = import.meta.env.VITE_URL
 
-    const {login} = useContext(UserContext)
+    const {LogIn} = useContext(UserContext)
+    const {mostrarNotificacion} = useContext(NotificacionesContext)
 
     const [formData, setFormData] = useState({
 
-        nombre: "",
+        name: "",
         email: "",
         password: "",
-        repeatpass: "",
-        user: ""
+        repeatPassword: "",
+        username: ""
 
     })
 
+    
 
-    const handleChange = (e) => {
+
+    const handleChange = async (e) => {
         const {name, value} = e.target;
         setFormData((prev) => ({...prev, [name]: value}))
     }
 
 
 
-    //Hook useFetch para la creación del usuario
-    const {datos, loading, error} = useFetch(formData)
+    // //Hook useFetch para la creación del usuario
+    // const {datos, loading, error} = useFetch(formData)
 
 
 
-    const handleEnviar = (e) => {
+    const handleEnviar = async (e) => {
         e.preventDefault();
+
+
+        //Validar todos los campos
+        if (Object.values(formData).some((value) => value.trim() ==='')) {
+            alert("Todos los campos son obligatorios")
+        }
         
         //validar contraseña 
-        if(formData.password !==formData.repeatpass) {
+        if(formData.password.trim() !==formData.repeatPassword.trim()) {
             alert('Las contraseñas no coinciden')
             return;
         }
 
     
-    }
+        try {
+            const response = await fetch(`${VITE_URL}/api/v1/usuarios`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+    
+            const data = await response.json();
+            console.log('Response:' ,response)
+            console.log('Data:' , data)
+    
+            if (response.ok) {
 
 
-    // Después de que el usuario se haya registrado con éxito, si necesitas hacer login:
-    useEffect(() => {
-        if (datos && datos.status === 'ok') {
-            login(datos.data); // Si el backend devuelve los datos del usuario, iniciamos sesión
+               mostrarNotificacion("success", "¡Te has registrado correctamente!")
+                LogIn(data.data);
+            
+
+            } else {
+                mostrarNotificacion("error", "Ups, algo salió mal")
+            }
+        } catch (e) {
+            console.error('Error al registrarse', e);
+            mostrarNotificacion("error", "Ups, algo salió mal")
         }
-    }, [datos, login]); // Se ejecutará cuando 
+
+    }    
+
+
+
+
+
+
+    
+    // useEffect(() => {
+    //     if (datos && datos.status === 'ok') {
+    //         login(datos.data); 
+    //     }
+    // }, [datos, login]); 
 
 
 
@@ -68,16 +112,19 @@ const Registro = () => {
             <div className="Header-main">
                 <Header />
                 <main className="Main-login">
-                    <form action="GET" onSubmit={handleEnviar} className="Formulario">
+                    <div className="Notificacion-container">
+                        <Notificaciones />
+                    </div>
+                    <form action="POST" onSubmit={handleEnviar} className="Formulario">
 
                         <h1 className='Formulario-h1'>Registro</h1>
 
-                        <input onChange={handleChange} value={formData.nombre} type="text" name='nombre' className="Formulario-nombre Formulario-input" placeholder="Name" />
+                        <input onChange={handleChange} value={formData.name} type="text" name='name' className="Formulario-nombre Formulario-input" placeholder="Name" />
                         <input onChange={handleChange} value={formData.email} type="mail" name='email' className="Formulario-mail Formulario-input" placeholder="email" />
-                        <input onChange={handleChange} value={formData.user} type="text" name='user' className="Formulario-userName Formulario-input" placeholder="Username" />
+                        <input onChange={handleChange} value={formData.username} type="text" name='username' className="Formulario-userName Formulario-input" placeholder="Username" />
                         <input onChange={handleChange} value={formData.password}  name='password'type="password" className="Formulario-password Formulario-input" placeholder="Password" />
 
-                        <input onChange={handleChange} value={formData.repeatPassword}  name='repeatpass'type="password" className="Formulario-password Formulario-input" placeholder="Repeat password" />
+                        <input onChange={handleChange} value={formData.repeatPassword}  name='repeatPassword'type="password" className="Formulario-password Formulario-input" placeholder="Repeat password" />
 
                         <div className="Formulario-botones">
                             <Button type='submit' variant='primary'>Create account</Button>

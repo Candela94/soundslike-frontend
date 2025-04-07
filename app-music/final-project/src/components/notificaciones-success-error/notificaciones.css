@@ -1,0 +1,17 @@
+
+
+
+.Notificacion{
+    padding: 1rem;
+}
+
+.Notificacion-success{
+    background-color: green;
+
+}
+
+
+.Notificacion-error{
+    background-color: red;
+
+}

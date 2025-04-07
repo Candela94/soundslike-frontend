@@ -28,12 +28,12 @@ export const useFetch =  (userData) => {
                 })
 
                 if(!response.ok) {
-                    const data = await response.json()
+                    const data = await response.json();
                     setDatos(data);
 
                 } else {
-
-                   setError('Algo salió mal')
+                    const errorData = await response.json();
+                   setError(errorData.message || 'Algo salió mal');
 
                 }
 
@@ -42,14 +42,16 @@ export const useFetch =  (userData) => {
 
             } catch(e) {
 
-                console.error('Error al registrarse', e)
+                console.error('Error al registrarse', e);
+                setError(errorData.message || "Algo salió mal")
 
             }finally {
                 setLoading(false)
             }
 
-            if(userData){
-            createUsuario()
+            if(userData && Obhect.values(userData).everry((value) => value.trimv!== '')) {
+                setLoading(true);
+                createUsuario()
             }
 
 
