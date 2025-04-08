@@ -94,8 +94,8 @@ const LogIn = () => {
                         
 
                         <div className="Formulario-botones">
-                            <Button variant='secondary'>Todavía no soy usuario</Button>
-                            <Button type='submit' variant='primary'>Iniciar sesión</Button>
+                            <Button variant='secondary'>Regístrate</Button>
+                            <Button type='submit' variant='solid'>Iniciar sesión</Button>
                         </div>
 
                     </form>

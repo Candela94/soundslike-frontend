@@ -49,6 +49,7 @@ const NuevaLista = () => {
             });
 
             const data = await response.json();
+            console.log(data)
 
 
             if(response.ok){
@@ -78,19 +79,24 @@ const NuevaLista = () => {
 
     return ( 
         <>
+             <div className="Header-main">
         <Header />
         <main className="Main-lista">
 
-                <h1>Crea tu nueva lista</h1>
-            <form  className="Formulario-lista">
+                <h1 className="Main-titulo">Crea tu nueva lista</h1>
+                <div className="Notificacion-container">
+                        <Notificaciones />
+                    </div>
+            <form onSubmit={handleCrear} className="Formulario-lista">
                 <input 
                 onChange={handleChange}
                 value = {nombreLista}
                 className="Formulario-input" type="text" placeholder="Nombre de tu lista"/>
-                <Button type= 'submit' onClick={handleCrear} variant='solid'>Crear lista</Button>
+                <Button type='submit'  variant='solid'>Crear lista</Button>
             </form>
 
         </main>
+        </div>
         <BottomNavigation />
         </>
      );

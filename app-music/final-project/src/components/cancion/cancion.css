@@ -99,11 +99,24 @@
 
 
 .Confirmacion-contenido{
-   position: absolute;
-    background-color: rgba(0, 0, 0, 0.5); 
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    position: absolute;
+    background-color:var(--background-secondary);
+    border-radius: 6px;
+    align-items: center;
+    padding: 4rem 1rem;
+    z-index: 1;
+}
+
+.Confirmacion-botones{
     display: flex;
     justify-content: center;
-    align-items: center;
-    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+   
 }
 

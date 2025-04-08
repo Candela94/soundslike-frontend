@@ -6,6 +6,7 @@ import { PiShareFatBold } from "react-icons/pi";
 import { Button } from "../buttons/Button.jsx";
 
 
+
 export const Cancion = ({ titulo, artista, img }) => {
 
     const [openMenu, setOpenMenu] = useState(false)
@@ -75,6 +76,7 @@ export const Listas = ({ nombre, img }) => {
 
 
     const [openMenu, setOpenMenu] = useState(false)
+    const [cardConfirmar, setCardConfirmar] = useState(false)
     const [confirmacion, setConfirmacion] = useState(false)
 
 
@@ -83,7 +85,7 @@ export const Listas = ({ nombre, img }) => {
     }
 
 
-    const handleConfirmacionMenu = () => {
+    const handleConfirmar = () => {
         setConfirmacion(!confirmacion)
         setOpenMenu(false)
     }
@@ -92,6 +94,7 @@ export const Listas = ({ nombre, img }) => {
 
     const handleCancelarConfirmacion = () => {
         setConfirmacion(false)
+        setCardConfirmar(false)
     }
 
     return (
@@ -107,35 +110,39 @@ export const Listas = ({ nombre, img }) => {
 
 
                 <CiMenuKebab className="Cancion-icono" onClick={handleOpenMenu} />
-
                 {
+                    openMenu && !confirmacion && (  
 
-                    openMenu && (
+                        <div onClick={handleConfirmar} className="MenuOpened-contenido">
 
-                        <div className="MenuOpened-contenido">
-                            <p>Eliminar lista</p>
-                            <RiDeleteBin6Line onClick={handleConfirmacionMenu}/>
+                            <p >Eliminar lista</p>
 
-                            {
-                                confirmacion && (
-                                    <div className="Confirmacion-contenido">
-                                        <p>¿Seguro que quieres borrar esta lista?</p>
-                                        <div className="Confirmacion-botones">
-                                            <Button onClick={handleCancelarConfirmacion} variant='secondary'>No estoy seguro</Button>
-                                            <Button  variant= 'destructive'>Eliminar lista</Button>
-
-                                        </div>
-                                    </div>
-                                )
-                            }
+                            <RiDeleteBin6Line />
                         </div>
-
-
-
                     )
-
-
                 }
+
+
+{
+                    confirmacion && ( 
+                        <div className="Confirmacion-contenido">
+                            <p>¿Seguro que quieres borrar esta lista?</p>
+                            <div className="Confirmacion-botones">
+                                <Button onClick={handleCancelarConfirmacion} variant="secondary">
+                                    No estoy seguro
+                                </Button>
+                                <Button variant="danger">
+                                    Eliminar lista
+                                </Button>
+                            </div>
+                        </div>
+                    )
+                }
+
+
+             
+
+                
 
 
 

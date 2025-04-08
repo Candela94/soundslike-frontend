@@ -59,17 +59,36 @@
 
 
 
-
-
 .Subheader-content:active{
     transform: scale(0.9);
 }
 
 
+
+.Bibliotecas-intro{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+}
+
+.Bibliotecas-icono{
+    font-size: 32px;
+    color: var(--primary);
+}
+
+
+.Bibliotecas-titulo{
+    font-family: apfel-black;
+}
+
 .Galeria-listas{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 13rem;
 }
 
 

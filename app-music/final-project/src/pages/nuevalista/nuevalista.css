@@ -2,10 +2,12 @@
 
 .Main-lista{
     margin: 1rem;
+    margin-top: 6rem;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 3rem;
     padding: 1rem;
 }
@@ -16,4 +18,51 @@
     gap: 3rem;
     width: 100%;
     align-items: center;
+}
+
+
+
+
+
+
+
+
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+    .Main-lista{
+
+
+       
+    }
+    
+
+  
+
+}
+
+
+
+
+/* Escritorio */
+@media (min-width: 1025px) {
+
+    .Main-lista{
+
+        font-size: 3rem;
+
+      
+    }
+
+    .Main-titulo{
+        font-size: 4rem;
+    }
+    
+
+
 }

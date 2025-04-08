@@ -12,6 +12,7 @@ import { BottomNavigation } from '../../components/bottom-navigation-header/Bott
 import { Button } from '../../components/buttons/Button.jsx';
 import { NavLink } from 'react-router';
 import { useFetch } from '../../../hooks/useFetch.jsx';
+import { IoAddCircleSharp } from "react-icons/io5";
 
 
 const Bibliotecas = ({ icon, biblioteca }) => {
@@ -81,7 +82,11 @@ const Bibliotecas = ({ icon, biblioteca }) => {
                 {secciones === 'misBibliotecas' && (
 
                     <div className="Bibliotecas">
-                        <h1>Mis bibliotecas</h1>
+
+                        <div className="Bibliotecas-intro">
+                        <h1 className='Bibliotecas-titulo'>Mis listas</h1>
+                        <NavLink to = '/playlist'><IoAddCircleSharp className='Bibliotecas-icono'/></NavLink>
+                        </div>
 
                         <div className="Galeria-listas">
                        {
@@ -107,7 +112,7 @@ const Bibliotecas = ({ icon, biblioteca }) => {
                         )
                        }
                         </div>
-                        <NavLink to = '/playlist'><Button variant='solid'>Crear una nueva lista   +</Button></NavLink>
+                       
                     </div>
 
 
@@ -117,7 +122,7 @@ const Bibliotecas = ({ icon, biblioteca }) => {
                 {secciones === 'misFavoritos' && (
 
                     <div className="Bibliotecas">
-                        <h1>Favoritos</h1>
+                        <h1 className='Bibliotecas-titulo'>Favoritos</h1>
 
                         <div className="Galeria-canciones">
                     <Cancion />
@@ -134,7 +139,7 @@ const Bibliotecas = ({ icon, biblioteca }) => {
                 {secciones === 'misSoundsLike' && (
 
                     <div className="Bibliotecas">
-                        <h1>SoundsLike</h1>
+                        <h1 className='Bibliotecas-titulo'>SoundsLike</h1>
                     </div>
 
 
