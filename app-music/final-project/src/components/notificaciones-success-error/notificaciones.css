@@ -1,17 +1,25 @@
 
-
+.Notificacion-container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+}
 
 .Notificacion{
-    padding: 1rem;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+    border-radius: 6px;
+    color: var(--text);
 }
 
 .Notificacion-success{
-    background-color: green;
+    background-color: rgb(114, 176, 114);
 
 }
 
 
 .Notificacion-error{
-    background-color: red;
+    background-color: rgb(227, 124, 124);
 
 }

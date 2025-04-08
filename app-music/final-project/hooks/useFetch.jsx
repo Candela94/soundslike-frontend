@@ -1,64 +1,66 @@
 
 
+import { useContext, useEffect,useState } from "react";
+import { Notificaciones } from "../src/components/notificaciones-success-error/Notificaciones.jsx";
+import { NotificacionesContext } from "../src/context/NotificacionesContext";
 
-import { useEffect,useState } from "react";
-
-export const useFetch =  (userData) => {
-
+export const useFetch = () => {
 
     const VITE_URL = import.meta.env.VITE_URL
-
-    const [datos, setDatos] = useState([]);
-    const [loading, setLoading] = useState(false); 
-    const [error, setError] = useState(null); 
-
-    useEffect(()  => {
-
-        const createUsuario = async () => {
-
-
-            try{
-
-                const response = await fetch(`${VITE_URL}/api/v1/usuarios`, {
-                    method:'POST',
-                    headers : {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(userData)
-                })
-
-                if(!response.ok) {
-                    const data = await response.json();
-                    setDatos(data);
-
-                } else {
-                    const errorData = await response.json();
-                   setError(errorData.message || 'Algo salió mal');
-
-                }
+    const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+    const [bibliotecas, setBibliotecas] = useState([])
+    const {mostrarNotificacion} = useContext(NotificacionesContext)
 
 
 
+    const obtenerBibliotecas = async () => {
 
-            } catch(e) {
+        try {
 
-                console.error('Error al registrarse', e);
-                setError(errorData.message || "Algo salió mal")
+            const response = await fetch(`${VITE_URL}/api/v1/playlists`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }, 
+                
+            });
 
-            }finally {
-                setLoading(false)
+            if(!response.ok) {
+                throw new Error (`Error:, ${response.status}`)
             }
 
-            if(userData && Obhect.values(userData).everry((value) => value.trimv!== '')) {
-                setLoading(true);
-                createUsuario()
-            }
+            const data = await response.json();
+            setBibliotecas(data.data || [])
 
 
+
+        } catch (e) {
+            
+            console.error('Error al obtener las bibliotecas', e);
+            setError(e.message);
+            mostrarNotificacion("error", "Ups, algo salió mal")
+
+
+        } finally {
+            setLoading(false)
+            
         }
 
-    }, [userData])
+
+    }
 
 
-    return {datos, loading, error}
+    useEffect(() => {
+        obtenerBibliotecas()
+    },[])
+
+
+
+
+
+
+    return {
+        bibliotecas, loading, error 
+    };
 }

@@ -15,12 +15,12 @@ const Error = () => {
             <main className="Main-error">
 
 
-                <img className='Error-gif' src="../../public/img/gifs/error.gif" alt="error" />
+                <img className='Error-gif' src="../img/gifs/error.gif" alt="error" />
             </main>
 
 
             <div className="Error-texto">
-                <p className='Error-p'>¡Vaya!Esta melodía se perdió en el ritmo. Regresa a la página principal y descubre nuevos éxitos."</p>
+                <p className='Error-p'>¡Vaya! Esta melodía se perdió en el ritmo. Regresa a la página principal y descubre nuevos éxitos."</p>
 
 
 

@@ -23,13 +23,13 @@ function Layout() {
 
   return (
     <>
-    <NotificacionesContextProvider>
-  <UserContextProvider>
-  <ReproductorContextProvider>
-  <Outlet />
-  </ReproductorContextProvider>
-  </UserContextProvider>
-  </NotificacionesContextProvider>
+     <NotificacionesContextProvider>
+        <UserContextProvider>
+          <ReproductorContextProvider>
+            <Outlet />
+          </ReproductorContextProvider>
+        </UserContextProvider>
+      </NotificacionesContextProvider>
 
  
   

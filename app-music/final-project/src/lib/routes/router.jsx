@@ -14,8 +14,8 @@ import Error from "../../pages/error/Error.jsx";
 import ReproductorPage from "../../pages/reproductor/ReproductorPage.jsx";
 import HomeSounds from "../../pages/home-sounds/HomeSounds.jsx";
 import BuscadorPag from "../../pages/buscador/BuscadorPag.jsx";
-
 import Publicacion from "../../pages/formulario-publicacion/Publicacion.jsx";
+import NuevaLista from "../../pages/nuevalista/NuevaLista.jsx";
 
 
 const router = createBrowserRouter([{
@@ -76,6 +76,12 @@ const router = createBrowserRouter([{
             path:"/bibliotecas",
             element: <Bibliotecas />
         },
+
+        {
+            path:"/playlist",
+            element: <NuevaLista />
+        },
+       
        
 
 

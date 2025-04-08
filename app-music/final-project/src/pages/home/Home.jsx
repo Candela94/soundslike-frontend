@@ -19,19 +19,23 @@ import { CardRecomendaciones } from '../../components/cards/Cards';
 
 
 import { NavLink } from 'react-router';
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
 
 
 
 
 
 const Home = () => {
+
+    const {userData} = useContext(UserContext)
     return (
         <>
         <div className="Header-main">
         <Header />
             <main className="Main-home">
 
-                <h1 className='Main-intro'> ¡Hola, ... ! ¿Qué te gustaría escuchar hoy?</h1>
+                <h1 className='Main-intro'> ¡Hola, ! ¿Qué te gustaría escuchar hoy?</h1>
 
                 {/* Aquí haremos un map de la base de datos */}
 

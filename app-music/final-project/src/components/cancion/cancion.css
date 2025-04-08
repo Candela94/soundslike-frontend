@@ -6,8 +6,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background-color: var(--background-secondary);
-    border-radius: 4px;
+   /* background-color: var(--secondary); */
+    border-radius: 4px 4px 0 0 ;
+    border-bottom: solid 0.5px var(--secondary);
     position: relative;
 }
 
@@ -74,7 +75,35 @@
 
 .Lista{
 
+    position: relative;
+  
+}
+
+.MenuOpened-contenido{
+
+    position: absolute;
+    right: 60px;
+    padding: 1rem;
+    background-color: var(--background-secondary);
+    border-radius: 4px;
 
 }
 
+
+
+.Lista-imagen{
+    width: 40px;
+    border-radius: 4px;
+}
+
+
+
+.Confirmacion-contenido{
+   position: absolute;
+    background-color: rgba(0, 0, 0, 0.5); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
 

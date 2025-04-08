@@ -22,7 +22,7 @@ export const NotificacionesContextProvider = ({ children }) => {
         setNotificacion({type,message})
         
 
-        setTimeout(() => setNotificacion({type:null, message: ''}), 1500)
+        setTimeout(() => setNotificacion({type:null, message: ''}), 2000)
     }
 
 

@@ -9,6 +9,9 @@ import { BottomNavigation } from '../../components/bottom-navigation-header/Bott
 // import { useFetch } from '../../../hooks/useFetch.jsx';
 import { NotificacionesContext } from '../../context/NotificacionesContext.jsx';
 import { Notificaciones } from '../../components/notificaciones-success-error/Notificaciones.jsx';
+import { useNavigate } from 'react-router';
+
+
 
 
 const Registro = () => {
@@ -45,6 +48,7 @@ const Registro = () => {
 
 
     const handleEnviar = async (e) => {
+        const navigate = useNavigate();
         e.preventDefault();
 
 
@@ -77,7 +81,9 @@ const Registro = () => {
 
 
                mostrarNotificacion("success", "¡Te has registrado correctamente!")
-                LogIn(data.data);
+               localStorage.setItem("token", data.token)
+                LogIn(data.user);
+                navigate('/home')
             
 
             } else {
@@ -120,7 +126,7 @@ const Registro = () => {
                         <h1 className='Formulario-h1'>Registro</h1>
 
                         <input onChange={handleChange} value={formData.name} type="text" name='name' className="Formulario-nombre Formulario-input" placeholder="Name" />
-                        <input onChange={handleChange} value={formData.email} type="mail" name='email' className="Formulario-mail Formulario-input" placeholder="email" />
+                        <input onChange={handleChange} value={formData.email} type="email" name='email' className="Formulario-mail Formulario-input" placeholder="email" />
                         <input onChange={handleChange} value={formData.username} type="text" name='username' className="Formulario-userName Formulario-input" placeholder="Username" />
                         <input onChange={handleChange} value={formData.password}  name='password'type="password" className="Formulario-password Formulario-input" placeholder="Password" />
 

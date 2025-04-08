@@ -73,10 +73,19 @@
    
 }
 
+
+.Footer-icons.isActive{
+    color: var(--primary);
+}
+
+
 .Logo{
     stroke: var(--primary);
 }
 
+.isActive{
+    color: var(--primary);
+}
 
 /* media queries */
 
