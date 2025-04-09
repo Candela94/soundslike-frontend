@@ -21,15 +21,17 @@
 .Publicacion-input{
     font-family: apfel-regular;
     padding: 1rem;
-    background-color: var(--secondary);
     border: none;
-    border-radius: 4px;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px solid var(--secondary);
+    background: none ;
     color: var(--text);
-    transition: box-shadow 0.5s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 
 .Publicacion-input:focus{
+    color: var(--text);
     outline: none;
-    box-shadow: 1px 1px 8px var(--primary);
+    background-color: rgb(45, 43, 43);
 }

@@ -11,10 +11,20 @@
     gap: 1rem;
     border-radius: 6px;
     color: var(--text);
+  
 }
+
+
+
+
+
+
+
+
 
 .Notificacion-success{
     background-color: rgb(114, 176, 114);
+  
 
 }
 

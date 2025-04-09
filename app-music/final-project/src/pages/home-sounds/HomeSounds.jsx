@@ -20,7 +20,7 @@ const HomeSounds = () => {
 
 
                 <div className="Main-texto">
-                    <h1 className='Eslogan'>Descubre la música de una manera única</h1>
+                    <h1 className='Eslogan'>DESCUBRE  <br />la música <br />de una manera ÚNICA</h1>
                    <NavLink to='/soundslike'> <Button variant='solid'>Entrar en SoundsLike</Button></NavLink>
                 </div>
 

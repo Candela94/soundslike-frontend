@@ -8,7 +8,7 @@ export const useFetch = () => {
 
     const VITE_URL = import.meta.env.VITE_URL
     const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+    const [error, setError] = useState(null);
     const [bibliotecas, setBibliotecas] = useState([])
     const {mostrarNotificacion} = useContext(NotificacionesContext)
 
@@ -27,7 +27,7 @@ export const useFetch = () => {
             });
 
             if(!response.ok) {
-                throw new Error (`Error:, ${response.status}`)
+                throw new Error(`Error:, ${response.status}`)
             }
 
             const data = await response.json();

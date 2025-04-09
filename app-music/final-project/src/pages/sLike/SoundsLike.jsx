@@ -8,16 +8,20 @@ import { BsChevronCompactDown } from "react-icons/bs";
 import { GoHeartFill } from "react-icons/go";
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { HiMiniPause } from "react-icons/hi2";
-
 import { ReproductorContext } from "../../context/ReproductorContext.jsx";
-
+import { useFetch } from "../../../hooks/useFetch.jsx";
 
 import './soundslike.css'
+
+
+
 
 const Sound = () => {
 
   //Obtenemos valores del contexto
   const { isPlaying, audioRef, handlePlay, handleProgress, handleDuration } = useContext(ReproductorContext)
+  const { bibliotecas } = useFetch()
+
 
   const [openMenu, setOpenMenu] = useState(false)
   const [like, setLike] = useState(false)
@@ -75,7 +79,7 @@ const Sound = () => {
                 <p>Artista</p>
               </div>
 
-              <button className="Post-btn" onClick={handlePlay}>{isPlaying? <HiMiniPause /> : <TbPlayerPlayFilled />}</button>
+              <button className="Post-btn" onClick={handlePlay}>{isPlaying ? <HiMiniPause /> : <TbPlayerPlayFilled />}</button>
 
             </div>
 
@@ -114,12 +118,11 @@ const Sound = () => {
 
                     <ul className="MenuOpened-ul">
                       <h3>Añadir a mi lista</h3>
-                      <li className="MenuOpened-li">
-                        Lista 1
-                      </li>
-                      <li className="MenuOpened-li">
-                        Lista 2
-                      </li>
+                      {
+                        bibliotecas.map((biblioteca) => (
+
+                          <li className='Galeria-li' key={biblioteca._id}>{biblioteca.nombre}</li>
+                        ))}
                     </ul>
                   </div>
                 )

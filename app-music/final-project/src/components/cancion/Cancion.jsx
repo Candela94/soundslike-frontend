@@ -4,7 +4,8 @@ import './cancion.css'
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { PiShareFatBold } from "react-icons/pi";
 import { Button } from "../buttons/Button.jsx";
-
+import { useEliminarLista } from '../../../hooks/useEliminar.jsx';
+import { IoClose } from "react-icons/io5";
 
 
 export const Cancion = ({ titulo, artista, img }) => {
@@ -72,12 +73,15 @@ export const Cancion = ({ titulo, artista, img }) => {
 
 
 
-export const Listas = ({ nombre, img }) => {
+export const Listas = ({ nombre, img, id }) => {
 
 
     const [openMenu, setOpenMenu] = useState(false)
-    const [cardConfirmar, setCardConfirmar] = useState(false)
     const [confirmacion, setConfirmacion] = useState(false)
+    
+
+    const {eliminarLista, eliminado} = useEliminarLista()
+
 
 
     const handleOpenMenu = () => {
@@ -94,9 +98,22 @@ export const Listas = ({ nombre, img }) => {
 
     const handleCancelarConfirmacion = () => {
         setConfirmacion(false)
-        setCardConfirmar(false)
+        
+       
     }
 
+
+
+    const handleEliminar = () => {
+        console.log('eliminando lista con id:' ,id)
+        eliminarLista({id})
+        setConfirmacion(false)
+        setOpenMenu(false)
+    }
+
+    if(eliminado){
+        return null;
+    }
     return (
 
 
@@ -126,15 +143,14 @@ export const Listas = ({ nombre, img }) => {
 {
                     confirmacion && ( 
                         <div className="Confirmacion-contenido">
+                            <IoClose onClick={handleCancelarConfirmacion} className="Confirmacion-close"/>
                             <p>¿Seguro que quieres borrar esta lista?</p>
-                            <div className="Confirmacion-botones">
-                                <Button onClick={handleCancelarConfirmacion} variant="secondary">
-                                    No estoy seguro
-                                </Button>
-                                <Button variant="danger">
+                           
+                            
+                                <Button onClick={handleEliminar} variant="danger">
                                     Eliminar lista
                                 </Button>
-                            </div>
+                            
                         </div>
                     )
                 }

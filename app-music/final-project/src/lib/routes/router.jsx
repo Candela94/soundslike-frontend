@@ -4,6 +4,8 @@ import { createBrowserRouter } from "react-router";
 import Layout from "../../Layout.jsx";
 import Home from '../../pages/home/Home.jsx'
 import Bibliotecas from '../../pages/bibliotecas/Bibliotecas.jsx'
+import Favoritos from "../../pages/bibliotecas/Favoritos.jsx";
+import SoundsCanciones from "../../pages/bibliotecas/SoundsCanciones.jsx";
 import Sound from "../../pages/sLike/SoundsLike.jsx";
 import Inicio from '../../pages/inicio/Inicio.jsx'
 import Login from "../../pages/login/LogIn.jsx";
@@ -76,6 +78,20 @@ const router = createBrowserRouter([{
             path:"/bibliotecas",
             element: <Bibliotecas />
         },
+
+
+        {
+            path:"/favoritos",
+            element: <Favoritos />
+        },
+
+
+        {
+            path:"/soundsongs",
+            element: <SoundsCanciones />
+        },
+
+
 
         {
             path:"/playlist",

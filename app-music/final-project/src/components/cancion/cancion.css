@@ -63,6 +63,9 @@
 }
 
 
+
+
+
 .MenuOpened-contenido:active{
     transform: scale(0.9);
 }
@@ -79,6 +82,17 @@
   
 }
 
+@keyframes eliminarMenu {
+    0% {
+        opacity: 0;
+       
+    }
+    100% {
+        opacity: 1;
+        
+    }
+} 
+
 .MenuOpened-contenido{
 
     position: absolute;
@@ -86,6 +100,7 @@
     padding: 1rem;
     background-color: var(--background-secondary);
     border-radius: 4px;
+    animation: eliminarMenu 0.5s ease-out forwards;
 
 }
 
@@ -103,20 +118,39 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    width: 100%;
-    position: absolute;
+    width: 60%;
+    position: fixed;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
     background-color:var(--background-secondary);
     border-radius: 6px;
     align-items: center;
-    padding: 4rem 1rem;
+    padding: 3em 1rem;
     z-index: 1;
+    animation: aparecer 0.5s ease-out forwards;
 }
 
-.Confirmacion-botones{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    width: 100%;
-   
+
+@keyframes aparecer {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+} 
+
+
+
+.Confirmacion-close{
+    cursor: pointer;
+    transition: transform 0.2s ease;
 }
 
+
+.Confirmacion-close:active{
+    transform: scale(0.9);
+}
