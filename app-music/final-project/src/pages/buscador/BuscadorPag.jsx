@@ -8,11 +8,13 @@ import { BottomNavigation } from '../../components/bottom-navigation-header/Bott
 const BuscadorPag = () => {
     return (
         <>
+        <div className="Header-main">
 <Header />
         <main className="Main-buscador">
-            <h2 className='Main-titulo'>Encuentra la canción perfecta para tu momento</h2>
+            <h2 className='Main-titulo'>Busca tu canción</h2>
        <Buscador />
        </main>
+       </div>
        <BottomNavigation />
         </>
     );

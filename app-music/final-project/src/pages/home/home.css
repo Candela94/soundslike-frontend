@@ -202,6 +202,16 @@
     .Seccion-imagen {
         min-height: 300px;
     }
+
+
+    .Main-intro{
+        font-size: 2.5rem;
+    }
+    .Main-subheading{
+        font-size: 2rem;
+    }
+  
+    
 }
 
 
@@ -257,6 +267,14 @@
         min-height: 300px;
     }
 
+
+
+    .Main-intro{
+        font-size: 3rem;
+    }
+    .Main-subheading{
+        font-size: 2rem;
+    }
   
 
 

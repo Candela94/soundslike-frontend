@@ -4,23 +4,101 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40vh;
+    width: 100%;
+    height: 70vh;
+    margin: 1rem;
 }
 
 
 
 .Error-gif{
     width: 50%;
+    border-radius: 50px;
+}
+
+
+.Error{
+    color: var(--primary);
+    font-family: genius ;
+    letter-spacing: 0.5px;
+    font-size: 2.5rem;
 }
 
 .Error-texto{
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 70%;
     gap: 1.5rem;
     padding: 2rem;
 }
 
 .Error-p{
     text-align: center;
+}
+
+
+
+
+
+
+
+
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+    .Main-error{
+        height: 75vh;
+    }
+
+    .Error-gif{
+        width: 35%;
+      }
+
+    .Error{
+        font-size: 3rem;
+      }
+
+
+      .Error-texto{
+
+        width: 50%;
+    
+      }
+
+}
+
+
+
+
+/* Escritorio */
+@media (min-width: 1025px) {
+
+  .Main-error{
+   display: flex;
+   flex-direction: row;
+   height: 90vh;
+  }
+
+  .Error-gif{
+    width: 40%;
+  }
+
+
+  .Error-texto{
+
+    width: 50%;
+
+  }
+
+  .Error{
+    font-size: 3.5rem;
+  }
+
+
 }

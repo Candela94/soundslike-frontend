@@ -125,15 +125,15 @@ const Registro = () => {
 
                         <h1 className='Formulario-h1'>Registro</h1>
 
-                        <input onChange={handleChange} value={formData.name} type="text" name='name' className="Formulario-nombre Formulario-input" placeholder="Name" />
+                        <input onChange={handleChange} value={formData.name} type="text" name='name' className="Formulario-nombre Formulario-input" placeholder="Nombre" />
                         <input onChange={handleChange} value={formData.email} type="email" name='email' className="Formulario-mail Formulario-input" placeholder="email" />
-                        <input onChange={handleChange} value={formData.username} type="text" name='username' className="Formulario-userName Formulario-input" placeholder="Username" />
-                        <input onChange={handleChange} value={formData.password}  name='password'type="password" className="Formulario-password Formulario-input" placeholder="Password" />
+                        <input onChange={handleChange} value={formData.username} type="text" name='username' className="Formulario-userName Formulario-input" placeholder="Nombre de usuario" />
+                        <input onChange={handleChange} value={formData.password}  name='password'type="password" className="Formulario-password Formulario-input" placeholder="Contraseña" />
 
-                        <input onChange={handleChange} value={formData.repeatPassword}  name='repeatPassword'type="password" className="Formulario-password Formulario-input" placeholder="Repeat password" />
+                        <input onChange={handleChange} value={formData.repeatPassword}  name='repeatPassword'type="password" className="Formulario-password Formulario-input" placeholder="Repite la contraseña" />
 
                         <div className="Formulario-botones">
-                            <Button type='submit' variant='primary'>Create account</Button>
+                            <Button type='submit' variant='solid'>Crear cuenta</Button>
                         </div>
 
                     </form>
