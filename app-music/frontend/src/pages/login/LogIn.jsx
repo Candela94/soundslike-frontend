@@ -1,16 +1,18 @@
 import { useState, useContext } from "react";
-import { Button } from "../../components/buttons/Button";
-import { Header } from "../../components/header/Header";
+import { Button } from "../../components/buttons/Button.jsx";
+import { Header } from "../../components/header/Header.jsx";
 import { Notificaciones } from "../../components/notificaciones-success-error/Notificaciones.jsx";
-import { NotificacionesContext } from "../../context/NotificacionesContext";
-import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
+import { NotificacionesContext } from "../../context/NotificacionesContext.jsx";
+import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation.jsx";
 import { NavLink } from "react-router";
+import { useNavigate } from "react-router";
 
 const LogIn = () => {
 
 
     const VITE_URL = import.meta.env.VITE_URL
     const {mostrarNotificacion} = useContext(NotificacionesContext)
+    const navigate = useNavigate();
 
     const [data, setData] = useState({
 
@@ -41,7 +43,7 @@ const LogIn = () => {
 
 
             const response = await fetch(`${VITE_URL}/api/v1/usuarios/login`, {
-                method:'GET',
+                method:'POST',
                 headers: {
                     'Content-Type':'application/json',
                 },
@@ -56,8 +58,9 @@ const LogIn = () => {
             console.log('Datos:' , datos)
 
             if(response.ok) {
-                localStorage.setItem('token', result.token)
+                localStorage.setItem('token', datos.token)
                 mostrarNotificacion("success", "Iniciaste sesión correctamente")
+                navigate('/home')
 
             } else {
                 mostrarNotificacion("error" , "Vaya, algo salió mal")
@@ -87,9 +90,9 @@ const LogIn = () => {
                         <h1 className="Formulario-h1">Log in</h1>
 
 
-                        <input onChange={handleChange} type="mail" className="Formulario-mail Formulario-input" placeholder="email"  value={data.email}/>
+                        <input onChange={handleChange} type="email" className="Formulario-mail Formulario-input" placeholder="email"  value={data.email} name="email"/>
 
-                        <input onChange={handleChange} type="password" className="Formulario-password Formulario-input" placeholder="Password" value={data.password} />
+                        <input onChange={handleChange} type="password" className="Formulario-password Formulario-input" placeholder="Password" value={data.password} name="password" />
 
                         
 

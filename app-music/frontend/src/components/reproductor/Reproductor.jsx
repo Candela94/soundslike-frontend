@@ -1,7 +1,7 @@
 import './reproductor.css' 
 import { FaPlay } from "react-icons/fa";
 import { useContext } from 'react';
-import { ReproductorContext } from '../../context/ReproductorContext.jsx';
+import { ReproductorContext } from '../../context/ReproductorContext';
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { HiMiniPause } from "react-icons/hi2";
 

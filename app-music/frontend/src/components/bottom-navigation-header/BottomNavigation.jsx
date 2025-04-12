@@ -2,7 +2,7 @@
 
 import { NavLink } from 'react-router';
 import './bottom-navigation.css'
-import { Reproductor } from '../../components/reproductor/Reproductor';
+import { Reproductor } from '../reproductor/Reproductor';
 import { FaCirclePlus } from "react-icons/fa6";
 
 

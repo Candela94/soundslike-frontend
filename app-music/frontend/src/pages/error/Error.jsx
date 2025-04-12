@@ -20,7 +20,7 @@ const Error = () => {
 
                     <div className="Error-texto">
                         <h1 className="Error">ERROR 404</h1>
-                        <p className='Error-p'>¡Vaya! Esta melodía se perdió en el ritmo. Regresa a la página principal y descubre nuevos éxitos."</p>
+                        <p className='Error-p'>¡Vaya! Esta melodía se perdió en el ritmo. Regresa a la página principal y descubre nuevos éxitos</p>
 
 
                         <NavLink to='/home'><Button variant='solid'>Volver al inicio</Button></NavLink>

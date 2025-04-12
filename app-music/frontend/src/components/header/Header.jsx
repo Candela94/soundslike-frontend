@@ -2,7 +2,7 @@
 
 import './header.css'
 
-import '../../components/bottom-navigation-header/bottom-navigation.css'
+import '../bottom-navigation-header/bottom-navigation.css'
 import { BsMusicNoteList } from "react-icons/bs";
 
 import { TbMenu4 } from "react-icons/tb";

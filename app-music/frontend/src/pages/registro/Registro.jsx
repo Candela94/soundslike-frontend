@@ -18,7 +18,8 @@ const Registro = () => {
 
    
     const VITE_URL = import.meta.env.VITE_URL
-
+    
+    const navigate = useNavigate();
     const {LogIn} = useContext(UserContext)
     const {mostrarNotificacion} = useContext(NotificacionesContext)
 
@@ -48,7 +49,6 @@ const Registro = () => {
 
 
     const handleEnviar = async (e) => {
-        const navigate = useNavigate();
         e.preventDefault();
 
 
@@ -65,8 +65,8 @@ const Registro = () => {
 
     
         try {
-            const response = await fetch(`${VITE_URL}/api/v1/usuarios`, {
-                method: 'POST',
+            const response = await fetch(`${VITE_URL}/api/v1/usuarios/register`, {
+                method:'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -102,12 +102,7 @@ const Registro = () => {
 
 
     
-    // useEffect(() => {
-    //     if (datos && datos.status === 'ok') {
-    //         login(datos.data); 
-    //     }
-    // }, [datos, login]); 
-
+   
 
 
 

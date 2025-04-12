@@ -3,7 +3,7 @@
 import './barra.css'
 
 import { useState, useRef, useContext } from 'react';
-import { ReproductorContext } from '../../context/ReproductorContext.jsx';
+import { ReproductorContext } from '../../context/ReproductorContext';
 import { TbPlayerTrackPrevFilled } from "react-icons/tb";
 
 
@@ -30,7 +30,7 @@ export const BarraReproduccion = () => {
         
         <div className="Reproductor-barra">
 
-          <audio src="./img/audio.mp3"
+          <audio src="/img/audio.mp3"
           
               ref={audioRef}
               onTimeUpdate={handleProgress}

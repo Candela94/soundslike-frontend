@@ -1,0 +1,87 @@
+
+.Main-formu{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    height: 100vh;
+}
+
+
+.Formu-titulo{
+    font-family: genius;
+    letter-spacing: 2px;
+    font-size: 3rem;
+    width: 90%;
+}
+
+.Formu-admin{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.Formulario-label{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+
+.Formulario-uploads{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.Formulario-btn{
+    display: flex;
+    justify-content: end;
+}
+
+
+
+
+
+
+
+
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+
+
+    
+
+}
+
+
+
+
+/* Escritorio */
+@media (min-width: 1025px) {
+
+    .Main-formu{
+        display: flex;
+        height: 90vh;
+        justify-content: center;
+         
+    }
+
+    .Formu-admin{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0rem;
+    }
+
+}
