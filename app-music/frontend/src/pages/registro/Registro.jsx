@@ -82,7 +82,12 @@ const Registro = () => {
 
                mostrarNotificacion("success", "¡Te has registrado correctamente!")
                localStorage.setItem("token", data.token)
-                LogIn(data.user);
+                LogIn({
+                    nombre:data.user.name,
+                    username: data.user.username,
+                    email: data.user.email
+
+                });
                 navigate('/home')
             
 

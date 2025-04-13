@@ -6,6 +6,7 @@ import { NotificacionesContext } from "../../context/NotificacionesContext.jsx";
 import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation.jsx";
 import { NavLink } from "react-router";
 import { useNavigate } from "react-router";
+import { UserContext } from "../../context/UserContext.jsx";
 
 const LogIn = () => {
 
@@ -13,6 +14,7 @@ const LogIn = () => {
     const VITE_URL = import.meta.env.VITE_URL
     const {mostrarNotificacion} = useContext(NotificacionesContext)
     const navigate = useNavigate();
+    const {LogIn} = useContext(UserContext)
 
     const [data, setData] = useState({
 
@@ -59,6 +61,11 @@ const LogIn = () => {
 
             if(response.ok) {
                 localStorage.setItem('token', datos.token)
+                LogIn({
+                    name:datos.user.name,
+                    username:datos.user.username,
+                    email:datos.user.email
+                })
                 mostrarNotificacion("success", "Iniciaste sesión correctamente")
                 navigate('/home')
 

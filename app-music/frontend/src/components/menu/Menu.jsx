@@ -1,17 +1,30 @@
 
 import './menu.css'
-import { NavLink } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 import { FaUser } from "react-icons/fa6";
 import { LuLogOut } from "react-icons/lu";
 import { FiSettings } from "react-icons/fi";
 import { FaQuestion } from "react-icons/fa";
+import { useContext } from 'react';
+import { UserContext } from '../../context/UserContext';
+import { NotificacionesContext } from '../../context/NotificacionesContext';
 
 
 
 
 export const MenuLateral = ({opened}) => {
 
+const {LogOut} =useContext(UserContext)
+const {mostrarNotificacion} = useContext(NotificacionesContext)
+const navigate = useNavigate()
 
+
+const handleLogut= () => {
+    LogOut()
+    localStorage.removeItem("token");
+    navigate('/')
+    mostrarNotificacion("success", "¡Hasta pronto!")
+}
 
     return ( 
 
@@ -52,7 +65,7 @@ export const MenuLateral = ({opened}) => {
 
 
             <li className="Menu-lateralLi"><NavLink to="">
-                <div className="Nav-content">
+                <div className="Nav-content" onClick={handleLogut}>
                 <LuLogOut />
                 <p>Log out</p>
                 </div>

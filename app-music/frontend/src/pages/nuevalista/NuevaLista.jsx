@@ -38,12 +38,16 @@ const NuevaLista = () => {
             mostrarNotificacion("error", "El nombre de la lista es obligatorio");
             return;
         }
+
+        const token = localStorage.getItem('token');
         
         try {
-            const response = await fetch(`${VITE_URL}/api/v1/playlists` , {
+            const response = await fetch(`${VITE_URL}/api/v1/me/playlists` , {
                 method:'POST', 
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`,
+                   
                 },
                 body: JSON.stringify({nombre: nombreLista})
             });
@@ -51,6 +55,9 @@ const NuevaLista = () => {
             const data = await response.json();
             console.log(data)
 
+
+
+  
 
             if(response.ok){
                 mostrarNotificacion("success", "Lista creada con éxito")

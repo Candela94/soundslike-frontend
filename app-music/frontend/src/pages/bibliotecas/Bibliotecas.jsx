@@ -4,8 +4,6 @@
 import './bibliotecas.css'
 
 import { useState } from 'react';
-import { BsMusicNoteList } from "react-icons/bs";
-import { GoHeart } from "react-icons/go";
 import { Cancion, Listas } from '../../components/cancion/Cancion';
 import { Header } from '../../components/header/Header';
 import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
@@ -17,23 +15,16 @@ import SubHeader from '../../components/subheader/Subheader.jsx';
 import { IoAddCircleSharp } from "react-icons/io5";
 
 
-const Bibliotecas = ({ icon, biblioteca }) => {
+const Bibliotecas = () => {
 
 
 
-    const [secciones, setSecciones] = useState("misBibliotecas")
+  
 
     const { bibliotecas, loading, error } = useFetch()
 
 
-
-
-    const handleSeccion = (menu) => {
-        setSecciones(menu)
-    }
-
-
-
+ 
 
 
 
@@ -73,9 +64,9 @@ const Bibliotecas = ({ icon, biblioteca }) => {
 
                                     <ul className='Galeria-ul'>
                                         {
-                                            bibliotecas.map((biblioteca) => (
+                                            bibliotecas.map((playlist) => (
 
-                                                <li className='Galeria-li' key={biblioteca._id}><Listas nombre={biblioteca.nombre} img={biblioteca.coverImage || '../img/sensenra.jpg'} /></li>
+                                                <li className='Galeria-li' key={playlist._id}><Listas nombre={playlist.nombre} img={playlist.coverImage || '../img/sensenra.jpg'} /></li>
                                             ))}
                                     </ul>
 

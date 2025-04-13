@@ -35,7 +35,13 @@ const Home = () => {
         <Header />
             <main className="Main-home">
 
-                <h1 className='Main-intro'> ¡Hola, ! ¿Qué te gustaría escuchar hoy?</h1>
+                <h1 className='Main-intro'> 
+                    {
+                        userData && userData.name
+
+                        ? `¡Hola, ${userData.name}! ¿Qué te gustaría escuchar hoy?`: `¡Hola! Qué te gustaría escuchar hoy?`
+                    }
+                    </h1>
 
                 {/* Aquí haremos un map de la base de datos */}
 
