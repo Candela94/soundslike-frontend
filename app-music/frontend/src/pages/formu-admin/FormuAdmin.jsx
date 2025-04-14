@@ -1,17 +1,21 @@
 
 
 import './formuadmin.css'
+import { useEffect } from 'react';
 import { Header } from '../../components/header/Header';
 import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
 import { Button } from '../../components/buttons/Button';
 import { useContext, useState } from 'react';
 import { Notificaciones } from '../../components/notificaciones-success-error/Notificaciones';
 import { NotificacionesContext } from '../../context/NotificacionesContext';
+import { UserContext } from '../../context/UserContext';
+import { useNavigate } from 'react-router';
 
 
-const FormuAdmin = () => {
+const Admin = () => {
 
     const [songData, setSongData] = useState({
+
         cancion: '',
         artista: '',
         genero: '',
@@ -19,8 +23,31 @@ const FormuAdmin = () => {
         imagen: null,
         audio: null
     })
+
+
+
+
+
+
     const VITE_URL = import.meta.env.VITE_URL
     const {mostrarNotificacion} = useContext(NotificacionesContext)
+    const navigate = useNavigate()
+
+    const {userData} = useContext(UserContext)
+
+
+    useEffect(() => {
+        if (!userData) {
+            navigate('/login');
+        } else if (userData.role !== 'admin') {
+            navigate('/acceso-denegado');
+        }
+    }, [userData, navigate]);
+
+
+
+
+
 
 
     const handleChange = (e) => {
@@ -39,19 +66,35 @@ const FormuAdmin = () => {
 
 
         try {
+
+            const formData = new FormData();
+            formData.append('nombre', songData.cancion);
+            formData.append('artista', songData.artista);
+            formData.append('genero', songData.genero);
+            formData.append('tag', songData.tag);
+            formData.append('imgprod', songData.imagen);
+            formData.append('audio', songData.audio);
             const token = localStorage.getItem('token');
 
             const response = await fetch(`${VITE_URL}/api/v1/admin/uploads`, {
                 method: 'POST',
                 headers: {
-                    Authorization: `Bearer ${token}`     //Añadir token
+                    'Authorization': `Bearer ${token}`    
                 },
-                body: songData
+                body: formData
             })
 
-            const result = response.json();
+            const result = await response.json();
             if (response.ok) {
                 mostrarNotificacion("success", `Canción ${result} subida con éxito`)
+                setSongData({
+                    cancion:'',
+                    artista:'',
+                    genero:'',
+                    tag:'',
+                    imagen:null,
+                    audio:null
+                })
             } else {
                 mostrarNotificacion("error", `No se ha pudido subir la cancion ${result.error}`)
             }
@@ -125,4 +168,4 @@ const FormuAdmin = () => {
     );
 }
 
-export default FormuAdmin;
+export default Admin;

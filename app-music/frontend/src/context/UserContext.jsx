@@ -1,6 +1,6 @@
 
 
-import { createContext, useState, useContext } from "react";
+import { createContext, useState } from "react";
 
 
 //1. Creamos el contexto
@@ -14,7 +14,8 @@ export const UserContextProvider = ({children}) => {
 const [userData, setUserData] = useState({
     nombre:"",
     username:"",
-    email:""
+    email:"",
+    role:""
 })
 
 const LogIn = (userData) => setUserData(userData)

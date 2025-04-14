@@ -36,9 +36,9 @@ const LogIn = () => {
 
         if(!data.email || !data.password) {
             mostrarNotificacion("error", "Por favor, completa todos los datos")
+            return;
         }
 
-        //Añadir aqui la validacion de la contraseña con la que se ha registrado el usuario 
 
 
         try {
@@ -61,13 +61,21 @@ const LogIn = () => {
 
             if(response.ok) {
                 localStorage.setItem('token', datos.token)
+                localStorage.setItem('userRole', datos.user.role)
                 LogIn({
-                    name:datos.user.name,
+                    nombre:datos.user.nombre,
                     username:datos.user.username,
-                    email:datos.user.email
+                    email:datos.user.email,
+                    role:datos.user.role
                 })
                 mostrarNotificacion("success", "Iniciaste sesión correctamente")
-                navigate('/home')
+            
+                if(datos.user.role === 'admin') {
+                    navigate('/admin')
+
+                } else {
+                    navigate('/home')
+                }
 
             } else {
                 mostrarNotificacion("error" , "Vaya, algo salió mal")

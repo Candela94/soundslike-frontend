@@ -8,7 +8,7 @@ import { useEliminarLista } from '../../../hooks/useEliminar.jsx';
 import { IoClose } from "react-icons/io5";
 
 
-export const Cancion = ({ titulo, artista, img }) => {
+export const Cancion = ({ nombre, artista, imagen }) => {
 
     const [openMenu, setOpenMenu] = useState(false)
 
@@ -26,11 +26,11 @@ export const Cancion = ({ titulo, artista, img }) => {
 
                 <div className="Cancion-imgTexto">
 
-                    <img src={img} alt="portada" className="Cancion-img" />
+                    <img src={imagen} alt="portada" className="Cancion-img" />
 
                     <div className="Cancion-info">
-                        <h4>{titulo}Titulo canción</h4>
-                        <p>{artista} Artista</p>
+                        <h4>{nombre}</h4>
+                        <p>{artista} </p>
                     </div>
 
                 </div>

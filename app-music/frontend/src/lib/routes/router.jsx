@@ -19,6 +19,10 @@ import BuscadorPag from "../../pages/buscador/BuscadorPag.jsx";
 import Publicacion from "../../pages/formulario-publicacion/Publicacion.jsx";
 import NuevaLista from "../../pages/nuevalista/NuevaLista.jsx";
 
+import Admin from "../../pages/formu-admin/FormuAdmin.jsx"
+import ProtectedRoute from "../../pages/protected-route/ProtectedRoute.jsx";
+import NoAutorizado from "../../pages/no-autorizado/NoAutorizado.jsx";
+
 
 
 const router = createBrowserRouter([{
@@ -120,6 +124,23 @@ const router = createBrowserRouter([{
             element: <Publicacion />
         },
 
+        {
+            path:"/admin",
+            element: <ProtectedRoute requiredRole = 'admin' />,
+            children : [
+                {
+                index : true ,
+                element : <Admin />
+                }
+            ]
+        },
+
+        {
+            path:"/acceso-denegado",
+            element:<NoAutorizado />
+        },
+
+      
         {
             path:"*",
             element:<Error />
