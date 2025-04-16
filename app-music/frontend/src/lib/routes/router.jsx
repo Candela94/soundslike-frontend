@@ -98,7 +98,7 @@ const router = createBrowserRouter([{
 
 
         {
-            path:"/bibliotecas/canciones",
+            path:"/bibliotecas/:pid/canciones",
             element: <Listas />
         },
 

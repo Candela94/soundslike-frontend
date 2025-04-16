@@ -40,7 +40,7 @@ const BuscadorPag = () => {
                                         canciones.map((cancion) => {
 
                                             return (
-                                            <li className="Galeria-li" key={cancion._id}><Cancion id={cancion._id} nombre={cancion.nombre} artista={cancion.artista} imagen={cancion.imagen}  audio= {cancion.audio}/></li>
+                                            <li className="Galeria-li" key={cancion._id}><Cancion _id={cancion._id} nombre={cancion.nombre} artista={cancion.artista} imagen={cancion.imagen} audio={cancion.audio}/></li>   // audio= {cancion.audio}
 
                                         )})
                                     }

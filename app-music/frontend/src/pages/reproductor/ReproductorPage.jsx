@@ -9,7 +9,7 @@ import { CardReproduccion } from "../../components/card-reproduccion/CardReprodu
 import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
 import { ReproductorContext } from "../../context/ReproductorContext";
 import { useContext, useState } from "react";
-import { LuCirclePlus } from "react-icons/lu";
+
 
 import { useFetch } from "../../../hooks/useFetch";
 import { BsChevronCompactDown } from "react-icons/bs";
@@ -27,11 +27,7 @@ const ReproductorPage = () => {
     const { mostrarNotificacion } = useContext(NotificacionesContext)
 
 
-    //función para abrir menu de listas
-    const handleOpenMenu = () => {
-        setOpenMenu(prevState => !prevState);
-    }
-
+  
 
 
     //Función para añadir canciones a una lista 
@@ -97,37 +93,6 @@ return (
 
                 <div className="Main-contenido">
 
-
-                    <div className="Reproductor-cabecera">
-
-                        <div className="Reproductor-infoCancion">
-                            <h2 className="Reproductor-song">{currentSong.nombre}</h2>
-                            <h4 className="Reproductor-artist">{currentSong.artista}</h4>
-                        </div>
-
-                        <LuCirclePlus className="Reproductor-iconAdd" onClick={handleOpenMenu} />
-                        {
-                            openMenu && (
-                                <div className='Menu-add' >
-
-
-                                    <BsChevronCompactDown onClick={handleOpenMenu} className="MenuOpened-addIcon" />
-
-
-                                    <ul className="MenuOpened-ul">
-                                        <h3>Añadir a mi lista</h3>
-                                        {
-                                            bibliotecas.map((biblioteca) => (
-
-                                                <li  onClick={() => handleAdd(biblioteca._id)} className='Galeria-li' key={biblioteca._id}>{biblioteca.nombre}</li>
-                                            ))}
-                                    </ul>
-                                </div>
-                            )
-                        }
-
-
-                    </div>
 
                     <CardReproduccion />
 
