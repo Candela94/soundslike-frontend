@@ -5,12 +5,14 @@ import { Header } from '../../components/header/Header.jsx';
 import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation.jsx';
 import { useFetchSongs } from '../../../hooks/usefetchSongs.jsx';
 import { Cancion } from '../../components/cancion/Cancion.jsx';
+import { useState } from 'react';
 
 const BuscadorPag = () => {
 
 
 
     const { canciones, loading, error } = useFetchSongs()
+    const [searchTerm, setSearchTerm] = useState("")
 
 
 
@@ -21,7 +23,7 @@ const BuscadorPag = () => {
                 <main className="Main-buscador">
                     <h2 className='Main-titulo'>Busca tu canción</h2>
 
-                    <Buscador />
+                    <Buscador setSearchTerm = {setSearchTerm}/>
 
 
 
@@ -38,7 +40,7 @@ const BuscadorPag = () => {
                                         canciones.map((cancion) => {
 
                                             return (
-                                            <li className="Galeria-li" key={cancion._id}><Cancion nombre={cancion.nombre} artista={cancion.artista} imagen={cancion.imagen} /></li>
+                                            <li className="Galeria-li" key={cancion._id}><Cancion id={cancion._id} nombre={cancion.nombre} artista={cancion.artista} imagen={cancion.imagen}  audio= {cancion.audio}/></li>
 
                                         )})
                                     }

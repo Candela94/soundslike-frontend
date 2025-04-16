@@ -9,21 +9,23 @@ import { HiMiniPause } from "react-icons/hi2";
 
 export const Reproductor = () => {
 
-    const {isPlaying, audioRef, handlePlay} =useContext(ReproductorContext)
+    const {isPlaying, handlePlay, currentSong} =useContext(ReproductorContext)
 
 
     return ( 
         <>
 
         <div className="Reproductor">
+            {currentSong ? (
+
+
             <div className="Reproductor-info">
-                 <audio src="./img/audio.mp3"
-                 ref={audioRef}>
-                 </audio>
                 
-                <h3>Canción</h3>
-                <p>Artista</p>
+                
+                <h3>{currentSong.nombre}</h3>
+                <p>{currentSong.artista}</p>
             </div>
+            ): <p>Empieza a escuchar ahora</p>}
 
            
         

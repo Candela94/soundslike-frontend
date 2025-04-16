@@ -41,7 +41,9 @@ export const useFetch = () => {
             }
 
             const data = await response.json();
-            console.log('datos del backend' , data)
+          
+
+            if(JSON.stringify(data.data) !==JSON.stringify(bibliotecas))
             setBibliotecas(data.data || [])
 
 

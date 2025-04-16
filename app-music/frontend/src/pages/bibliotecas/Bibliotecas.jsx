@@ -66,7 +66,7 @@ const Bibliotecas = () => {
                                         {
                                             bibliotecas.map((playlist) => (
 
-                                                <li className='Galeria-li' key={playlist._id}><Listas nombre={playlist.nombre} img={playlist.coverImage || '../img/sensenra.jpg'} /></li>
+                                               <NavLink to='/bibliotecas/canciones'  key={playlist._id}> <li className='Galeria-li' ><Listas nombre={playlist.nombre} img={playlist.coverImage || '../img/sensenra.jpg'} /></li></NavLink>
                                             ))}
                                     </ul>
 

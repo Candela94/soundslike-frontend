@@ -2,44 +2,148 @@
 
 
 import { Header } from "../../components/header/Header";
-import'./reproductorpage.css'
+import './reproductorpage.css'
 
-import { BarraReproduccion } from "../../components/barra-reproduccion/BarraReproduccion";
+import { CardReproduccion } from "../../components/card-reproduccion/CardReproduccion";
 
 import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
+import { ReproductorContext } from "../../context/ReproductorContext";
+import { useContext, useState } from "react";
+import { LuCirclePlus } from "react-icons/lu";
 
+import { useFetch } from "../../../hooks/useFetch";
+import { BsChevronCompactDown } from "react-icons/bs";
+import { useAddSongsToPlaylist } from "../../../hooks/useAddSongs";
+import { NotificacionesContext } from "../../context/NotificacionesContext";
 
 
 const ReproductorPage = () => {
 
+    const { currentSong } = useContext(ReproductorContext)
+    const { bibliotecas } = useFetch()
+    console.log('usefetch' , {bibliotecas})
+    const [openMenu, setOpenMenu] = useState(false)
+    const { addSong, loading, error, success } = useAddSongsToPlaylist();
+    const { mostrarNotificacion } = useContext(NotificacionesContext)
 
 
-    return (  
+    //función para abrir menu de listas
+    const handleOpenMenu = () => {
+        setOpenMenu(prevState => !prevState);
+    }
 
-        <>
-         <div className="Header-main">
-        <Header />
+
+
+    //Función para añadir canciones a una lista 
+    const handleAdd = async (playlistId) => {
+        console.log('Current Song:', currentSong);
+        console.log('Playlist ID:', playlistId);
+
+        if (!currentSong._id) {
+
+            mostrarNotificacion("error", "No has seleccionado ninguna canción")
+            return;
+        }
+
+        if(!playlistId){
+            mostrarNotificacion('error', 'No se ha seleccionado ninguna lista')
+            return;
+        }
+
+
+        try {
+            console.log('Añadiendo canción a la playlist', {playlistId, songId: currentSong._id})
+
+            await addSong(playlistId, currentSong._id);
+            mostrarNotificacion('success', 'Canción añadida con éxito')
+            setOpenMenu(false)
+
+        } catch (e) {
+
+            console.error("error al añadir la cancion", e)
+            mostrarNotificacion("error", "Error al añadir la cancion")
+        }
+
+
+    }
+
+
+
         
-        <main className="Main-reproductor">
-            <img src="./img/sensenra.jpg" alt="fondo" className="Fondo" />
 
-            <div className="Reproductor-card">
-                <img src="./img/sensenra.jpg" alt="imagen" className="Reproductor-imagen" />
-
-            <BarraReproduccion />
-            </div>
+            
 
 
-        </main>
-<BottomNavigation/>
-</div>
 
-       
-        </>
 
-    );
+
+
+
+
+
+
+
+
+return (
+
+    <>
+        <div className="Header-main">
+            <Header />
+
+            <main className="Main-reproductor">
+
+                <img src={currentSong.imagen} alt="fondo" className="Fondo" />
+
+
+                <div className="Main-contenido">
+
+
+                    <div className="Reproductor-cabecera">
+
+                        <div className="Reproductor-infoCancion">
+                            <h2 className="Reproductor-song">{currentSong.nombre}</h2>
+                            <h4 className="Reproductor-artist">{currentSong.artista}</h4>
+                        </div>
+
+                        <LuCirclePlus className="Reproductor-iconAdd" onClick={handleOpenMenu} />
+                        {
+                            openMenu && (
+                                <div className='Menu-add' >
+
+
+                                    <BsChevronCompactDown onClick={handleOpenMenu} className="MenuOpened-addIcon" />
+
+
+                                    <ul className="MenuOpened-ul">
+                                        <h3>Añadir a mi lista</h3>
+                                        {
+                                            bibliotecas.map((biblioteca) => (
+
+                                                <li  onClick={() => handleAdd(biblioteca._id)} className='Galeria-li' key={biblioteca._id}>{biblioteca.nombre}</li>
+                                            ))}
+                                    </ul>
+                                </div>
+                            )
+                        }
+
+
+                    </div>
+
+                    <CardReproduccion />
+
+
+                </div>
+
+            </main>
+            <BottomNavigation />
+        </div>
+
+
+    </>
+
+);
 }
 
 
- 
+
 export default ReproductorPage;

@@ -1,10 +1,8 @@
 
 
 
-import { ReproductorContextProvider } from './context/ReproductorContext'
-import { UserContextProvider } from './context/UserContext'
-import { NotificacionesContextProvider } from './context/NotificacionesContext'
 import { Outlet } from 'react-router'
+import { ReproductorContextProvider } from './context/ReproductorContext'
 
 
 
@@ -15,19 +13,14 @@ function Layout() {
 
   return (
     <>
-     <NotificacionesContextProvider>
-        <UserContextProvider>
-          <ReproductorContextProvider>
-
-
+   
+   <ReproductorContextProvider>
             
             <Outlet />
+            </ReproductorContextProvider>
           
           
-          
-          </ReproductorContextProvider>
-        </UserContextProvider>
-      </NotificacionesContextProvider>
+         
 
  
   

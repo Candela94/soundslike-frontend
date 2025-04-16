@@ -22,7 +22,7 @@ import NuevaLista from "../../pages/nuevalista/NuevaLista.jsx";
 import Admin from "../../pages/formu-admin/FormuAdmin.jsx"
 import ProtectedRoute from "../../pages/protected-route/ProtectedRoute.jsx";
 import NoAutorizado from "../../pages/no-autorizado/NoAutorizado.jsx";
-
+import Listas from "../../pages/listas/Listas.jsx";
 
 
 const router = createBrowserRouter([{
@@ -94,6 +94,12 @@ const router = createBrowserRouter([{
         {
             path:"/soundsongs",
             element: <SoundsCanciones />
+        },
+
+
+        {
+            path:"/bibliotecas/canciones",
+            element: <Listas />
         },
 
 

@@ -1,0 +1,85 @@
+
+.Reproductor-card{
+    background-color: var(--secondary);
+    width: 300px;
+    height: auto;
+    padding: 1.5rem;
+    border-radius: 6px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+
+
+.Card-imagen{
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+
+.Reproductor-imagen{
+    width: 100%;
+    border-radius: 6px;
+    box-shadow: 3px 3px 10px var(--background-color);
+    height: 100%;
+    object-fit: cover;
+}
+
+.Card-icon{
+    position: absolute;
+    font-size: 28px;
+    padding: 0.3rem;
+    border-radius: 30px;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--background-color);
+
+}
+
+
+
+.progress-bar{
+
+    width: 100%;
+    height: 5px;
+    background-color: var(--background-color);
+  
+    border-radius: 8px;
+
+}
+
+
+.progress {
+    height: 100%;
+    background-color: var(--text);
+    border-radius: 5px;
+  }
+
+
+.Reproductor-controllers{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.Btn-control{
+    border: none;
+    background: none;
+    font-size: 28px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    color: var(--text);
+}
+
+
+.Btn-control:active{
+
+    transform: scale(0.8);
+}
+
+
+
+
+

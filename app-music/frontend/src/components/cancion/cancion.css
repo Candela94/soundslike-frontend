@@ -10,6 +10,21 @@
     border-radius: 4px 4px 0 0 ;
     border-bottom: solid 0.5px var(--secondary);
     position: relative;
+    cursor: pointer;
+}
+
+
+.Cancion:active{
+    border-bottom: solid 0.8px var(--primary);
+    
+}
+
+
+.Cancion-img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 4px;
 }
 
 .Cancion-imgTexto, .Imagen-titulo {
@@ -19,10 +34,15 @@
 }
 
 
+.Cancion-artista{
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
 
 .Cancion-icono{
     cursor: pointer;
     transition: transform 0.2s ease ;
+    color: var(--primary);
 }
 
 .Cancion-icono:active{
