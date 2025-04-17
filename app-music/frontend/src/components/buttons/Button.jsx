@@ -29,7 +29,7 @@ export const Button = ({variant, children}) => {
 
 
         <>
-         <button className={`btn ${btnClass()}`}>{children}</button>
+         <button onClick={onclick} className={`btn ${btnClass()}`}>{children}</button>
 
 </>
     )

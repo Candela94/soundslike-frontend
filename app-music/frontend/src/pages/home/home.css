@@ -78,6 +78,14 @@
 
 
 
+
+.Galeria-ulRecomendaciones{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+
 .Seccion-imagen {
     display: flex;
     justify-content: center;

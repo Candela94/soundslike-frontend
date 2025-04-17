@@ -35,3 +35,10 @@
     outline: none;
     background-color: rgb(45, 43, 43);
 }
+
+
+.Formulario-btn{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}

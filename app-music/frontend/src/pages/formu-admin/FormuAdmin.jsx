@@ -9,7 +9,7 @@ import { useContext, useState } from 'react';
 import { Notificaciones } from '../../components/notificaciones-success-error/Notificaciones';
 import { NotificacionesContext } from '../../context/NotificacionesContext';
 import { UserContext } from '../../context/UserContext';
-import { useNavigate } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 
 
 const Admin = () => {
@@ -23,9 +23,6 @@ const Admin = () => {
         imagen: null,
         audio: null
     })
-
-
-
 
 
 
@@ -148,6 +145,7 @@ const Admin = () => {
                         </div>
 
                         <div className="Formulario-btn">
+                            <NavLink to='/playlists'>Publicar una playlist</NavLink>
                             <Button type='submit' variant='solid'>Subir canción</Button>
                         </div>
 

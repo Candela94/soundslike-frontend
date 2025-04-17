@@ -22,6 +22,7 @@ const Publicacion = () => {
                 <input className="Publicacion-input" type="file" id="image-input" accept="image/*" placeholder='Subir una imagen' />
 
                 <Button variant='solid'>Publicar canción</Button>
+                
 
             </form>
         </main>

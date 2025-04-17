@@ -3,7 +3,7 @@ import { Header } from "../../components/header/Header";
 import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
 
 import { useParams } from "react-router";
-import { Cancion } from "../../components/cancion/Cancion";
+import { CancionAgregada } from "../../components/cancion/Cancion";
 import { useEffect, useState } from "react";
 
 
@@ -107,7 +107,7 @@ const Listas = () => {
 
                                     {
                                         bibliotecaId.map((cancion) => (
-                                            <li className="Galeria-lia"><Cancion _id={cancion._id} nombre={cancion.nombre} artista={cancion.artista} imagen={cancion.imagen} audio={cancion.audio} /></li>
+                                            <li key={cancion._id} className="Galeria-li"><CancionAgregada _id={cancion._id} nombre={cancion.nombre} artista={cancion.artista} imagen={cancion.imagen} audio={cancion.audio} /></li>
                                         ))
                                     }
 

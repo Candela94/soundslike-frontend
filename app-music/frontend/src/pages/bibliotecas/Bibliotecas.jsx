@@ -66,7 +66,7 @@ const Bibliotecas = () => {
                                         {
                                             bibliotecas.map((playlist) => (
 
-                                               <NavLink to='/bibliotecas/canciones'  key={playlist._id}> <li className='Galeria-li' ><Listas nombre={playlist.nombre} img={playlist.coverImage || '../img/sensenra.jpg'} /></li></NavLink>
+                                                  <li key={playlist._id} className='Galeria-li' ><Listas nombre={playlist.nombre} img={playlist.coverImage || '../img/sensenra.jpg'} pid={playlist._id}/></li>
                                             ))}
                                     </ul>
 

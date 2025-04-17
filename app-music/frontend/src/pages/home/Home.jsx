@@ -22,6 +22,8 @@ import { NavLink } from 'react-router';
 import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 
+import {  useFetchPlayLists } from '../../../hooks/useFetch';
+
 
 
 
@@ -29,6 +31,9 @@ import { UserContext } from '../../context/UserContext';
 const Home = () => {
 
     const {userData} = useContext(UserContext)
+    const {playlist, loading, error} = useFetchPlayLists()
+
+
     return (
         <>
         <div className="Header-main">
@@ -49,9 +54,7 @@ const Home = () => {
                     <h2 className= 'Main-subheading'>Lo último en SOUNDsLike</h2>
                     <div className="Galeria">
                         <CardTendencias />
-                        <CardTendencias />
-                        <CardTendencias />
-                        <CardTendencias />
+                      
 
                     </div>
                 </section>
@@ -90,15 +93,44 @@ const Home = () => {
                 <section className="Recomendaciones">
                     <h2 className= 'Main-subheading'>Hecho para ti</h2>
 
-                    <div className="Galeria Galeria-recomendaciones">
+                    <div className=" Galeria-recomendaciones">
 
                     {/* Aquí irá un map de mi base de datos */}
+                    {
+                        loading ? (
+                            <p>Cargando...</p>
 
-                
-                    <CardRecomendaciones/>
-                    <CardRecomendaciones/>
-                     <CardRecomendaciones/>
-                     <CardRecomendaciones/>
+                        ) : error ? (
+                            <p> Error al cargar las listas</p>
+
+
+                        ) : playlist.length > 0 ? (
+
+                            <ul className="Galeria-ulRecomendaciones">
+
+                            {
+                                playlist.map((list) => {
+                                    console.log(list)
+                                    return(
+                                    <li className="Galeria Galeria-li" key={list._id}>
+                                        <CardRecomendaciones
+
+                                        img={list.coverImage}
+                                        mix={list.nombre}
+                                        
+                                        />
+                                    </li>
+                                   
+                                )})
+                               
+                            }
+
+
+                            </ul>
+                        ) : (
+                            <p>No hay playlists</p>
+                        )
+                    }
                      </div>
                 </section>
 

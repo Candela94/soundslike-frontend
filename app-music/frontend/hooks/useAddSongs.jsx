@@ -2,8 +2,6 @@ import { useContext, useEffect, useState } from "react";
 
 
 
-
-
 export const useAddSongsToPlaylist =  () => {
 
     const VITE_URL = import.meta.env.VITE_URL;
@@ -15,6 +13,7 @@ export const useAddSongsToPlaylist =  () => {
     const addSong = async (playlistId, songId) => {
        
         const token = localStorage.getItem('token')
+        setLoading(true)
 
         try {
 
@@ -32,7 +31,7 @@ export const useAddSongsToPlaylist =  () => {
             }
 
             const data = await response.json()
-            setCancionesAgregadas((prevCanciones) => [...prevCanciones, data.data])
+            setCancionesAgregadas((prevCanciones) => [...prevCanciones, songId])
             return data;
 
 

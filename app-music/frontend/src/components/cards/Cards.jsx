@@ -97,17 +97,17 @@ export const CardAnimo = ({ variant, children, h3, icon }) => {
 
 
 
-export const CardRecomendaciones = ({ h3, img, mix }) => {
+export const CardRecomendaciones = ({ img, mix }) => {
     return (
         <>
             <div className="CardRecomendaciones">
 
-                <img src="../../../public/img/sensenra.jpg" alt="img" className="CardRecomendaciones-img" />
+                <img src={img} alt="img" className="CardRecomendaciones-img" />
 
 
                 <div className="titulo">
 
-                    <h4>Mix {mix}</h4>
+                    <h4>{mix}</h4>
                 </div>
             </div>
         </>

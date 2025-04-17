@@ -20,6 +20,7 @@ import Publicacion from "../../pages/formulario-publicacion/Publicacion.jsx";
 import NuevaLista from "../../pages/nuevalista/NuevaLista.jsx";
 
 import Admin from "../../pages/formu-admin/FormuAdmin.jsx"
+import FormuPlayLists from "../../pages/formu-admin/FormuAdminPlaylist.jsx";
 import ProtectedRoute from "../../pages/protected-route/ProtectedRoute.jsx";
 import NoAutorizado from "../../pages/no-autorizado/NoAutorizado.jsx";
 import Listas from "../../pages/listas/Listas.jsx";
@@ -98,7 +99,7 @@ const router = createBrowserRouter([{
 
 
         {
-            path:"/bibliotecas/:pid/canciones",
+            path:"/playlists/:pid/canciones",
             element: <Listas />
         },
 
@@ -137,6 +138,16 @@ const router = createBrowserRouter([{
                 {
                 index : true ,
                 element : <Admin />
+                }
+            ]
+        },
+        {
+            path:"/playlists",
+            element: <ProtectedRoute requiredRole = 'admin' />,
+            children : [
+                {
+                index : true ,
+                element : <FormuPlayLists />
                 }
             ]
         },

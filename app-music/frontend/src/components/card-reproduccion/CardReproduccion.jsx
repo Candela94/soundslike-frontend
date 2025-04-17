@@ -57,7 +57,7 @@ export const CardReproduccion = () => {
 
 
     try {
-        console.log('Añadiendo canción a la playlist', {playlistId, songId: setCurrentSong._id})
+        console.log('Añadiendo canción a la playlist', {playlistId, songId: currentSong._id})
 
         await addSong(playlistId, currentSong._id);
         mostrarNotificacion('success', 'Canción añadida con éxito')
