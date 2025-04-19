@@ -23,6 +23,7 @@ import { useContext } from 'react';
 import { UserContext } from '../../context/UserContext';
 
 import {  useFetchPlayLists } from '../../../hooks/useFetch';
+import { useFetchSongs, useFetchSongsList } from '../../../hooks/usefetchSongs';
 
 
 
@@ -32,7 +33,9 @@ const Home = () => {
 
     const {userData} = useContext(UserContext)
     const {playlist, loading, error} = useFetchPlayLists()
-
+    const {canciones} = useFetchSongs()
+  
+    console.log(userData)
 
     return (
         <>
@@ -42,9 +45,9 @@ const Home = () => {
 
                 <h1 className='Main-intro'> 
                     {
-                        userData && userData.name
+                        userData && userData.nombre
 
-                        ? `¡Hola, ${userData.name}! ¿Qué te gustaría escuchar hoy?`: `¡Hola! Qué te gustaría escuchar hoy?`
+                        ? `¡Hola, ${userData.nombre}! ¿Qué te gustaría escuchar hoy?`: `¡Hola! Qué te gustaría escuchar hoy?`
                     }
                     </h1>
 
@@ -53,7 +56,43 @@ const Home = () => {
                 <section className="Seccion-tendencias">
                     <h2 className= 'Main-subheading'>Lo último en SOUNDsLike</h2>
                     <div className="Galeria">
-                        <CardTendencias />
+
+                          {
+                        loading ? (
+                            <p>Cargando...</p>
+
+                        ) : error ? (
+                            <p> Error al cargar las listas</p>
+
+
+                        ) : playlist.length > 0 ? (
+
+                            <ul className="Galeria-ulRecomendaciones">
+
+                            {
+                                canciones.map((song) => {
+                                    console.log(song)
+                                    return(
+                                        <li className="Galeria Galeria-li">
+                                        <CardTendencias
+
+                                        img={song.imagen}
+                                        nombre={song.nombre}
+                                        artista = {song.artista}
+                                        
+                                        />
+                                    </li>
+                                   
+                                )})
+                               
+                            }
+
+
+                            </ul>
+                        ) : (
+                            <p>No hay playlists</p>
+                        )
+                    }
                       
 
                     </div>
@@ -95,7 +134,7 @@ const Home = () => {
 
                     <div className=" Galeria-recomendaciones">
 
-                    {/* Aquí irá un map de mi base de datos */}
+                   
                     {
                         loading ? (
                             <p>Cargando...</p>
@@ -112,14 +151,14 @@ const Home = () => {
                                 playlist.map((list) => {
                                     console.log(list)
                                     return(
-                                    <li className="Galeria Galeria-li" key={list._id}>
+                                        <NavLink  key={list._id} to={`/playlists/${list._id}`}> <li className="Galeria Galeria-li">
                                         <CardRecomendaciones
 
                                         img={list.coverImage}
                                         mix={list.nombre}
                                         
                                         />
-                                    </li>
+                                    </li></NavLink>
                                    
                                 )})
                                

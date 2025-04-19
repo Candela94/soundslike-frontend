@@ -13,8 +13,8 @@ export const NotificacionesContextProvider = ({ children }) => {
 
 
     const [notificacion, setNotificacion] = useState({
-        type: "", //aquí se mostrará si el mensaje es success o error 
-        message:"" //aquí el mensaje en función del tipo que sea 
+        type: "", 
+        message:"" 
     })
 
 

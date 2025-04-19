@@ -2,7 +2,7 @@
 
 import './card-reproduccion.css'
 
-import { useState, useRef, useContext } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
 import { ReproductorContext } from '../../context/ReproductorContext';
 import { TbPlayerTrackPrevFilled } from "react-icons/tb";
 import { BsChevronCompactDown } from "react-icons/bs";
@@ -11,13 +11,15 @@ import { TbPlayerTrackNextFilled } from "react-icons/tb";
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { HiMiniPause } from "react-icons/hi2";
 import { GoHeart } from "react-icons/go";
+import { GoHeartFill } from "react-icons/go";
 import { useFetch } from '../../../hooks/useFetch';
 import { LuCirclePlus } from "react-icons/lu";
 import { Notificaciones } from '../notificaciones-success-error/Notificaciones';
 import { NotificacionesContext } from '../../context/NotificacionesContext';
 import { useAddSongsToPlaylist } from '../../../hooks/useAddSongs';
 
-
+import { useFetchFavoritos } from '../../../hooks/useFavorites';
+import { useFavoritos } from '../../../hooks/useFavorites';
 
 
 
@@ -31,10 +33,23 @@ export const CardReproduccion = () => {
   const {setCurrentSong, currentSong, progress} = useContext(ReproductorContext)
   const [openMenu,setOpenMenu] = useState(false)
   const {mostrarNotificacion} = useContext(NotificacionesContext)
-
+const [isLike, setIsLike] = useState(false)
 
   const { bibliotecas, loading, error } = useFetch()
   const {addSong} = useAddSongsToPlaylist()
+  const {favoritos, getFavoritos } = useFetchFavoritos()
+ 
+ const {addFav, removeFav} = useFavoritos()
+
+
+
+
+
+  useEffect(() => {
+    getFavoritos();
+  }, [currentSong, favoritos]);
+
+
 
 
   //Función para añadir canciones a una lista 
@@ -71,6 +86,72 @@ export const CardReproduccion = () => {
 
 
 }
+
+
+
+
+
+
+const handleLike = async () => {
+
+
+  console.log('Current Song:', currentSong);
+ 
+
+  if (!currentSong || !currentSong._id) {
+
+      mostrarNotificacion("error", "No has seleccionado ninguna canción")
+      return;
+  }
+
+
+
+  try {
+     
+
+      await addFav(currentSong._id);
+      mostrarNotificacion('success', 'Canción añadida con éxito')
+      setIsLike(true)
+
+  } catch (e) {
+
+      console.error("error al añadir la cancion", e)
+      mostrarNotificacion("error", "Error al añadir la cancion")
+  }
+
+}
+
+
+
+const handleUnLike = async () => {
+
+  if (!currentSong?._id) return;
+
+  try {
+    await removeFav(currentSong._id);
+    setIsLike(false)
+    mostrarNotificacion('success', 'Canción eliminada de favoritos');
+  
+    
+
+  } catch (error) {
+    console.error(error);
+    mostrarNotificacion("error", "Error al eliminar la canción de favoritos");
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -123,7 +204,7 @@ export const CardReproduccion = () => {
                   {
                     bibliotecas.map((biblioteca) => (
 
-                      <li onClick={() => handleAdd(biblioteca._id)} className='Galeria-li' key={biblioteca._id}>{biblioteca.nombre}</li>
+                      <li  key={biblioteca._id} onClick={() => handleAdd(biblioteca._id)} className='Galeria-li'>{biblioteca.nombre}</li>
                     ))}
                 </ul>
               </div>
@@ -133,7 +214,9 @@ export const CardReproduccion = () => {
 
         </div>
         <div className="Card-imagen">
-          <GoHeart className='Card-icon' />
+         {
+            isLike ? ( <GoHeartFill  className='Card-icon' onClick={handleUnLike}/> ) : (<GoHeart className='Card-icon'  onClick={handleLike}/>)
+          } 
           <img src={currentSong.imagen} alt="imagen" className="Reproductor-imagen" />
         </div>
 

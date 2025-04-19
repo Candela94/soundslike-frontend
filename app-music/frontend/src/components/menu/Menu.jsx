@@ -23,7 +23,7 @@ const handleLogut= () => {
     LogOut()
     localStorage.removeItem("token");
     navigate('/')
-    mostrarNotificacion("success", "¡Hasta pronto!")
+   
 }
 
     return ( 

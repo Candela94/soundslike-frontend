@@ -24,6 +24,7 @@ import FormuPlayLists from "../../pages/formu-admin/FormuAdminPlaylist.jsx";
 import ProtectedRoute from "../../pages/protected-route/ProtectedRoute.jsx";
 import NoAutorizado from "../../pages/no-autorizado/NoAutorizado.jsx";
 import Listas from "../../pages/listas/Listas.jsx";
+import SeccionPlayLists from "../../pages/home/SeccionListas.jsx";
 
 
 const router = createBrowserRouter([{
@@ -40,6 +41,12 @@ const router = createBrowserRouter([{
         {
             path:"/home",
             element: <Home />
+        },
+
+
+        {
+            path:"/playlists/:pid",
+            element: <SeccionPlayLists />
         },
 
 

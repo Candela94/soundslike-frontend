@@ -12,15 +12,14 @@ import { ReproductorContextProvider } from './context/ReproductorContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-          
+            <UserContextProvider>
       <NotificacionesContextProvider>
-        <UserContextProvider>
+
 
     <RouterProvider router={router} />
 
-        </UserContextProvider>
       </NotificacionesContextProvider>
-  
+      </UserContextProvider>
 
 
 

@@ -11,7 +11,7 @@ import { TbPlayerPlayFilled } from "react-icons/tb";
 import { HiMiniPause } from "react-icons/hi2";
 
 // Aqui tengo que poner props, esto es una prueba {img,h3,nombre}
-export const CardTendencias = () => {
+export const CardTendencias = ({nombre, artista, img}) => {
 
     const { handlePlay, isPlaying, audioRef } = useContext(ReproductorContext)
     console.log("Contexto en CardTendencias:", { isPlaying, audioRef });
@@ -20,8 +20,10 @@ export const CardTendencias = () => {
         <>
 
             <div className="Card">
-                <img src="../img/sensenra.jpg" alt="portada" className="Card-img" />
-                <audio src="./img/audio.mp3"
+                <div className="Card-image">
+                <img src={img} alt="portada" className="Card-img" />
+                </div>
+                <audio 
 
                     ref={audioRef}
                 >
@@ -29,17 +31,17 @@ export const CardTendencias = () => {
                 </audio>
 
                 <div className="Card-informacion">
-                    <h3 className="Card-nombre">Nombre</h3>
-                    <p className="Card-grupo">Grupo</p>
+                    <h4 className="Card-nombre">{nombre}</h4>
+                    <p className="Card-grupo">{artista}</p>
                 </div>
 
-                <div className="Boton">
+                {/* <div className="Boton">
 
                     <Button onClick={() => {
                         console.log("Botón presionado");
                         handlePlay();
                     }} variant='solid'>{isPlaying ? <HiMiniPause /> : <TbPlayerPlayFilled />} </Button>
-                </div>
+                </div> */}
             </div>
         </>
 

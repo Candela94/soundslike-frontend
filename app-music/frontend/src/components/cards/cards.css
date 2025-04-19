@@ -1,5 +1,5 @@
 .Card{
-width: 150px;
+width: 130px;
     
    position: relative;
     display: flex;
@@ -11,11 +11,19 @@ width: 150px;
 
 
 
+.Card-image{
+    width: 100%;
+    height: 150px;
+}
+
 
 .Card-img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     
 }
+
 
 
 
@@ -30,6 +38,7 @@ width: 150px;
 
 .Card-grupo{
     color: var(--text-secondary);
+    font-size: 12px;
 }
 
 
@@ -136,10 +145,10 @@ background-color: #68bc68;
 
     padding: 0.2rem 0.5rem;
     position: absolute;
-    left: 9px;
+    right: 0px;
     bottom: 0px;
     background-color:rgb(219, 79, 126); 
     border-radius: 0px 0 4px 0px;
-    width: 95%;
+    width: 65%;
 
 }

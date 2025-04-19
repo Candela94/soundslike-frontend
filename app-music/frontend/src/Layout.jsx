@@ -3,7 +3,7 @@
 
 import { Outlet } from 'react-router'
 import { ReproductorContextProvider } from './context/ReproductorContext'
-
+import { Notificaciones } from './components/notificaciones-success-error/Notificaciones'
 
 
 
@@ -13,11 +13,12 @@ function Layout() {
 
   return (
     <>
-   
-   <ReproductorContextProvider>
-            
+         
+           <ReproductorContextProvider>
+            <Notificaciones />
             <Outlet />
             </ReproductorContextProvider>
+            
           
           
          

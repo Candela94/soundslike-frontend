@@ -81,6 +81,9 @@ export const useFetch = () => {
 
 
 
+
+
+
 //obtener playlists creadas por admin 
 
 export const useFetchPlayLists = () => {
@@ -103,7 +106,7 @@ export const useFetchPlayLists = () => {
         try {
 
 
-            const response = await fetch(`${VITE_URL}/api/v1/playlists`, {
+            const response = await fetch(`${VITE_URL}/api/v1/playlists?isAdmin=true`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

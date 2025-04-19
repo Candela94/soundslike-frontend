@@ -20,10 +20,12 @@ const LogIn = () => {
 
         email: "",
         password: "",
+        nombre:"",
+        username:""
 
 
     })
-
+    console.log('Datos de usuario en LogIn:', data); 
     
     const handleChange = async (e) => {
         const {name, value} = e.target;
@@ -51,11 +53,14 @@ const LogIn = () => {
                 },
                 body:JSON.stringify({
                     email:data.email,
-                    password:data.password
+                    password:data.password,
+                   
                 })
             })
 
             const datos = await response.json();
+            console.log('Nombre recibido:', datos.user.nombre)
+            console.log('Usuario:', datos.user);
             console.log('Response:' , response)
             console.log('Datos:' , datos)
 
@@ -63,12 +68,12 @@ const LogIn = () => {
                 localStorage.setItem('token', datos.token)
                 localStorage.setItem('userRole', datos.user.role)
                 LogIn({
-                    nombre:datos.user.nombre,
-                    username:datos.user.username,
+                    nombre:datos.user.nombre || '',
+                    username:datos.user.username || '',
                     email:datos.user.email,
                     role:datos.user.role
                 })
-                mostrarNotificacion("success", "Iniciaste sesión correctamente")
+             
             
                 if(datos.user.role === 'admin') {
                     navigate('/admin')
