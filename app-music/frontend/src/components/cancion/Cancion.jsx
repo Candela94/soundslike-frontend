@@ -18,7 +18,7 @@ import { useFavoritos } from "../../../hooks/useFavorites.jsx";
 import { useFetchFavoritos } from "../../../hooks/useFavorites.jsx";
 import { NotificacionesContext } from "../../context/NotificacionesContext.jsx";
 import { useAddSongsToPlaylist } from "../../../hooks/useAddSongs.jsx";
-
+import { useNavigate } from 'react-router'
 
 import { useFetch } from "../../../hooks/useFetch.jsx";
 
@@ -30,7 +30,7 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
     const { mostrarNotificacion } = useContext(NotificacionesContext)
     const { bibliotecas, loading, error } = useFetch()
     const [openMenu, setOpenMenu] = useState(false)
-
+    const navigate = useNavigate()
 
 
 
@@ -80,7 +80,18 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
             console.log('Añadiendo canción a la playlist', { playlistId, songId: currentSong._id })
 
             await addSong(playlistId, song._id);
+
+
             mostrarNotificacion('success', 'Canción añadida con éxito')
+
+            setTimeout(() => {
+
+                navigate('/bibliotecas')
+
+            }, 1500)
+
+
+
             setOpenMenu(false)
 
         } catch (e) {
@@ -114,11 +125,11 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
                 <FaCirclePlus onClick={() => setOpenMenu(!openMenu)} className="Cancion-icono" />
                 {openMenu && (
                     <div className="Menu-add">
-                        <ul>
+                        <ul className='Menu-addUl'>
                             {bibliotecas.map((b) => (
-                               <li key={b._id} onClick={() => handleAdd(b._id, { nombre, artista, imagen, audio, _id })}>
-                               {b.nombre}
-                           </li>
+                                <li className='Menu-addLi' key={b._id} onClick={() => handleAdd(b._id, { nombre, artista, imagen, audio, _id })}>
+                                    {b.nombre}
+                                </li>
                             ))}
                         </ul>
                     </div>
@@ -155,12 +166,17 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
 
 
-    const handleConfirmar = () => {
+
+    const handleConfirmar = (e) => {
+        e.stopPropagation()
         setConfirmacion(!confirmacion)
+
+
     }
 
 
-    const handleCancelarConfirmacion = () => {
+    const handleCancelarConfirmacion = (e) => {
+        e.stopPropagation();
         setConfirmacion(false)
 
 
@@ -168,10 +184,12 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
 
 
-    const handleEliminar = () => {
+    const handleEliminar = (e) => {
+        e.stopPropagation()
         console.log('eliminando cancion con id:', _id)
         eliminarCancion({ pid, cid: _id })
         setConfirmacion(false)
+
 
     }
 
@@ -197,7 +215,7 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
         }
 
         setCurrentSong({ nombre, artista, imagen, audio, _id })
-        console.log('Current song set:', { nombre, artista, imagen, audio, _id });
+        console.log('Current song:', { nombre, artista, imagen, audio, _id });
     }
 
 
@@ -207,6 +225,7 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
 
         <>
+
             <div className="Cancion" tabIndex="0" >
 
                 <div className="Cancion-imgTexto" onClick={handleCancion}>
@@ -221,7 +240,13 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
                 </div>
 
-                <RiDeleteBin3Line onClick={(e) => { e.stopPropagation(); handleConfirmar() }} />
+
+
+                <div onClick={handleConfirmar} className="Boton eliminar">
+                    <RiDeleteBin3Line />
+                </div>
+
+
                 {
                     confirmacion && (
                         <div className="Confirmacion-contenido">
@@ -229,8 +254,8 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
                             <p>¿Seguro que quieres borrar esta canción?</p>
 
 
-                            <div onClick={handleEliminar} variant="danger">
-                                <p>Eliminar canción</p>
+                            <div onClick={handleEliminar} >
+                                <p className="Confirmacion-btn">Eliminar cancion</p>
                             </div>
 
                         </div>
@@ -404,8 +429,8 @@ export const Listas = ({ nombre, img, pid }) => {
         <>
 
             <div className="Lista">
-                <NavLink to={`/playlists/${pid}/canciones`}> <div className="Imagen-titulo">
-                    <img src={img} alt="Imagen-lista" className="Lista-imagen" />
+                <NavLink className='Lista-nombreLista' to={`/playlists/${pid}/canciones`}> <div className="Imagen-titulo">
+
                     <h4>{nombre}</h4>
                 </div> </NavLink>
 
@@ -416,7 +441,7 @@ export const Listas = ({ nombre, img, pid }) => {
 
                         <div onClick={handleConfirmar} className="MenuOpened-contenido">
 
-                            <p >Eliminar lista</p>
+                            <p>Eliminar lista</p>
 
                             <RiDeleteBin6Line />
                         </div>
@@ -431,8 +456,8 @@ export const Listas = ({ nombre, img, pid }) => {
                             <p>¿Seguro que quieres borrar esta lista?</p>
 
 
-                            <div onClick={handleEliminar} variant="danger">
-                                <p>Eliminar lista</p>
+                            <div onClick={handleEliminar} >
+                                <p className="Confirmacion-btn">Eliminar lista</p>
                             </div>
 
                         </div>

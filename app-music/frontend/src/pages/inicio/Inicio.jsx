@@ -20,8 +20,11 @@ const Inicio = () => {
 
             <main className="Main-inicio">
 
-                <img src="../img/portada-rosa.jpg" alt="portada" className="Inicio-img" />
+               
+                
 
+                <img src="../img/portada-rosa.jpg" alt="portada" className="Inicio-img" />
+                
                 <div className="Intro-texto">
                     <div className="Texto">
                         <h1 className='Main-h1Intro'>SOUNDsLIKE</h1>
@@ -29,7 +32,7 @@ const Inicio = () => {
                     </div>
 
                     <div className="Intro-botones">
-                        <NavLink to='/registro' ><Button className='Intro-btn'>Regístrate</Button></NavLink>
+                        <NavLink to='/registro' ><Button variant='secondary'className='Intro-btn'>Regístrate</Button></NavLink>
                         <NavLink to='/login' ><Button className='Intro-btn' variant='solid'>Iniciar sesión</Button></NavLink>
                     </div>
 

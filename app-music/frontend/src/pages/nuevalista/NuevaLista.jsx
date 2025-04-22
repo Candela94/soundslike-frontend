@@ -7,7 +7,7 @@ import { Button } from "../../components/buttons/Button.jsx";
 import { useState, useContext} from "react";
 import { NotificacionesContext } from "../../context/NotificacionesContext";
 import { Notificaciones } from "../../components/notificaciones-success-error/Notificaciones.jsx";
-
+import { useNavigate } from "react-router";
 
 const NuevaLista = () => {
 
@@ -16,6 +16,7 @@ const NuevaLista = () => {
    
     const [nombreLista, setNombreLista] = useState('')
     const {mostrarNotificacion} = useContext(NotificacionesContext)
+    const navigate = useNavigate()
 
 
     const handleChange = async (e) => {
@@ -63,6 +64,12 @@ const NuevaLista = () => {
                 mostrarNotificacion("success", "Lista creada con éxito")
                setNombreLista('')
 
+               setTimeout(() => {
+
+                   navigate('/bibliotecas')
+
+               },1500)
+
             }  else {
 
              mostrarNotificacion("error",  "Error al crear la lista");
@@ -91,7 +98,7 @@ const NuevaLista = () => {
 
                 <h1 className="Main-titulo">Crea tu nueva lista</h1>
                 <div className="Notificacion-container">
-                        <Notificaciones />
+                     
                     </div>
             <form onSubmit={handleCrear} className="Formulario-lista">
                 <input 

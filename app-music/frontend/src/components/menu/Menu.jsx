@@ -5,7 +5,7 @@ import { FaUser } from "react-icons/fa6";
 import { LuLogOut } from "react-icons/lu";
 import { FiSettings } from "react-icons/fi";
 import { FaQuestion } from "react-icons/fa";
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { UserContext } from '../../context/UserContext';
 import { NotificacionesContext } from '../../context/NotificacionesContext';
 
@@ -19,10 +19,26 @@ const {mostrarNotificacion} = useContext(NotificacionesContext)
 const navigate = useNavigate()
 
 
+
+
+
+
+
 const handleLogut= () => {
-    LogOut()
+
+
     localStorage.removeItem("token");
-    navigate('/')
+    LogOut()
+
+    mostrarNotificacion("info", '¡Hasta pronto!')
+   
+
+    setTimeout(() => {
+
+        navigate('/')
+
+
+    },1500)
    
 }
 

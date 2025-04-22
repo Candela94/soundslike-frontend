@@ -211,7 +211,7 @@ useEffect(() => {
 
 
 const handlePlay = () => {
-    if (!audioRef.current) {
+    if (!audioRef && audioRef.current) {
         console.error("audioRef.current es null");
         return;
     }

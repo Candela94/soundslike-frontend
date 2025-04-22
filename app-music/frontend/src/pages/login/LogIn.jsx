@@ -117,7 +117,7 @@ const LogIn = () => {
                         
 
                         <div className="Formulario-botones">
-                            <Button variant='secondary'>Regístrate</Button>
+                          <NavLink to='/registro'>  <Button variant='secondary'>Regístrate</Button></NavLink>
                             <Button type='submit' variant='solid'>Iniciar sesión</Button>
                         </div>
 

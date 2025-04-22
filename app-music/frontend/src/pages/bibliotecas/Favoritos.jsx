@@ -70,7 +70,7 @@ const Favoritos = () => {
 
 
                                 ) : (
-                                    <p>No tienes favoritos agregados</p>
+                                    <p className='Galeria-mensaje'>No tienes favoritos agregados</p>
                                 )
                             }
                         </div>

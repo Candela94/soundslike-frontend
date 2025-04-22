@@ -9,6 +9,7 @@ import { MdOutlineEmail } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa6";
 import { FaUser } from "react-icons/fa6";
 import { useContext, useState } from 'react';
+import { IoClose } from "react-icons/io5";
 import { Header } from '../../components/header/Header';
 import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
 import { UserContext } from '../../context/UserContext';
@@ -152,7 +153,7 @@ const Perfil = () => {
 
 
 
-                                <div onClick={handleEliminar}className='Perfil-botones'>
+                                <div onClick={handleConfirmar} className='Perfil-botones'>
 
                                     <Button variant='danger'>Eliminar cuenta</Button>
                                 </div>
@@ -162,11 +163,11 @@ const Perfil = () => {
                                     confirmacion && (
                                         <div className="Confirmacion-contenido">
                                             <IoClose onClick={handleCancelarConfirmacion} className="Confirmacion-close" />
-                                            <p>¿Estás segurx de que quieres abandonarnos?</p>
+                                            <p className='Confirmacion-p'>¿Estás segurx de que quieres abandonarnos?</p>
 
 
-                                            <div onClick={handleEliminar} variant="danger">
-                                                <p>Eliminar cuenta</p>
+                                            <div className='Confirmacion-btn'onClick={handleEliminar} >
+                                                Eliminar cuenta
                                             </div>
 
                                         </div>

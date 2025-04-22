@@ -5,8 +5,8 @@ import Layout from "../../Layout.jsx";
 import Home from '../../pages/home/Home.jsx'
 import Bibliotecas from '../../pages/bibliotecas/Bibliotecas.jsx'
 import Favoritos from "../../pages/bibliotecas/Favoritos.jsx";
-import SoundsCanciones from "../../pages/bibliotecas/SoundsCanciones.jsx";
-import Sound from "../../pages/sLike/SoundsLike.jsx";
+
+
 import Inicio from '../../pages/inicio/Inicio.jsx'
 import Login from "../../pages/login/LogIn.jsx";
 import Perfil from '../../pages/perfil/Perfil.jsx'
@@ -14,7 +14,7 @@ import Registro from "../../pages/registro/Registro.jsx";
 import Error from "../../pages/error/Error.jsx";
 
 import ReproductorPage from "../../pages/reproductor/ReproductorPage.jsx";
-import HomeSounds from "../../pages/home-sounds/HomeSounds.jsx";
+
 import BuscadorPag from "../../pages/buscador/BuscadorPag.jsx";
 
 import NuevaLista from "../../pages/nuevalista/NuevaLista.jsx";
@@ -56,11 +56,7 @@ const router = createBrowserRouter([{
         },
 
 
-        {
-            path:"/soundslike/home",
-            element: <HomeSounds />
-        },
-        
+      
 
 
 
@@ -105,10 +101,7 @@ const router = createBrowserRouter([{
         },
 
 
-        {
-            path:"/soundsongs",
-            element: <SoundsCanciones />
-        },
+      
 
 
         {
@@ -124,12 +117,6 @@ const router = createBrowserRouter([{
         },
        
        
-
-
-        {
-            path:"/soundslike",
-            element: <Sound />
-        },
 
 
 

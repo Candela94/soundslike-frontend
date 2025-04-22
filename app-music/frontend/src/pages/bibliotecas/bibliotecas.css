@@ -73,6 +73,12 @@
         padding: 3rem 2rem 3rem 0;
     }
 
+
+    .Galeria-mensaje{
+        position: absolute;
+        top: 250px;
+       }
+
 }
 
 
@@ -83,5 +89,11 @@
     .Contenido{
         padding: 3rem 2rem 3rem 0;
     }
+
+
+   .Galeria-mensaje{
+    position: absolute;
+    top: 250px;
+   }
 
 }

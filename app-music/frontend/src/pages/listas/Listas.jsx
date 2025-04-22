@@ -3,8 +3,9 @@ import { Header } from "../../components/header/Header";
 import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
 
 import { useParams } from "react-router";
-import { CancionAgregada } from "../../components/cancion/Cancion";
+
 import { useEffect, useState } from "react";
+import { CancionAgregada } from '../../components/cancion/Cancion';
 
 
 const Listas = () => {

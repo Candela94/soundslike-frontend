@@ -5,7 +5,8 @@
 
 .Subheader-ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 6rem;
     align-items: center;
 }
 

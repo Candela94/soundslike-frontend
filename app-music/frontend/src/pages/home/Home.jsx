@@ -120,34 +120,22 @@ const Home = () => {
                         </div>
                     </section>
 
-                    <section className="Seccion-animo">
-                        <h2 className='Main-subheading'>Elige el estado en el que vibras hoy</h2>
+                    <section className="Seccion-listas">
 
-                        <div className="Galeria-animo">
+                        <div className="Listas-img">
+                            <img src="../img/seccion-listas.jpg" alt="" className="Listas-imagen" />
 
-
-                            <CardAnimo variant='energy'
-                                children='Energía'
-                                icon={<FaBoltLightning />} />
-                            <CardAnimo
-
-                                children='Melancólica'
-                                icon={<GoHeart />}
-                                variant='melancoly' />
-
-
-
-                            <CardAnimo variant='relax'
-                                children='Relax'
-                                icon={<MdNightlight />} />
-                            <CardAnimo variant='concentrated'
-                                children='Concentrada'
-                                icon={<FaRegLightbulb />} />
-
-
-
+                            <div className="Listas-texto">
+                                <h2 className='Listas-titulo'>Crea tus propias listas</h2>
+                                <div className="Listas-btn">
+                                    <NavLink to='/playlist'><Button variant='secondary'>Crear una lista</Button></NavLink>
+                                    <NavLink to='/bibliotecas'><Button variant='solid'>Ir a mis listas</Button></NavLink>
+                                </div>
+                            </div>
                         </div>
 
+
+                       
                     </section>
 
 
@@ -199,12 +187,18 @@ const Home = () => {
 
                     <section className="Seccion-imagen">
 
-                        <img src="../img/imagen-cta.jpg" alt="" className="Img-cta" />
+                        <img src="../img/imagen-cta.jpg" alt="imgCta" className="Img-cta" />
                         <div className="Sounds-cta">
-                            <h1 className='SoundsH1'>¿Todavía no has entrado en nuestra red?</h1>
+
+                            <h1 className="Soundslike">SOUNDsLike</h1>
+
+                            <h3 className='Sounds-texto'>Para los amantes de la música</h3>
+
                             <div className="Sounds-enlace">
 
-                                <NavLink to='/soundslike/home'> <FiArrowRightCircle className='ctaButton' /> </NavLink>
+                               <NavLink to='/buscador'> <Button variant='solid'>Buscar canciones</Button></NavLink>
+
+                               
                             </div>
 
                         </div>

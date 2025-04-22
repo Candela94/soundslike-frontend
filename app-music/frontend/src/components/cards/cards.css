@@ -86,36 +86,7 @@
 }
 
 
-.relaxMode {
-    background-color: rgb(131, 131, 229);
-}
 
-
-
-.concentratedMode {
-    background-color: #68bc68;
-
-}
-
-
-.energyMode {
-
-    background-color: rgb(219, 79, 126);
-}
-
-
-
-.melancolyMode {
-    background-color: rgb(192, 137, 244);
-}
-
-
-.Card-animoIcon {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-
-}
 
 
 
@@ -136,6 +107,7 @@
 
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border-radius: 4px;
 
 }

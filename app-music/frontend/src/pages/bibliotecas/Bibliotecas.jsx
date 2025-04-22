@@ -37,7 +37,7 @@ const Bibliotecas = () => {
                 <div className="Contenido">
 
                     <div className="Subheader-intro">
-                        <SubHeader />
+                        <SubHeader style={{position:'sticky'}}/>
                         <div className="Bibliotecas-intro">
                             <h1 className='Bibliotecas-titulo'>Mis listas</h1>
                             <NavLink to='/playlist'><IoAddCircleSharp className='Bibliotecas-icono' /></NavLink>
