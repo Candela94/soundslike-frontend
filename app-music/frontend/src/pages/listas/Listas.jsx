@@ -81,16 +81,15 @@ const Listas = () => {
 
     return (
         <>
-            <div className="Header-main">
-                <Header />
+           
 
 
                 <main className="Main-bibliotecas">
-                    <h1 className="Nombre-lista">{nombre}</h1>
 
 
 
                     <div className="Galeria-listas">
+                    <h1 className="Nombre-lista">{nombre}</h1>
 
 
                         {
@@ -123,8 +122,7 @@ const Listas = () => {
 
                     </div>
                 </main>
-            </div>
-            <BottomNavigation />
+           
         </>
     );
 }

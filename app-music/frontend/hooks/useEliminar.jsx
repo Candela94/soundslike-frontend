@@ -178,3 +178,97 @@ export const useEliminarCancion =  () => {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const useEliminarUsuario = () => {
+
+    const VITE_URL = import.meta.env.VITE_URL
+  
+    const { mostrarNotificacion } = useContext(NotificacionesContext)
+    const [eliminado, setEliminado] = useState(false);
+    const [dataUsuario, setDataUsuario] = useState(null);
+
+
+
+
+    const eliminarUsuario = async ({id}) => {
+
+
+      
+
+
+        try {
+
+            const token = localStorage.getItem('token')
+
+            const response = await fetch(`${VITE_URL}/api/v1/usuarios/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${token}`
+
+                }
+            })
+
+
+            console.log(response)
+            console.log("Haciendo DELETE a:", `${VITE_URL}/api/v1/usuarios/${id}`);
+
+            if (!response.ok) {
+                throw new Error('Error al eliminar usuario');
+            }
+
+        
+
+            try {
+
+                const datos = await response.json();
+                console.log('Datos recibidos', datos);
+                setDataUsuario(datos)
+
+            } catch (e) {
+                console.warn('no se puedo parsear', e)
+            }
+
+
+
+            if (response.ok) {
+                mostrarNotificacion("success", "Nos abandonas :(");
+                setEliminado(true);
+
+
+            }
+
+
+
+
+
+
+        } catch(e) {
+
+            console.error('Error al obtener usuario', e);
+            mostrarNotificacion("error", "Error al intentar eliminar")
+            setEliminado(false)
+
+
+        }
+
+
+    }
+
+    return { eliminarUsuario, eliminado, dataUsuario}
+
+
+}

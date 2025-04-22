@@ -9,8 +9,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const Error = () => {
     return (
         <>
-            <div className="Header-main">
-                <Header />
+           
 
 
                 <main className="Main-error">
@@ -30,8 +29,7 @@ const Error = () => {
 
 
 
-            </div>
-            < BottomNavigation />
+          
         </>
 
     );

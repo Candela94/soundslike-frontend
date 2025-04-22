@@ -15,11 +15,13 @@ const BuscadorPag = () => {
     const [searchTerm, setSearchTerm] = useState("")
 
 
+    const cancionesFiltradas = canciones.filter(c => c.nombre.toLowerCase().includes(searchTerm.toLocaleLowerCase()) || c.artista.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase()))
+
+
 
     return (
         <>
-            <div className="Header-main">
-                <Header />
+         
                 <main className="Main-buscador">
                     <h2 className='Main-titulo'>Busca tu canción</h2>
 
@@ -33,11 +35,11 @@ const BuscadorPag = () => {
                                 <p>Cargando canciones</p>
                             ) : error ? (
                                 <p>Error al cargar {error}</p>
-                            ) : canciones.length > 0 ? (
+                            ) : cancionesFiltradas.length > 0 ? (
 
                                 <ul className="Galeria-ul">
                                     {
-                                        canciones.map((cancion) => {
+                                        cancionesFiltradas.map((cancion) => {
 
                                             return (
                                             <li className="Galeria-li" key={cancion._id}><Cancion _id={cancion._id} nombre={cancion.nombre} artista={cancion.artista} imagen={cancion.imagen} audio={cancion.audio}/></li>   // audio= {cancion.audio}
@@ -56,8 +58,7 @@ const BuscadorPag = () => {
 
 
                 </main>
-            </div>
-            <BottomNavigation />
+           
         </>
     );
 }

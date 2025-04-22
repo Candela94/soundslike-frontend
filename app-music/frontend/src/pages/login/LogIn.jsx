@@ -19,12 +19,12 @@ const LogIn = () => {
     const [data, setData] = useState({
 
         email: "",
-        password: "",
-        nombre:"",
-        username:""
-
+        password: ""
+       
 
     })
+
+
     console.log('Datos de usuario en LogIn:', data); 
     
     const handleChange = async (e) => {
@@ -68,10 +68,11 @@ const LogIn = () => {
                 localStorage.setItem('token', datos.token)
                 localStorage.setItem('userRole', datos.user.role)
                 LogIn({
-                    nombre:datos.user.nombre || '',
+                    nombre:datos.user.name || '',
                     username:datos.user.username || '',
                     email:datos.user.email,
-                    role:datos.user.role
+                    role:datos.user.role,
+                    _id:datos.user.id
                 })
              
             
@@ -99,8 +100,7 @@ const LogIn = () => {
 
     return (
         <>
-            <div className="Header-main">
-                <Header />
+           
                 <main className="Main-login">
                 <div className="Notificacion-container">
                         <Notificaciones />
@@ -123,8 +123,7 @@ const LogIn = () => {
 
                     </form>
                 </main>
-            </div>
-            <BottomNavigation />
+          
         </>
     )
 }

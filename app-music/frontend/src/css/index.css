@@ -108,3 +108,24 @@ h1{
   font-family: genius;
   src: url(../fonts/geniustechno-regular.otf);
 }
+
+
+
+
+
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .Header-main{
+      display: flex;
+      width: 100%;
+  }
+
+ 
+
+ 
+}

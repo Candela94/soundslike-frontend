@@ -7,6 +7,7 @@ import { Header } from '../../components/header/Header';
 import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
 import { useParams } from "react-router";
 import { Cancion } from "../../components/cancion/Cancion";
+import './home.css'
 
 
 
@@ -25,15 +26,14 @@ const SeccionPlayLists = () => {
         <>
 
 
-        <div className="Header-Main">
-            <Header/>
+      
 
+            <main className="Main-cancionesListas">
                 <div className="Cabecera-img">
                     <img src= {coverImage} alt="portada" className="Cabecera-img" />
                   
                 <h1 className="Cabecera">SOUNDsLIKE {nombrePlaylist}</h1>
                 </div>
-            <main className="Main-cancionesListas">
 
 
 
@@ -84,8 +84,7 @@ const SeccionPlayLists = () => {
 
             </main>
 
-            <BottomNavigation />
-        </div>
+         
         
         
         </>

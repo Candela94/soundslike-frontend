@@ -115,8 +115,7 @@ const Registro = () => {
 
     return (
         <>
-            <div className="Header-main">
-                <Header />
+            
                 <main className="Main-login">
                     <div className="Notificacion-container">
                         <Notificaciones />
@@ -138,8 +137,7 @@ const Registro = () => {
 
                     </form>
                 </main>
-            </div>
-            <BottomNavigation />
+           
         </>
     );
 }

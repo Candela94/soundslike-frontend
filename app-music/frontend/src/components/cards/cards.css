@@ -1,42 +1,58 @@
-.Card{
-width: 130px;
+.Card {
+
+    max-width: 140px;
+    max-height: 300px;
     
-   position: relative;
+
+    position: relative;
     display: flex;
     flex-direction: column;
-  
-    border-radius: 4px 4px 0 0 ;
+    gap: 0.5rem;
+
+   
     overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 
+.Card:active{
+    transform: scale(0.95);
+}
 
-.Card-image{
-    width: 100%;
+
+.Card:focus{
+    box-shadow: 1px 1px 10px var(--primary);
+}
+
+
+.Card-image {
+    max-width: 100%;
     height: 150px;
 }
 
 
-.Card-img{
+.Card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    
+    border-radius: 4px;;
+
 }
 
 
 
 
-.Card-informacion{
-    padding: 0.8rem 1rem 1rem 0.8rem;
+.Card-informacion {
+  
     border-radius: 0 0 4px 4px;
-    background-color: var(--background-secondary);
+
+    height: 100;
 }
 
 
 
 
-.Card-grupo{
+.Card-grupo {
     color: var(--text-secondary);
     font-size: 12px;
 }
@@ -44,19 +60,6 @@ width: 130px;
 
 
 
-.Boton{
-
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    border:none
-    
-
-}
-
-.Boton-icon{
-    font-size: 12px;
-}
 
 
 
@@ -64,10 +67,7 @@ width: 130px;
 
 
 
-
-
-
-.Card-animo{
+.Card-animo {
 
     width: 120px;
     height: 40px;
@@ -75,13 +75,13 @@ width: 130px;
     justify-content: center;
     border-radius: 20px;
     cursor: pointer;
-    transition: transform  0.2s ease;
-    
+    transition: transform 0.2s ease;
+
 
 }
 
 
-.Card-animo:active{
+.Card-animo:active {
     transform: scale(0.9);
 }
 
@@ -92,25 +92,25 @@ width: 130px;
 
 
 
-.concentratedMode{
-background-color: #68bc68;    
+.concentratedMode {
+    background-color: #68bc68;
 
 }
 
 
-.energyMode{
+.energyMode {
 
     background-color: rgb(219, 79, 126);
 }
 
 
 
-.melancolyMode{
+.melancolyMode {
     background-color: rgb(192, 137, 244);
 }
 
 
-.Card-animoIcon{
+.Card-animoIcon {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -124,7 +124,7 @@ background-color: #68bc68;
 /* Card recomendaciones */
 
 
-.CardRecomendaciones{
+.CardRecomendaciones {
 
     width: 190px;
     height: 220px;
@@ -132,23 +132,81 @@ background-color: #68bc68;
     position: relative;
 }
 
-.CardRecomendaciones-img{
+.CardRecomendaciones-img {
 
     width: 100%;
     height: 100%;
     border-radius: 4px;
-  
+
 }
 
 
-.titulo{
+.titulo {
 
     padding: 0.2rem 0.5rem;
     position: absolute;
     right: 0px;
     bottom: 0px;
-    background-color:rgb(219, 79, 126); 
+    background-color: rgb(219, 79, 126);
     border-radius: 0px 0 4px 0px;
     width: 65%;
 
 }
+
+
+
+
+
+
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .Card{
+        display: flex;
+        background-color: var(--secondary);
+        flex-direction: row;
+        border-radius: 4px;
+        max-width: 260px;
+        height: 100px;
+        align-items: center;
+    }
+
+
+    .Card-informacion{
+        padding: 1rem;
+    }
+    
+   
+}
+
+
+/* Escritorio */
+
+@media (min-width: 1025px) {
+
+
+.Card{
+    display: flex;
+    background-color: var(--secondary);
+    flex-direction: row;
+    border-radius: 4px;
+    max-width: 280px;
+    height: 120px;
+    align-items: center;
+}
+
+
+
+.Card-informacion{
+    padding: 1rem;
+}
+
+}
+
+
+
+

@@ -19,11 +19,16 @@ import { NotificacionesContext } from "../../context/NotificacionesContext";
 
 const ReproductorPage = () => {
 
-    const { currentSong } = useContext(ReproductorContext)
+    const { currentSong} = useContext(ReproductorContext)
+
     const { bibliotecas } = useFetch()
-    console.log('usefetch' , {bibliotecas})
+
+  
+
     const [openMenu, setOpenMenu] = useState(false)
+
     const { addSong, loading, error, success } = useAddSongsToPlaylist();
+
     const { mostrarNotificacion } = useContext(NotificacionesContext)
 
 
@@ -32,8 +37,7 @@ const ReproductorPage = () => {
 
     //Función para añadir canciones a una lista 
     const handleAdd = async (playlistId) => {
-        console.log('Current Song:', currentSong);
-        console.log('Playlist ID:', playlistId);
+       
 
         if (!currentSong._id) {
 
@@ -83,8 +87,7 @@ const ReproductorPage = () => {
 return (
 
     <>
-        <div className="Header-main">
-            <Header />
+       
 
             <main className="Main-reproductor">
 
@@ -100,8 +103,7 @@ return (
                 </div>
 
             </main>
-            <BottomNavigation />
-        </div>
+         
 
 
     </>

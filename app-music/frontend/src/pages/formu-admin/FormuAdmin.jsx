@@ -118,8 +118,7 @@ const Admin = () => {
 
         <>
 
-            <div className="Header-main">
-                <Header />
+         
 
                 <main className="Main-formu">
 
@@ -156,8 +155,7 @@ const Admin = () => {
 
                 </main>
 
-            </div>
-            <BottomNavigation />
+        
 
         </>
 

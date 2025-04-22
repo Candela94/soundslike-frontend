@@ -11,12 +11,17 @@
     border-bottom: solid 0.5px var(--secondary);
     position: relative;
     cursor: pointer;
+    transition: box-shadow 0.3s ease, transform 0.5s ease;
 }
 
 
-.Cancion:active{
-    border-bottom: solid 0.8px var(--primary);
+.Cancion:focus{
+   box-shadow: 1px 1px 10px var(--secondary);
     
+}
+
+.Cancion:active{
+    transform: scale(0.98);
 }
 
 

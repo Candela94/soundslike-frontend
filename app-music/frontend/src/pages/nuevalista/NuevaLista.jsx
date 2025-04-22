@@ -86,8 +86,7 @@ const NuevaLista = () => {
 
     return ( 
         <>
-             <div className="Header-main">
-        <Header />
+             
         <main className="Main-lista">
 
                 <h1 className="Main-titulo">Crea tu nueva lista</h1>
@@ -103,8 +102,7 @@ const NuevaLista = () => {
             </form>
 
         </main>
-        </div>
-        <BottomNavigation />
+       
         </>
      );
 }

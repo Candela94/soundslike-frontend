@@ -166,3 +166,40 @@
 .Galeria-li {
   cursor: pointer;
 }
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+  .Reproductor-card{
+    width: 500px;
+  }
+  
+
+}
+
+
+
+/* Escritorio */
+
+@media (min-width: 1025px) {
+
+  .Reproductor-card{
+    width: 700px;
+  }
+
+   
+
+}

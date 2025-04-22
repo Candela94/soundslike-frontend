@@ -1,0 +1,47 @@
+.About{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 12rem;
+    margin-top: 1.5rem;
+}
+
+
+.About-secciones{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.About-cabecera{
+    font-family: genius;
+    font-size: 3rem;
+    text-align: center;
+    color: var(--primary);
+}
+
+.About-subheader{
+    font-family: apfel-black;
+    text-align: center;
+}
+
+
+.About-text{
+    text-align: center;
+}
+
+
+
+.About-seccion{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.About-list{
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}

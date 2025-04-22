@@ -88,6 +88,8 @@ export const useFetchSongsList = (pid) => {
 
 if(pid) {
 
+    console.log('la lista es', pid)
+
 
 
     const songsList = async () => {

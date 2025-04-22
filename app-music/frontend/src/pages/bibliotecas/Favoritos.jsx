@@ -29,8 +29,7 @@ const Favoritos = () => {
         <>
 
             {console.log(favoritos)}
-            <div className="Header-main">
-                <Header />
+          
 
                 <div className="Contenido">
 
@@ -81,9 +80,9 @@ const Favoritos = () => {
                 </div>
 
 
-            </div >
+          
 
-            <BottomNavigation />
+       
 
 
         </>

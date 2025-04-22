@@ -31,9 +31,7 @@ const Bibliotecas = () => {
     return (
         <>
 
-            <div className="Header-main">
-
-                <Header />
+        
 
 
                 <div className="Contenido">
@@ -90,10 +88,9 @@ const Bibliotecas = () => {
 
                     </main>
                 </div>
-            </div>
+          
 
-
-            <BottomNavigation />
+           
         </>
     );
 }

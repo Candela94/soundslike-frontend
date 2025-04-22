@@ -4,9 +4,8 @@ import { useState } from 'react';
 
 
 
-export const Buscador = () => {
+export const Buscador = ({searchTerm, setSearchTerm}) => {
 
-    const [searTerm, setSearchTerm] = useState('')
 
     const handleChange = (e) => {
         setSearchTerm(e.target.value)
@@ -17,7 +16,7 @@ export const Buscador = () => {
         <>
           <div className="Buscador">
                 <input 
-                value={searTerm}
+                value={searchTerm}
                 onChange={handleChange}
                 type="search" className="Input-buscador" placeholder='Buscar' />
             </div>

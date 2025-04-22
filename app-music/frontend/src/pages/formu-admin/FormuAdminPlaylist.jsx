@@ -91,8 +91,7 @@ const FormuPlayLists = () => {
 
     return ( 
         <>
-  <div className="Header-main">
-                <Header />
+
 
                 <main className="Main-formu">
 
@@ -128,8 +127,7 @@ const FormuPlayLists = () => {
 
                 </main>
 
-            </div>
-            <BottomNavigation />
+           
         
         </>
      );

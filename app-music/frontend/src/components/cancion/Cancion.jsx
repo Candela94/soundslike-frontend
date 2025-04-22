@@ -58,13 +58,13 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
 
 
     //Función para añadir canciones a una lista 
-    const handleAdd = async (playlistId) => {
+    const handleAdd = async (playlistId, song) => {
 
 
-        console.log('Current Song:', currentSong);
+        console.log('Current Song:', song);
         console.log('Playlist ID:', playlistId);
 
-        if (!currentSong || !currentSong._id) {
+        if (!song || !song._id) {
 
             mostrarNotificacion("error", "No has seleccionado ninguna canción")
             return;
@@ -79,7 +79,7 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
         try {
             console.log('Añadiendo canción a la playlist', { playlistId, songId: currentSong._id })
 
-            await addSong(playlistId, currentSong._id);
+            await addSong(playlistId, song._id);
             mostrarNotificacion('success', 'Canción añadida con éxito')
             setOpenMenu(false)
 
@@ -97,7 +97,7 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
 
 
         <>
-            <div className="Cancion" >
+            <div className="Cancion" tabIndex="0">
 
                 <div className="Cancion-imgTexto" onClick={handleCancion}>
 
@@ -116,9 +116,9 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
                     <div className="Menu-add">
                         <ul>
                             {bibliotecas.map((b) => (
-                                <li key={b._id} onClick={() => handleAdd(b._id)}>
-                                    {b.nombre}
-                                </li>
+                               <li key={b._id} onClick={() => handleAdd(b._id, { nombre, artista, imagen, audio, _id })}>
+                               {b.nombre}
+                           </li>
                             ))}
                         </ul>
                     </div>
@@ -207,7 +207,7 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
 
         <>
-            <div className="Cancion" >
+            <div className="Cancion" tabIndex="0" >
 
                 <div className="Cancion-imgTexto" onClick={handleCancion}>
 
@@ -322,7 +322,7 @@ export const CancionLike = ({ nombre, artista, imagen, audio, _id }) => {
 
 
         <>
-            <div className="Cancion" >
+            <div className="Cancion" tabIndex="0">
 
                 <div className="Cancion-imgTexto" onClick={handleCancion}>
 

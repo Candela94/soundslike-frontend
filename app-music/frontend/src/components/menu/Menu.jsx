@@ -55,10 +55,10 @@ const handleLogut= () => {
 
 
 
-            <li className="Menu-lateralLi"><NavLink to="">
+            <li className="Menu-lateralLi"><NavLink to="/info">
                 <div className="Nav-content">
                 <FaQuestion />
-                <p>Ayuda</p>
+                <p>Información</p>
                 </div>
             </NavLink>
             </li>

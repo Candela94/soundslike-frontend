@@ -16,7 +16,7 @@ import Error from "../../pages/error/Error.jsx";
 import ReproductorPage from "../../pages/reproductor/ReproductorPage.jsx";
 import HomeSounds from "../../pages/home-sounds/HomeSounds.jsx";
 import BuscadorPag from "../../pages/buscador/BuscadorPag.jsx";
-import Publicacion from "../../pages/formulario-publicacion/Publicacion.jsx";
+
 import NuevaLista from "../../pages/nuevalista/NuevaLista.jsx";
 
 import Admin from "../../pages/formu-admin/FormuAdmin.jsx"
@@ -25,6 +25,12 @@ import ProtectedRoute from "../../pages/protected-route/ProtectedRoute.jsx";
 import NoAutorizado from "../../pages/no-autorizado/NoAutorizado.jsx";
 import Listas from "../../pages/listas/Listas.jsx";
 import SeccionPlayLists from "../../pages/home/SeccionListas.jsx";
+import Info from "../../pages/info/Info.jsx";
+
+import MiMusica from "../../pages/perfil/MiMusica.jsx";
+
+
+
 
 
 const router = createBrowserRouter([{
@@ -74,7 +80,7 @@ const router = createBrowserRouter([{
 
 
         {
-            path:"/buscar",
+            path:"/buscador",
             element: <BuscadorPag />
         },
 
@@ -133,9 +139,21 @@ const router = createBrowserRouter([{
         },
 
 
+      
+
+
+
         {
-            path:"/publicacion",
-            element: <Publicacion />
+            path:"/info",
+            element: <Info />
+        },
+
+
+      
+
+        {
+            path:"/mimusica",
+            element: <MiMusica />
         },
 
         {

@@ -35,9 +35,19 @@ export const useFetchFavoritos = () => {
             }
 
             const data = await response.json();
-            console.log('Fetched favoritos:', data);
-            setFavs(data || []);
+            // console.log('Fetched favoritos:', data);
+
+
+            if (JSON.stringify(data) !== JSON.stringify(favoritos)) {
+                setFavs(data || [])
+
+            }
+            // setFavs(data || []);
             return data;
+
+
+
+
         } catch(e) {
             console.error('Error al obtener favoritos:', e.message);
             setError(e.message);
