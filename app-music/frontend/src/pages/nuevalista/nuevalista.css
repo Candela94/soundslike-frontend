@@ -35,11 +35,13 @@
 @media (min-width: 768px) and (max-width: 1024px) {
 
 
-    .Main-lista{
 
 
+        .Main-titulo{
+            font-size: 3rem;
+        }
        
-    }
+    
     
 
   
@@ -60,7 +62,7 @@
     }
 
     .Main-titulo{
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
     
 

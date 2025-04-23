@@ -9,7 +9,7 @@ import { BottomNavigation } from '../../components/bottom-navigation-header/Bott
 // import { useFetch } from '../../../hooks/useFetch.jsx';
 import { NotificacionesContext } from '../../context/NotificacionesContext.jsx';
 import { Notificaciones } from '../../components/notificaciones-success-error/Notificaciones.jsx';
-import { useNavigate } from 'react-router';
+import { NavLink, useNavigate } from 'react-router';
 
 
 
@@ -96,7 +96,7 @@ const Registro = () => {
             }
         } catch (e) {
             console.error('Error al registrarse', e);
-            mostrarNotificacion("error", "Ups, algo salió mal")
+            mostrarNotificacion("error", "Ups, algo salió ma, comprueba los datos")
         }
 
     }    
@@ -132,7 +132,9 @@ const Registro = () => {
                         <input onChange={handleChange} value={formData.repeatPassword}  name='repeatPassword'type="password" className="Formulario-password Formulario-input" placeholder="Repite la contraseña" />
 
                         <div className="Formulario-botones">
+                        <NavLink to='/login'><Button type='submit' variant='secondary'>Ya soy usuario</Button></NavLink>
                             <Button type='submit' variant='solid'>Crear cuenta</Button>
+
                         </div>
 
                     </form>

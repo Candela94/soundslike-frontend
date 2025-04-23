@@ -24,8 +24,19 @@
 
 
 
+.Mensaje{
+
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    padding: 2rem;
+}
 
 
+.Button{
+    display: flex;
+    justify-content: center;
+}
 
 
 

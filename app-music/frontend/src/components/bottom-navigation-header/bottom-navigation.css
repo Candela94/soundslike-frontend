@@ -32,6 +32,11 @@
 }
 
 
+.Footer-li.active{
+    color: var(--primary);
+}
+
+
 .Footer-li svg{
     border: none;
     background: none;
@@ -42,6 +47,11 @@
 
 .Footer-li svg:active{
     transform: scale(0.8);
+}
+
+
+.Footer-li svg.active{
+    color: var(--primary);
 }
 
 

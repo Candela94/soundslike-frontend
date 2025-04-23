@@ -85,12 +85,13 @@ export const useFetchSongsList = (pid) => {
     const [coverImage, setCoverImage] = useState("")
 
     useEffect(() => {
-
-        if (pid) {
-            if (!pid) return
-
-
-
+        // Verifica que pid no sea null o vacío
+        if (!pid) {
+            setError('El ID de la playlist es inválido.');
+            setLoading(false);
+            return;
+        }
+        console.log('PID recibido:', pid);
 
             const songsList = async () => {
 
@@ -104,6 +105,7 @@ export const useFetchSongsList = (pid) => {
 
 
                     const response = await fetch(`${VITE_URL}/api/v1/playlists/${pid}/canciones`, {
+                        
                         method: 'GET',
                         headers: {
                             'Content-Type': 'application/json',
@@ -112,6 +114,7 @@ export const useFetchSongsList = (pid) => {
 
                     })
 
+                    console.log(`URL de la petición: ${VITE_URL}/api/v1/playlists/${pid}/canciones`);
 
                     if (!response.ok) {
                         throw new Error(`Error:, ${response.status}`)
@@ -144,9 +147,9 @@ export const useFetchSongsList = (pid) => {
             songsList()
 
 
-        }
+        }, [pid, VITE_URL]);
 
-    }, [pid, VITE_URL])
+
 
 
 

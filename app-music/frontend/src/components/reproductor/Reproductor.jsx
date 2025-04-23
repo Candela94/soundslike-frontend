@@ -30,7 +30,12 @@ export const Reproductor = () => {
                         <h3>{currentSong.nombre}</h3>
                         <p>{currentSong.artista}</p>
                     </NavLink>
-                ) : <p>Empieza a escuchar ahora</p>}
+                ) :
+                
+                <NavLink className="Mensaje-reproductor" to='/buscador'><div >
+                <p>Empieza a escuchar ahora</p></div></NavLink>
+                
+                }
 
 
 

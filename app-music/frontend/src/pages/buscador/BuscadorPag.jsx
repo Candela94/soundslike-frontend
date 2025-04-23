@@ -47,7 +47,7 @@ const BuscadorPag = () => {
                                         )})
                                     }
                                 </ul>
-                            ) : <p>No hay canciones disponibles</p>
+                            ) : <p>No se encontró ninguna canción</p>
 
                             
                         }

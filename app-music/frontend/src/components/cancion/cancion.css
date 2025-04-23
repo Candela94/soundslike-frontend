@@ -68,10 +68,10 @@
 
 .Menu-add{
 
-    padding: 1rem;
+   
     background-color: rgb(37, 36, 36);
     width: 50%;
-    
+
     border-radius: 20px;
     position: absolute;
     bottom: 50%;
@@ -93,6 +93,18 @@
     list-style: none;
     text-align: center;
 }
+
+
+
+
+.Menu-tituloListas{
+
+    font-family: apfel-black;
+}
+
+
+
+
 
 .MenuOpened-contenido{
     display: flex;
@@ -192,7 +204,7 @@
     top: 50%; 
     left: 50%; 
     transform: translate(-50%, -50%);
-    background-color:var(--background-secondary);
+    background-color:var(--background-se);
     border-radius: 20px;
     align-items: center;
     padding: 3em 1rem;

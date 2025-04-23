@@ -133,7 +133,12 @@ export const PlayerContextProvider = ({ children }) => {
 
 
 
-    //Efecto para los eventos de audio 
+
+
+
+
+
+    //Eventos de audio 
     useEffect(() => {
 
         const timeUpdate = () => {
@@ -171,11 +176,19 @@ export const PlayerContextProvider = ({ children }) => {
 
     }, [currentId, playlist])
 
-    useEffect(() => {
-        console.log("Current ID updated:", currentId);
-    }, [currentId]);
 
-    //Efecto para actualizar url de la cancion cuando cambia
+
+
+
+
+
+
+
+
+
+
+
+    //Actualizar url de la cancion cuando cambia
 
     useEffect(() => {
         if (audioRef.current && currentSong?.audio) {
@@ -184,7 +197,7 @@ export const PlayerContextProvider = ({ children }) => {
             audioRef.current.src = currentSong.audio;
             audioRef.current.load();
     
-            if (isPlaying) {
+            
                 const handleCanPlay = () => {
 
                   audioRef.current.play().then(() => {
@@ -197,15 +210,12 @@ export const PlayerContextProvider = ({ children }) => {
                   })
 
 
-
                 audioRef.current.removeEventListener("canplay", handleCanPlay);
                 };
     
                 audioRef.current.addEventListener("canplay", handleCanPlay);
             }
-        } else {
-            console.warn("currentSong o audio no válido", currentSong);
-        }
+       
     }, [currentSong]);
 
 

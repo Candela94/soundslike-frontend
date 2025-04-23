@@ -22,10 +22,10 @@ function Layout() {
   
 
 
-            <Notificaciones />
 
             <div className="Header-main">
             <Header/>
+            <Notificaciones />
             <Outlet />
            </div>
 

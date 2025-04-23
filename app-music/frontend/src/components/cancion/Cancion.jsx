@@ -19,9 +19,19 @@ import { useFetchFavoritos } from "../../../hooks/useFavorites.jsx";
 import { NotificacionesContext } from "../../context/NotificacionesContext.jsx";
 import { useAddSongsToPlaylist } from "../../../hooks/useAddSongs.jsx";
 import { useNavigate } from 'react-router'
+import { BsChevronCompactDown } from "react-icons/bs";
 
 import { useFetch } from "../../../hooks/useFetch.jsx";
 import { usePlayer } from "../../context/PlayerContext.jsx";
+
+
+
+
+
+
+
+
+
 
 export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
 
@@ -33,8 +43,16 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
     const [openMenu, setOpenMenu] = useState(false)
     const navigate = useNavigate()
 
+    const {loadList, togglePlay, currentSong} = usePlayer()
 
-    const {loadList, togglePlay} = usePlayer()
+
+    const handleOpenMenu = () => {
+        setOpenMenu(prevState => !prevState);  
+    }
+    
+    const handleCloseMenu = () => {
+        setOpenMenu(false); 
+    }
 
 
 
@@ -81,22 +99,17 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
 
 
         try {
-            console.log('Añadiendo canción a la playlist', { playlistId, songId: currentSong._id })
+            console.log('Añadiendo canción a la playlist', { playlistId, songId: song._id })
 
             await addSong(playlistId, song._id);
 
 
             mostrarNotificacion('success', 'Canción añadida con éxito')
 
-            setTimeout(() => {
-
-                navigate('/bibliotecas')
-
-            }, 1500)
-
-
-
+         
             setOpenMenu(false)
+
+
 
         } catch (e) {
 
@@ -138,9 +151,11 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
 
                 </div>
 
-                <FaCirclePlus onClick={() => setOpenMenu(!openMenu)} className="Cancion-icono" />
+                <FaCirclePlus onClick={handleOpenMenu} className="Cancion-icono" />
                 {openMenu && (
                     <div className="Menu-add">
+                        <BsChevronCompactDown onClick={handleCloseMenu}/>
+                        <h3 className="Menu-tituloListas">Añadir a tus listas</h3>
                         <ul className='Menu-addUl'>
                             {bibliotecas.map((b) => (
                                 <li className='Menu-addLi' key={b._id} onClick={() => handleAdd(b._id, { nombre, artista, imagen, audio, _id })}>
@@ -319,36 +334,13 @@ export const CancionLike = ({ nombre, artista, imagen, audio, _id }) => {
 
 
 
-    // const handleCancion = () => {
-
-
-    //     if (audioRef.current) {
-
-    //         audioRef.current.src = audio;
-    //         audioRef.current.load();
-
-
-    //         audioRef.current.oncanplay = () => {
-
-    //             audioRef.current.play().catch(error => console.error("Error al reproducir", error))
-    //             setIsPlaying(true)
-    //         }
-    //     }
-
-    //     setCurrentSong({ nombre, artista, imagen, audio, _id })
-    //     console.log('Current song set:', { nombre, artista, imagen, audio, _id });
-    // }
-
-
-
-    //Quitamos canción de favorios
 
     const handleUnLike = async () => {
 
         if (!currentSong?._id) return;
 
         try {
-            await removeFav(currentSong._id);
+            await removeFav(song._id);
             setIsLike(false)
             mostrarNotificacion('success', 'Canción eliminada de favoritos');
 
@@ -402,7 +394,7 @@ export const CancionLike = ({ nombre, artista, imagen, audio, _id }) => {
 
 
 
-export const Listas = ({ nombre, img, pid }) => {
+export const Listas = ({ nombre, pid }) => {
     console.log("PID recibido en Listas:", pid);
 
 

@@ -20,6 +20,7 @@ import { useAddSongsToPlaylist } from '../../../hooks/useAddSongs';
 
 import { useFetchFavoritos } from '../../../hooks/useFavorites';
 import { useFavoritos } from '../../../hooks/useFavorites';
+import { useFetchSongsList } from '../../../hooks/usefetchSongs';
 import { usePlayer } from '../../context/PlayerContext';
 
 
@@ -48,13 +49,17 @@ export const CardReproduccion = () => {
   const { addFav, removeFav } = useFavoritos()
 
 
+ 
 
-
-const {currentSong, isPlaying, togglePlay, Next, Prev , currentTime, duration} = usePlayer()
+const {currentSong,loadList, isPlaying, togglePlay, Next, Prev , currentTime, duration} = usePlayer()
 
 
 //Progreso 
 const progress = duration > 0? (currentTime/duration) * 100 : 0;
+
+
+
+
 
 
 
@@ -191,28 +196,10 @@ const handlePrev = () => {
           </div>
 
           <LuCirclePlus className="Reproductor-iconAdd" onClick={handleOpenMenu} />
-          {
-            openMenu && (
-              <div className='Menu-add' >
-
-
-                <BsChevronCompactDown onClick={handleOpenMenu} className="MenuOpened-addIcon" />
-
-
-                <ul className="MenuOpened-ul">
-                  <h3>Añadir a mi lista</h3>
-                  {
-                    bibliotecas.map((biblioteca) => (
-
-                      <li key={biblioteca._id} onClick={() => handleAdd(biblioteca._id)} className='Galeria-li'>{biblioteca.nombre}</li>
-                    ))}
-                </ul>
-              </div>
-            )
-          }
 
 
         </div>
+          
         <div className="Card-imagen">
           {
             isLike ? (<GoHeartFill className='Card-icon' onClick={handleUnLike} />) : (<GoHeart className='Card-icon' onClick={handleLike} />)
@@ -263,6 +250,26 @@ const handlePrev = () => {
 
 
       </div>
+
+      {
+            openMenu && (
+              <div className='Menu-add' >
+
+
+                <BsChevronCompactDown onClick={handleOpenMenu} className="MenuOpened-addIcon" />
+
+
+                <ul className="Menu-addUl">
+                  <h3 className='Menu-titulosListas'>Añadir a mi lista</h3>
+                  {
+                    bibliotecas.map((biblioteca) => (
+
+                      <li key={biblioteca._id} onClick={() => handleAdd(biblioteca._id)} className='Galeria-li'>{biblioteca.nombre}</li>
+                    ))}
+                </ul>
+              </div>
+            )
+          }
 
 
     </>
