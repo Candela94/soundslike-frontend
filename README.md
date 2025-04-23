@@ -1,8 +1,5 @@
-# app-music-fs
+# SOUNDsLike
 
+SoundsLike es una app de música en la que puedes crear tus propias listas, guardar canciones en ellas, eliminar, añadir a tus favoritos... todo ello a través de las distintas rutas (CRUD de usuarios, canciones, playlists)
 
-tareas pendientes 
-
-- pag home de entrar como invitado
-- pagina error 
-- media querie
+La app ofrece en 

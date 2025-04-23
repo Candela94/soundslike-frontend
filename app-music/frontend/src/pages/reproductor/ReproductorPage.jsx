@@ -7,23 +7,24 @@ import './reproductorpage.css'
 import { CardReproduccion } from "../../components/card-reproduccion/CardReproduccion";
 
 import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
-import { ReproductorContext } from "../../context/ReproductorContext";
-import { useContext, useState } from "react";
+
+import { useContext, useState, useEffect } from "react";
 
 
 import { useFetch } from "../../../hooks/useFetch";
 import { BsChevronCompactDown } from "react-icons/bs";
 import { useAddSongsToPlaylist } from "../../../hooks/useAddSongs";
 import { NotificacionesContext } from "../../context/NotificacionesContext";
+import { usePlayer } from "../../context/PlayerContext";
 
 
 const ReproductorPage = () => {
 
-    const { currentSong} = useContext(ReproductorContext)
+
 
     const { bibliotecas } = useFetch()
 
-  
+
 
     const [openMenu, setOpenMenu] = useState(false)
 
@@ -31,13 +32,33 @@ const ReproductorPage = () => {
 
     const { mostrarNotificacion } = useContext(NotificacionesContext)
 
+    const { currentSong } = usePlayer()
 
-  
+    const [background, setBackground] = useState({
+        backgroundImg: ''
+
+    })
+
+
+    // Efecto para cambiar la imagen de fondo cuando cambia la canción
+    useEffect(() => {
+
+        if (currentSong?.imagen) {
+            setBackground({ backgroundImg: currentSong.imagen })
+        }
+
+
+
+
+    }, [currentSong]);
+
+
+
 
 
     //Función para añadir canciones a una lista 
     const handleAdd = async (playlistId) => {
-       
+
 
         if (!currentSong._id) {
 
@@ -45,14 +66,14 @@ const ReproductorPage = () => {
             return;
         }
 
-        if(!playlistId){
+        if (!playlistId) {
             mostrarNotificacion('error', 'No se ha seleccionado ninguna lista')
             return;
         }
 
 
         try {
-            console.log('Añadiendo canción a la playlist', {playlistId, songId: currentSong._id})
+            console.log('Añadiendo canción a la playlist', { playlistId, songId: currentSong._id })
 
             await addSong(playlistId, currentSong._id);
             mostrarNotificacion('success', 'Canción añadida con éxito')
@@ -69,29 +90,22 @@ const ReproductorPage = () => {
 
 
 
-        
-
-            
 
 
 
 
 
 
+    return (
 
+        <>
 
-
-
-
-
-return (
-
-    <>
-       
 
             <main className="Main-reproductor">
 
-                <img src={currentSong.imagen} alt="fondo" className="Fondo" />
+                {background.backgroundImg && (
+                    <img src={background.backgroundImg} alt="fondo" className="Fondo" />
+                )}
 
 
                 <div className="Main-contenido">
@@ -103,12 +117,12 @@ return (
                 </div>
 
             </main>
-         
 
 
-    </>
 
-);
+        </>
+
+    );
 }
 
 

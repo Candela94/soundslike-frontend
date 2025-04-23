@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { ReproductorContext } from "../../context/ReproductorContext.jsx";
+
 import { CiMenuKebab } from "react-icons/ci";
 import './cancion.css'
 import { RiDeleteBin6Line } from "react-icons/ri";
@@ -21,11 +21,12 @@ import { useAddSongsToPlaylist } from "../../../hooks/useAddSongs.jsx";
 import { useNavigate } from 'react-router'
 
 import { useFetch } from "../../../hooks/useFetch.jsx";
+import { usePlayer } from "../../context/PlayerContext.jsx";
 
 export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
 
 
-    const { setIsPlaying, handlePlay, audioRef, setCurrentSong, currentSong } = useContext(ReproductorContext)
+   
     const { addSong } = useAddSongsToPlaylist()
     const { mostrarNotificacion } = useContext(NotificacionesContext)
     const { bibliotecas, loading, error } = useFetch()
@@ -33,26 +34,29 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
     const navigate = useNavigate()
 
 
-
-    const handleCancion = () => {
-
-
-        if (audioRef.current) {
-
-            audioRef.current.src = audio;
-            audioRef.current.load();
+    const {loadList, togglePlay} = usePlayer()
 
 
-            audioRef.current.oncanplay = () => {
 
-                audioRef.current.play().catch(error => console.error("Error al reproducir", error))
-                setIsPlaying(true)
-            }
-        }
+    // const handleCancion = () => {
 
-        setCurrentSong({ nombre, artista, imagen, audio, _id })
-        console.log('Current song set:', { nombre, artista, imagen, audio, _id });
-    }
+
+    //     if (audioRef.current) {
+
+    //         audioRef.current.src = audio;
+    //         audioRef.current.load();
+
+
+    //         audioRef.current.oncanplay = () => {
+
+    //             audioRef.current.play().catch(error => console.error("Error al reproducir", error))
+    //             setIsPlaying(true)
+    //         }
+    //     }
+
+    //     setCurrentSong({ nombre, artista, imagen, audio, _id })
+    //     console.log('Current song set:', { nombre, artista, imagen, audio, _id });
+    // }
 
 
 
@@ -104,13 +108,25 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
     }
 
 
+
+
+
+    const handlePlaySong = () => {
+        if(!audio) {
+            mostrarNotificacion('error', 'No hay audio disponible')
+        }
+        const selectedSong = {nombre, artista, imagen, audio, _id};
+        loadList([selectedSong],0)
+        togglePlay()
+    }
+
     return (
 
 
         <>
             <div className="Cancion" tabIndex="0">
 
-                <div className="Cancion-imgTexto" onClick={handleCancion}>
+                <div className="Cancion-imgTexto"  onClick={handlePlaySong}>
 
 
                     <img src={imagen} alt="portada" className="Cancion-img" />
@@ -155,7 +171,7 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
 export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
 
-    const { setIsPlaying, handlePlay, audioRef, setCurrentSong } = useContext(ReproductorContext)
+  
 
     const [confirmacion, setConfirmacion] = useState(false)
 
@@ -164,6 +180,18 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
     const { pid } = useParams()
 
+    const {loadList, togglePlay} = usePlayer()
+
+
+
+    const handlePlaySong = () => {
+        if(!audio) {
+            mostrarNotificacion('error', 'No hay audio disponible')
+        }
+        const selectedSong = {nombre, artista, imagen, audio, _id};
+        loadList([selectedSong],0)
+        togglePlay()
+    }
 
 
 
@@ -198,25 +226,6 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
     }
 
 
-    const handleCancion = () => {
-
-
-        if (audioRef.current) {
-
-            audioRef.current.src = audio;
-            audioRef.current.load();
-
-
-            audioRef.current.oncanplay = () => {
-
-                audioRef.current.play().catch(error => console.error("Error al reproducir", error))
-                setIsPlaying(true)
-            }
-        }
-
-        setCurrentSong({ nombre, artista, imagen, audio, _id })
-        console.log('Current song:', { nombre, artista, imagen, audio, _id });
-    }
 
 
 
@@ -228,7 +237,7 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
             <div className="Cancion" tabIndex="0" >
 
-                <div className="Cancion-imgTexto" onClick={handleCancion}>
+                <div className="Cancion-imgTexto" onClick={handlePlaySong}>
 
 
                     <img src={imagen} alt="portada" className="Cancion-img" />
@@ -281,14 +290,26 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 export const CancionLike = ({ nombre, artista, imagen, audio, _id }) => {
 
 
-    const { setIsPlaying, handlePlay, audioRef, setCurrentSong, currentSong } = useContext(ReproductorContext)
+   
     const { removeFav, favoritos } = useFavoritos()
     const { getFavoritos } = useFetchFavoritos()
     const { mostrarNotificacion } = useContext(NotificacionesContext)
     const [isLike, setIsLike] = useState(false)
 
-
-
+    
+    
+    
+    const {loadList, togglePlay} = usePlayer()
+    
+    
+    const handlePlaySong = () => {
+        if(!audio) {
+            mostrarNotificacion('error', 'No hay audio disponible')
+        }
+        const selectedSong = {nombre, artista, imagen, audio, _id};
+        loadList([selectedSong],0)
+        togglePlay()
+    }
 
 
     useEffect(() => {
@@ -298,25 +319,25 @@ export const CancionLike = ({ nombre, artista, imagen, audio, _id }) => {
 
 
 
-    const handleCancion = () => {
+    // const handleCancion = () => {
 
 
-        if (audioRef.current) {
+    //     if (audioRef.current) {
 
-            audioRef.current.src = audio;
-            audioRef.current.load();
+    //         audioRef.current.src = audio;
+    //         audioRef.current.load();
 
 
-            audioRef.current.oncanplay = () => {
+    //         audioRef.current.oncanplay = () => {
 
-                audioRef.current.play().catch(error => console.error("Error al reproducir", error))
-                setIsPlaying(true)
-            }
-        }
+    //             audioRef.current.play().catch(error => console.error("Error al reproducir", error))
+    //             setIsPlaying(true)
+    //         }
+    //     }
 
-        setCurrentSong({ nombre, artista, imagen, audio, _id })
-        console.log('Current song set:', { nombre, artista, imagen, audio, _id });
-    }
+    //     setCurrentSong({ nombre, artista, imagen, audio, _id })
+    //     console.log('Current song set:', { nombre, artista, imagen, audio, _id });
+    // }
 
 
 
@@ -349,7 +370,7 @@ export const CancionLike = ({ nombre, artista, imagen, audio, _id }) => {
         <>
             <div className="Cancion" tabIndex="0">
 
-                <div className="Cancion-imgTexto" onClick={handleCancion}>
+                <div className="Cancion-imgTexto" onClick={handlePlaySong}>
 
 
                     <img src={imagen} alt="portada" className="Cancion-img" />

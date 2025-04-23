@@ -82,78 +82,78 @@ export const useFetchSongsList = (pid) => {
 
     const [canciones, setCanciones] = useState([])
     const [nombrePlaylist, setNombrePlaylist] = useState("")
-    const [coverImage, setCoverImage] = useState("") 
+    const [coverImage, setCoverImage] = useState("")
 
     useEffect(() => {
 
-if(pid) {
-
-    console.log('la lista es', pid)
-
-
-
-    const songsList = async () => {
-
-
-        const token = localStorage.getItem('token')
-
-
-        try {
+        if (pid) {
+            if (!pid) return
 
 
 
 
-            const response = await fetch(`${VITE_URL}/api/v1/playlists/${pid}/canciones`, {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-
-            })
+            const songsList = async () => {
 
 
-            if (!response.ok) {
-                throw new Error(`Error:, ${response.status}`)
+                const token = localStorage.getItem('token')
+
+
+                try {
+
+
+
+
+                    const response = await fetch(`${VITE_URL}/api/v1/playlists/${pid}/canciones`, {
+                        method: 'GET',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': `Bearer ${token}`
+                        },
+
+                    })
+
+
+                    if (!response.ok) {
+                        throw new Error(`Error:, ${response.status}`)
+                    }
+
+                    const data = await response.json();
+                    console.log('response data', data)
+
+                    setCanciones(data.canciones);
+                    setNombrePlaylist(data.nombre)
+                    setCoverImage(data.coverImage)
+
+
+                } catch (e) {
+                    setError(e.message || 'Error al obtener canciones');
+                    setLoading(false);
+
+                } finally {
+                    setLoading(false)
+                }
+
+
+
+
+
+
+
             }
 
-            const data = await response.json();
-            console.log('response data', data)
-
-            setCanciones(data.canciones);
-            setNombrePlaylist(data.nombre)
-            setCoverImage(data.coverImage)
+            songsList()
 
 
-        } catch (e) {
-            setError(e.message || 'Error al obtener canciones');
-            setLoading(false);
-
-        } finally {
-            setLoading(false)
         }
 
-
-      
-
-
-
-
-    }
-
-    songsList()
-
-
-}
-
-    }, [pid, VITE_URL] )
+    }, [pid, VITE_URL])
 
 
 
 
 
 
-    return { canciones, loading, error, nombrePlaylist , coverImage};
+    return { canciones, loading, error, nombrePlaylist, coverImage };
 }
 
 

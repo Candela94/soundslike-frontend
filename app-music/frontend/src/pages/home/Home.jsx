@@ -6,7 +6,6 @@ import { CardTendencias } from '../../components/cards/Cards';
 import { Header } from '../../components/header/Header';
 import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
 
-import { CardAnimo } from '../../components/cards/Cards';
 import { IoMdHappy } from "react-icons/io";
 import { GoHeart } from "react-icons/go";
 import { FaBoltLightning } from "react-icons/fa6";
@@ -97,10 +96,12 @@ const Home = () => {
                                                     } className="Galeria Galeria-li">
                                                         <CardTendencias
 
-                                                            img={song.imagen}
+                                                            imagen={song.imagen}
                                                             nombre={song.nombre}
                                                             artista={song.artista}
-                                                            cancion={song}
+                                                            audio={song.audio}
+                                                            _id={song._id}
+                                                           
                                                         />
                                                     </li>
 

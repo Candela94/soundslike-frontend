@@ -1,7 +1,9 @@
 import './reproductor.css'
 import { FaPlay } from "react-icons/fa";
 import { useContext } from 'react';
-import { ReproductorContext } from '../../context/ReproductorContext';
+
+import { usePlayer } from '../../context/PlayerContext';
+
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { HiMiniPause } from "react-icons/hi2";
 import { NavLink } from 'react-router';
@@ -10,7 +12,9 @@ import { NavLink } from 'react-router';
 
 export const Reproductor = () => {
 
-    const { isPlaying, handlePlay, currentSong } = useContext(ReproductorContext)
+    const {currentSong, isPlaying, togglePlay} = usePlayer()
+
+  
 
 
     return (
@@ -30,7 +34,7 @@ export const Reproductor = () => {
 
 
 
-                <button onClick={handlePlay} className='Btn-control'>{isPlaying ? <HiMiniPause /> : <TbPlayerPlayFilled />}</button>
+                <button  className='Btn-control' onClick={togglePlay}>{isPlaying ?  <HiMiniPause/> : <TbPlayerPlayFilled/>}</button>
 
 
 

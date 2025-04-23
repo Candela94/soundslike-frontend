@@ -17,7 +17,7 @@ const SeccionPlayLists = () => {
     const {pid} = useParams();
     console.log('id de la playlist recibido', pid)
     const {canciones, loading, error, nombrePlaylist, coverImage } = useFetchSongsList(pid)
-
+  const imgDefault = '../img/default.jpg'
 
 
     return ( 
@@ -30,7 +30,7 @@ const SeccionPlayLists = () => {
 
             <main className="Main-cancionesListas">
                 <div className="Cabecera-img">
-                    <img src= {coverImage} alt="portada" className="Cabecera-img" />
+                    <img src= {coverImage || imgDefault} alt="portada" className="Cabecera-img" />
                   
                 <h1 className="Cabecera">SOUNDsLIKE {nombrePlaylist}</h1>
                 </div>
@@ -62,7 +62,7 @@ const SeccionPlayLists = () => {
                             canciones.map((c) => {
                                 return(
 
-                                    <li className="Galeria-li" key={c._id}><Cancion imagen={c.imagen} nombre={c.nombre} artista={c.artista}/></li>
+                                    <li className="Galeria-li" key={c._id}><Cancion imagen={c.imagen} nombre={c.nombre} artista={c.artista} audio={c.audio}/></li>
                                     
 
                                 )

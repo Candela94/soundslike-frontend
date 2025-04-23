@@ -69,8 +69,8 @@ export const Header = () => {
 
                 </nav>
 
+            <MenuLateral opened={opened} onClose={() => setOpened(false)} />
             </header>
-            <MenuLateral opened={opened} />
 
         </>
     );

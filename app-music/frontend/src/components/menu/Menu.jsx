@@ -12,12 +12,11 @@ import { NotificacionesContext } from '../../context/NotificacionesContext';
 
 
 
-export const MenuLateral = ({opened}) => {
+export const MenuLateral = ({opened, onClose}) => {
 
-const {LogOut} =useContext(UserContext)
+const {LogOut, userData} =useContext(UserContext)
 const {mostrarNotificacion} = useContext(NotificacionesContext)
 const navigate = useNavigate()
-
 
 
 
@@ -28,19 +27,25 @@ const handleLogut= () => {
 
 
     localStorage.removeItem("token");
+    localStorage.removeItem("userData");
+    localStorage.removeItem("userId");
     LogOut()
 
     mostrarNotificacion("info", '¡Hasta pronto!')
+    navigate("/login")
+    onClose();
    
 
-    setTimeout(() => {
-
-        navigate('/')
-
-
-    },1500)
    
 }
+
+
+
+
+const handleLogin = () => {
+    onClose();
+    navigate("/login");
+};
 
     return ( 
 
@@ -53,7 +58,7 @@ const handleLogut= () => {
             <ul className="Menu-lateralUl">
 
             <li className="Menu-lateralLi"><NavLink to="/perfil">
-                <div className="Nav-content">
+                <div className="Nav-content" onClick={onClose}>
                 <FaUser />
                 <p>Mi perfil </p>
                 </div>
@@ -61,18 +66,12 @@ const handleLogut= () => {
             </li>
 
 
-            <li className="Menu-lateralLi"><NavLink to="">
-                <div className="Nav-content">
-                <FiSettings />
-                <p>Configuración </p>
-                </div>
-            </NavLink>
-            </li>
+          
 
 
 
             <li className="Menu-lateralLi"><NavLink to="/info">
-                <div className="Nav-content">
+                <div className="Nav-content" onClick={onClose}>
                 <FaQuestion />
                 <p>Información</p>
                 </div>
@@ -80,10 +79,10 @@ const handleLogut= () => {
             </li>
 
 
-            <li className="Menu-lateralLi"><NavLink to="">
-                <div className="Nav-content" onClick={handleLogut}>
+            <li className="Menu-lateralLi"><NavLink to="/login">
+                <div className="Nav-content" onClick={userData? handleLogut : handleLogin}>
                 <LuLogOut />
-                <p>Log out</p>
+                <p>{userData? 'Log out' : 'Log in'}</p>
                 </div>
             </NavLink>
             </li>

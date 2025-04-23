@@ -7,19 +7,19 @@
     gap: 1rem;
 
     position: fixed;
-    top: 70px;
-    left: -250px; 
-
+      top: 190px;
+      left: -250px;
+  
     width: 200px;
     height: 40%;
-
-    background-color: var(--background-secondary);
+    background-color: var(--background-color);
     box-shadow: 3px 3px 8px var(--secondary);
     
     color: white;
 
     transition: left 1s ease;
     border-radius: 0 20px 20px 0;
+    z-index: 1;
 
   }
   
@@ -35,6 +35,8 @@
 
   .Menu-lateralUl li{
     list-style: none;
+    border-bottom: 0.4px solid var(--secondary);
+   
 
   }
 
@@ -58,3 +60,57 @@
   .Nav-content:active{
     transform: scale(0.9);
   }
+
+
+
+
+
+  /* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+  .Menu-lateral{
+
+    position: fixed;
+    top: 230px;
+   
+
+  }
+
+
+  .Menu-lateral.open{
+    left: 108px;
+    z-index: 1;
+
+  }
+  
+}
+
+
+
+
+/* Escritorio */
+@media (min-width: 1025px) {
+
+
+  .Menu-lateral{
+
+    position: fixed;
+    top: 250px;
+   
+
+  }
+
+
+  .Menu-lateral.open{
+    left: 124px;
+    z-index: 1;
+
+  }
+
+
+}

@@ -7,11 +7,13 @@ import { RouterProvider } from 'react-router'
 import router from './lib/routes/router.jsx'
 import { NotificacionesContextProvider } from './context/NotificacionesContext.jsx'
 import { UserContextProvider } from './context/UserContext.jsx'
-import { ReproductorContextProvider } from './context/ReproductorContext.jsx'
+import { PlayerContextProvider } from './context/PlayerContext.jsx'
+
 
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <PlayerContextProvider>
     <UserContextProvider>
       <NotificacionesContextProvider>
   
@@ -24,7 +26,7 @@ createRoot(document.getElementById('root')).render(
       </NotificacionesContextProvider>
     </UserContextProvider>
 
-
+    </PlayerContextProvider>
 
   </StrictMode>,
 )

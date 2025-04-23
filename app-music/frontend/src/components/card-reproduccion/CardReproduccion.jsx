@@ -2,8 +2,8 @@
 
 import './card-reproduccion.css'
 
-import { useState, useRef, useEffect, useContext } from 'react';
-import { ReproductorContext } from '../../context/ReproductorContext';
+import { useState, useEffect, useContext } from 'react';
+
 import { TbPlayerTrackPrevFilled } from "react-icons/tb";
 import { BsChevronCompactDown } from "react-icons/bs";
 
@@ -20,6 +20,7 @@ import { useAddSongsToPlaylist } from '../../../hooks/useAddSongs';
 
 import { useFetchFavoritos } from '../../../hooks/useFavorites';
 import { useFavoritos } from '../../../hooks/useFavorites';
+import { usePlayer } from '../../context/PlayerContext';
 
 
 
@@ -30,7 +31,7 @@ export const CardReproduccion = () => {
 
   //Obtenemos valores del contexto
 
-  const { setCurrentSong, currentSong, progress, next, prev , isPlaying, handlePlay} = useContext(ReproductorContext)
+ 
 
   const [openMenu, setOpenMenu] = useState(false)
 
@@ -49,17 +50,37 @@ export const CardReproduccion = () => {
 
 
 
+const {currentSong, isPlaying, togglePlay, Next, Prev , currentTime, duration} = usePlayer()
+
+
+//Progreso 
+const progress = duration > 0? (currentTime/duration) * 100 : 0;
+
+
+
+//Play, Next y prev   !
+const handlePlay = () => {
+  console.log("Play/Pause pulsado");
+  togglePlay()
+}
+
+
+const handleNext = () => {
+  console.log("Next pulsado");
+  Next()
+}
+
+
+const handlePrev = () => {
+  console.log("Prev pulsado");
+  Prev()
+}
+
 
   useEffect(() => {
 
     getFavoritos();
   }, [currentSong]);
-
-
-
-
-
-
 
 
 
@@ -97,22 +118,6 @@ export const CardReproduccion = () => {
 
 
   }
-
-
-  const handleNext = () => {
-    console.log("handleNext clicado");
-    next();
-
-  }
-
-
-  const handlePrev = () => {
-    console.log("handlePrev clicado");
-    prev()
-  }
-
-
-
 
 
 
@@ -181,8 +186,8 @@ export const CardReproduccion = () => {
         <div className="Reproductor-cabecera">
 
           <div className="Reproductor-infoCancion">
-            <h2 className="Reproductor-song">{currentSong.nombre}</h2>
-            <h4 className="Reproductor-artist">{currentSong.artista}</h4>
+            <h2 className="Reproductor-song">{currentSong?.nombre || 'Selecciona una canción'}</h2>
+            <h4 className="Reproductor-artist">{currentSong?.artista || ''}</h4>
           </div>
 
           <LuCirclePlus className="Reproductor-iconAdd" onClick={handleOpenMenu} />
@@ -214,7 +219,12 @@ export const CardReproduccion = () => {
           }
 
           {/* imagen */}
-          <img src={currentSong.imagen} alt="imagen" className="Reproductor-imagen" />   
+
+          {currentSong?.imagen && (
+
+            <img src={currentSong?.imagen} alt= 'portada' className="Reproductor-imagen" />   
+
+          )}
 
 
 
@@ -237,7 +247,7 @@ export const CardReproduccion = () => {
 
             <button className="Btn-control" onClick={handlePrev}><TbPlayerTrackPrevFilled /></button>
 
-            <button  className='Btn-control' onClick={handlePlay}>{isPlaying ? <HiMiniPause /> : <TbPlayerPlayFilled />}</button>
+            <button  className='Btn-control' onClick={handlePlay} >{isPlaying ? <HiMiniPause /> : <TbPlayerPlayFilled />}</button>
 
             <button className="Btn-control" onClick={handleNext}><TbPlayerTrackNextFilled /></button>
 
