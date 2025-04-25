@@ -43,21 +43,22 @@ const Perfil = () => {
 
 
 
-//Funcion para editar
+    //Funcion para editar
     const handleEdit = (info) => {
-        setEditing(true)
+        setEditing(true);
         setEditData({
-            ...editData,
-            [info]:userData[info]
-        })
+            nombre: userData.nombre || '',
+            username: userData.username || '',
+            email: userData.email || ''
+        });
     }
 
 
     const handleChange = (e) => {
-        editData({
+        setEditData({
             ...editData,
             [e.target.name]: e.target.value
-        })
+        });
     }
 
 
@@ -67,8 +68,8 @@ const Perfil = () => {
         const userId = localStorage.getItem('userId');
         if (userId) {
             try {
-                await updateUsuario(userId, editData); 
-                setEditing(false); 
+                await updateUsuario(userId, editData);
+                setEditing(false);
             } catch (error) {
                 console.error("Error al actualizar usuario", error);
             }
@@ -79,12 +80,12 @@ const Perfil = () => {
 
 
     const handleCancel = () => {
-        setEditing(false); 
+        setEditing(false);
     };
 
 
 
-    
+
 
 
     const handleConfirmar = () => {
@@ -192,11 +193,19 @@ const Perfil = () => {
                                     <div className="Perfil-input">
 
                                         <div className="Perfil-informacion">
-                                            <p className="Perfil-texto"> {
-                                                userData && userData.nombre
-                                            } </p>
+                                            {editing ? (
+                                                <input
+                                                    type="text"
+                                                    name="nombre"
+                                                    value={editData.nombre}
+                                                    onChange={handleChange}
+                                                    placeholder="Nombre"
+                                                />
+                                            ) : (
+                                                <p className="Perfil-texto">{userData && userData.nombre}</p>
+                                            )}
                                         </div>
-                                        
+
 
                                     </div>
 
@@ -206,21 +215,29 @@ const Perfil = () => {
 
                             <li>
                                 <div className='Perfil-item'>
-                                    <FaUser  />
+                                    <FaUser />
 
 
 
                                     <div className="Perfil-input">
                                         <div className="Perfil-informacion">
-                                            <p className="Perfil-texto"> {
-                                                userData && userData.username
-                                        }</p>
+                                            {editing ? (
+                                                <input
+                                                    type="text"
+                                                    name="username"
+                                                    value={editData.username}
+                                                    onChange={handleChange}
+                                                    placeholder="Nombre de usuario"
+                                                />
+                                            ) : (
+                                                <p className="Perfil-texto">{userData && userData.username}</p>
+                                            )}
                                         </div>
-                                       
 
 
 
-                                       
+
+
                                     </div>
                                 </div>
                             </li>
@@ -234,12 +251,22 @@ const Perfil = () => {
                                     <div className="Perfil-input">
 
                                         <div className="Perfil-informacion">
-                                            <p className="Perfil-texto">{userData && userData.email} </p>
+                                            {editing ? (
+                                                <input
+                                                    type="email"
+                                                    name="email"
+                                                    value={editData.email}
+                                                    onChange={handleChange}
+                                                    placeholder="Email"
+                                                />
+                                            ) : (
+                                                <p className="Perfil-texto">{userData && userData.email}</p>
+                                            )}
                                         </div>
 
 
 
-                                
+
 
                                     </div>
                                 </div>
@@ -249,30 +276,19 @@ const Perfil = () => {
 
 
 
-                            <div onClick={handleConfirmar} className='Perfil-botones'>
 
 
-                                <Button variant='secondary'>Eliminar cuenta</Button>
+
+                            <div className='Perfil-botones' style={{ display: 'flex', gap: '10px', marginTop: '1rem' }}>
+                                {editing ? (
+                                    <>
+                                        <Button variant='primary' onClick={handleSave}>Guardar</Button>
+                                        <Button variant='secondary' onClick={handleCancel}>Cancelar</Button>
+                                    </>
+                                ) : (
+                                    <Button variant='primary' onClick={handleEdit}><FiEdit /> Editar</Button>
+                                )}
                             </div>
-                             
-
-
-                            {
-                                confirmacion && (
-                                    <div className="Confirmacion-contenido">
-                                        <IoClose onClick={handleCancelarConfirmacion} className="Confirmacion-close" />
-                                        <p className='Confirmacion-p'>¿Estás segurx de que quieres abandonarnos?</p>
-
-
-                                        <div className='Confirmacion-btn' onClick={handleEliminar} >
-                                            Eliminar cuenta
-                                        </div>
-
-                                    </div>
-                                )
-                            }
-
-
 
 
 
