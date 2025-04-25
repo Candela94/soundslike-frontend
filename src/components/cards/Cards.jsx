@@ -26,11 +26,16 @@ export const CardTendencias = ({nombre, artista, imagen, audio, _id, allSongs, i
 
 
     const handlePlaySong = () => {
-        if(!audio) {
-            mostrarNotificacion('error', 'No hay audio disponible')
+        if (allSongs && allSongs.length > 0) {
+            loadList(allSongs, index || 0)
+
+
+        }else {
+
+            console.error('No hay canciones para reproducir')
         }
-        const selectedSong = {nombre, artista, imagen, audio, _id};
-        loadList([selectedSong],0)
+
+       
       
     }
 
@@ -64,6 +69,10 @@ export const CardTendencias = ({nombre, artista, imagen, audio, _id, allSongs, i
 
 
 export const CardRecomendaciones = ({ img, mix }) => {
+
+
+
+
     return (
         <>
             <div className="CardRecomendaciones">

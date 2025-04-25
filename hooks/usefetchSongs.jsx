@@ -91,7 +91,7 @@ export const useFetchSongsList = (pid) => {
             setLoading(false);
             return;
         }
-        console.log('PID recibido:', pid);
+   
 
             const songsList = async () => {
 

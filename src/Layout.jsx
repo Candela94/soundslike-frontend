@@ -25,9 +25,9 @@ function Layout() {
 
       <div className="Header-main">
         <Header />
-        {/* <div className="Notificaciones-container" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
+        <div className="Notificaciones-container" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)' }}>
           <Notificaciones />
-        </div> */}
+        </div>
         <Outlet />
       </div>
 

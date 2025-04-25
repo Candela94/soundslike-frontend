@@ -9,6 +9,10 @@ import { CancionAgregada } from '../../components/cancion/Cancion';
 import { Button } from '../../components/buttons/Button';
 
 
+
+
+//Listas creadas por usuario
+
 const Listas = () => {
 
 
@@ -100,7 +104,7 @@ const Listas = () => {
 
                         ) : error ? (
 
-                            
+
                             <p>Error al cargar canciones</p>
 
                         ) : bibliotecaId.length > 0 ? (

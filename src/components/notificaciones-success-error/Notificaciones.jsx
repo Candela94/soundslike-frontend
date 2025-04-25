@@ -5,6 +5,9 @@ import { NotificacionesContext } from "../../context/NotificacionesContext.jsx";
 import './notificaciones.css'
 import { FcOk } from "react-icons/fc";
 import { MdOutlineCancel } from "react-icons/md";
+import { TbMoodSmileDizzy } from "react-icons/tb";
+
+
 
 export const Notificaciones = ({children}) => {
 
@@ -27,22 +30,19 @@ export const Notificaciones = ({children}) => {
     }, [notificacion])
 
     if(!children && !notificacion.message) return null;
+    let notificacionType = '';
+    let notificacionIcono = null;
 
-
-    let notificacionType = ''
-    if(notificacion.type === 'success') {
-        notificacionType = 'Notificacion-success'
-
+    if (notificacion.type === 'success') {
+        notificacionType = 'Notificacion-success';
+        notificacionIcono = <FcOk />;
     } else if (notificacion.type === 'error') {
-
-        notificacionType = 'Notificacion-error'
-
-    } else if (notificacion.type === 'info'){
-
-          notificacionType = 'Notificacion-info'
-
+        notificacionType = 'Notificacion-error';
+        notificacionIcono = <MdOutlineCancel />;
+    } else if (notificacion.type === 'info') {
+        notificacionType = 'Notificacion-info';
+        notificacionIcono = <TbMoodSmileDizzy />; 
     }
-    const notificacionIcono = notificacion.type === 'success' ? (<FcOk />) : (<MdOutlineCancel />)
 
 
     return ( 

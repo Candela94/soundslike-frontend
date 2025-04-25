@@ -44,7 +44,7 @@ export const PlayerContextProvider = ({ children }) => {
 
     //Función para cargar la playlist 
     const loadList = (songs, id = 0) => {
-        console.log("Cargando playlist:", songs);
+   
         if (!songs || !songs.length ) {
             console.warn("Canción inválida o sin audio:", songs[id]);
             return;
@@ -54,7 +54,7 @@ export const PlayerContextProvider = ({ children }) => {
         setPlaylist(songs)
         setCurrentId(id)
         setCurrentSong(songs[id])
-        console.log("Playlist cargada:", songs.length, "canciones, índice:", id);
+       
     }
 
 
