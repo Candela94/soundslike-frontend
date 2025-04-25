@@ -121,6 +121,9 @@ useEffect(() => {
 
             <main className="Main-reproductor">
 
+
+            {/* Background de imagenes de canciones */}
+
                 {background.backgroundImg && (
                     <img src={background.backgroundImg} alt="fondo" className="Fondo" />
                 )}
