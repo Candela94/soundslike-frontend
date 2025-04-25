@@ -16,7 +16,7 @@ import { NotificacionesContext } from '../../context/NotificacionesContext.jsx';
 
 
 
-export const CardTendencias = ({nombre, artista, imagen, audio, _id}) => {
+export const CardTendencias = ({nombre, artista, imagen, audio, _id, allSongs, index}) => {
 
   
     const {loadList} = usePlayer()

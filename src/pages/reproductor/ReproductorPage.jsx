@@ -16,28 +16,46 @@ import { BsChevronCompactDown } from "react-icons/bs";
 import { useAddSongsToPlaylist } from "../../../hooks/useAddSongs";
 import { NotificacionesContext } from "../../context/NotificacionesContext";
 import { usePlayer } from "../../context/PlayerContext";
+import { useFetchSongs } from "../../../hooks/usefetchSongs";
 
 
 const ReproductorPage = () => {
 
 
 
-    const { bibliotecas } = useFetch()
-
-
+   
 
     const [openMenu, setOpenMenu] = useState(false)
 
     const { addSong, loading, error, success } = useAddSongsToPlaylist();
+    const {canciones,load, err} = useFetchSongs()
 
     const { mostrarNotificacion } = useContext(NotificacionesContext)
 
-    const { currentSong } = usePlayer()
+    const { currentSong,loadList } = usePlayer()
 
     const [background, setBackground] = useState({
         backgroundImg: ''
 
     })
+
+
+
+
+
+//Cargar lista cuando haya canciones
+useEffect(() => {
+
+    
+    if (canciones.length > 0 && currentSong == null) {
+      loadList(canciones, 0); // Empieza desde la primera canción
+    }
+  }, [canciones]);
+
+
+
+
+
 
 
     // Efecto para cambiar la imagen de fondo cuando cambia la canción

@@ -89,7 +89,7 @@ const Home = () => {
                                     <ul className="Galeria-tendencias">
 
                                         {
-                                            canciones.map((song) => {
+                                            canciones.map((song, index) => {
                                                 console.log(song)
                                                 return (
                                                     <li key={song._id
@@ -101,6 +101,8 @@ const Home = () => {
                                                             artista={song.artista}
                                                             audio={song.audio}
                                                             _id={song._id}
+                                                            allSongs = {canciones}
+                                                            index = {index}
                                                            
                                                         />
                                                     </li>

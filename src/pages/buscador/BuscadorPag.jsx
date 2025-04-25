@@ -39,10 +39,17 @@ const BuscadorPag = () => {
 
                                 <ul className="Galeria-ul">
                                     {
-                                        cancionesFiltradas.map((cancion) => {
+                                        cancionesFiltradas.map((cancion, index) => {
 
                                             return (
-                                            <li className="Galeria-li" key={cancion._id}><Cancion _id={cancion._id} nombre={cancion.nombre} artista={cancion.artista} imagen={cancion.imagen} audio={cancion.audio}/></li>   // audio= {cancion.audio}
+                                            <li className="Galeria-li" key={cancion._id}><Cancion _id={cancion._id}
+                                             nombre={cancion.nombre}
+                                             artista={cancion.artista} 
+                                             imagen={cancion.imagen} 
+                                             audio={cancion.audio}
+                                              allSongs={cancionesFiltradas} 
+                                              index={index}/>
+                                             </li>   // audio= {cancion.audio}
 
                                         )})
                                     }

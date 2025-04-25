@@ -16,7 +16,7 @@ const Info = () => {
     <>
 
      
-        <main className="About">
+        <main className="Main-about">
 
 
 

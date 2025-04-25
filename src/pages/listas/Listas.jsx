@@ -100,6 +100,7 @@ const Listas = () => {
 
                         ) : error ? (
 
+                            
                             <p>Error al cargar canciones</p>
 
                         ) : bibliotecaId.length > 0 ? (
@@ -107,8 +108,14 @@ const Listas = () => {
                             <ul className="Galeria-ul">
 
                                 {
-                                    bibliotecaId.map((cancion) => (
-                                        <li key={cancion._id} className="Galeria-li"><CancionAgregada _id={cancion._id} nombre={cancion.nombre} artista={cancion.artista} imagen={cancion.imagen} audio={cancion.audio} /></li>
+                                    bibliotecaId.map((cancion, index) => (
+                                        <li key={cancion._id} className="Galeria-li"><CancionAgregada _id={cancion._id}
+                                         nombre={cancion.nombre} 
+                                         artista={cancion.artista} 
+                                         imagen={cancion.imagen} 
+                                         audio={cancion.audio}
+                                         allSongs={bibliotecaId} 
+                                         index={index} /></li>
                                     ))
                                 }
 

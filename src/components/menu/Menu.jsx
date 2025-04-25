@@ -8,6 +8,8 @@ import { FaQuestion } from "react-icons/fa";
 import { useContext, useState } from 'react';
 import { UserContext } from '../../context/UserContext';
 import { NotificacionesContext } from '../../context/NotificacionesContext';
+import { PlayerContextProvider } from '../../context/PlayerContext';
+
 
 
 
@@ -23,6 +25,7 @@ const navigate = useNavigate()
 
 
 
+
 const handleLogut= () => {
 
 
@@ -32,6 +35,7 @@ const handleLogut= () => {
     LogOut()
 
     mostrarNotificacion("info", '¡Hasta pronto!')
+   
     navigate("/login")
     onClose();
    

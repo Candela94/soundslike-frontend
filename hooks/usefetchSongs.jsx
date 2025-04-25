@@ -7,9 +7,9 @@ export const useFetchSongs = () => {
 
 
     const VITE_URL = import.meta.env.VITE_URL
-    const [loading, setLoading] = useState(true);
+    const [load, setLoad] = useState(true);
 
-    const [error, setError] = useState(null);
+    const [err, setErr] = useState(null);
     const [canciones, setCanciones] = useState([])
 
 
@@ -42,11 +42,11 @@ export const useFetchSongs = () => {
 
 
         } catch (e) {
-            setError(e.message || 'Error al obtener canciones');
-            setLoading(false);
+            setErr(e.message || 'Error al obtener canciones');
+            setLoad(false);
 
         } finally {
-            setLoading(false)
+            setLoad(false)
         }
 
 
@@ -60,7 +60,7 @@ export const useFetchSongs = () => {
 
     return {
 
-        canciones, loading, error
+        canciones, load, err
     };
 
 

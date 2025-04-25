@@ -61,8 +61,15 @@ const Favoritos = () => {
 
                                     <ul className="Galeria-ul">
 
-                                        {favoritos.map((f) => (
-                                            <li className="Galeria-li" key={f._id}> <CancionLike nombre={f.nombre} artista={f.artista} imagen={f.imagen} _id={f._id} audio={f.audio}  /></li>
+                                        {favoritos.map((f, index) => (
+                                            <li className="Galeria-li" key={f._id}> <CancionLike 
+                                            nombre={f.nombre} 
+                                            artista={f.artista} 
+                                            imagen={f.imagen}
+                                             _id={f._id} 
+                                             audio={f.audio} 
+                                             allSongs={favoritos}
+                                             index={index} /></li>
                                         ))
                                         }
                                     </ul>

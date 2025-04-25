@@ -33,7 +33,7 @@ import { usePlayer } from "../../context/PlayerContext.jsx";
 
 
 
-export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
+export const Cancion = ({ nombre, artista, imagen, audio, _id, allSongs, index }) => {
 
 
    
@@ -55,11 +55,18 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
     }
 
 
+    //Funcion para cargar toda la lista de canciones y establecer el id de la canción
+    const handlePlay = () => {
+        loadList(allSongs, index)
+    }
 
-    // const handleCancion = () => {
 
 
-    //     if (audioRef.current) {
+
+
+
+
+
 
     //         audioRef.current.src = audio;
     //         audioRef.current.load();
@@ -124,22 +131,22 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
 
 
 
-    const handlePlaySong = () => {
-        if(!audio) {
-            mostrarNotificacion('error', 'No hay audio disponible')
-        }
-        const selectedSong = {nombre, artista, imagen, audio, _id};
-        loadList([selectedSong],0)
-        togglePlay()
-    }
+    // const handlePlaySong = () => {
+    //     if(!audio) {
+    //         mostrarNotificacion('error', 'No hay audio disponible')
+    //     }
+    //     const selectedSong = {nombre, artista, imagen, audio, _id};
+    //     loadList([selectedSong],0)
+    //     togglePlay()
+    // }
 
     return (
 
 
         <>
-            <div className="Cancion" tabIndex="0">
+            <div className="Cancion" tabIndex="0" >
 
-                <div className="Cancion-imgTexto"  onClick={handlePlaySong}>
+                <div className="Cancion-imgTexto"  onClick={handlePlay}>
 
 
                     <img src={imagen} alt="portada" className="Cancion-img" />
@@ -183,7 +190,7 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id }) => {
 
 
 
-export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
+export const CancionAgregada = ({ nombre, artista, imagen, audio, _id , allSongs, index }) => {
 
 
   
@@ -199,15 +206,10 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
 
 
-    const handlePlaySong = () => {
-        if(!audio) {
-            mostrarNotificacion('error', 'No hay audio disponible')
-        }
-        const selectedSong = {nombre, artista, imagen, audio, _id};
-        loadList([selectedSong],0)
+    const handlePlay = () => {
+        loadList(allSongs, index)
         togglePlay()
     }
-
 
 
     const handleConfirmar = (e) => {
@@ -252,7 +254,7 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
             <div className="Cancion" tabIndex="0" >
 
-                <div className="Cancion-imgTexto" onClick={handlePlaySong}>
+                <div className="Cancion-imgTexto" onClick={handlePlay}>
 
 
                     <img src={imagen} alt="portada" className="Cancion-img" />
@@ -302,7 +304,7 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id }) => {
 
 
 
-export const CancionLike = ({ nombre, artista, imagen, audio, _id }) => {
+export const CancionLike = ({ nombre, artista, imagen, audio, _id, allSongs, index }) => {
 
 
    
@@ -317,12 +319,8 @@ export const CancionLike = ({ nombre, artista, imagen, audio, _id }) => {
     const {loadList, togglePlay} = usePlayer()
     
     
-    const handlePlaySong = () => {
-        if(!audio) {
-            mostrarNotificacion('error', 'No hay audio disponible')
-        }
-        const selectedSong = {nombre, artista, imagen, audio, _id};
-        loadList([selectedSong],0)
+    const handlePlay = () => {
+        loadList(allSongs, index)
         togglePlay()
     }
 
@@ -362,7 +360,7 @@ export const CancionLike = ({ nombre, artista, imagen, audio, _id }) => {
         <>
             <div className="Cancion" tabIndex="0">
 
-                <div className="Cancion-imgTexto" onClick={handlePlaySong}>
+                <div className="Cancion-imgTexto" onClick={handlePlay}>
 
 
                     <img src={imagen} alt="portada" className="Cancion-img" />

@@ -1,15 +1,14 @@
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 :root {
-  font-family:  apfel-regular, poppins;
-  
+  font-family: apfel-regular, poppins;
+
   --background-color: #212021;
-  --background-secondary:#383537;
+  --background-secondary: #383537;
   --primary: #fdbad0;
   --secondary: rgba(217, 121, 208, 0.1);
 
@@ -17,23 +16,32 @@
   --text-secondary: #c6c3c3;
 
   font-size: 14px;
- 
+
 }
 
 
-.Body{
+.Body {
   background-color: var(--background-color);
   color: var(--text);
 }
 
 
-a{
+a {
   color: inherit;
 }
 
 
-h1{
+h1 {
   font-family: apfel-regular;
+}
+
+
+.Notificacion-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
 
 
@@ -45,9 +53,9 @@ h1{
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-:root{
-  font-size: 16px;
-}
+  :root {
+    font-size: 16px;
+  }
 
 
 }
@@ -58,9 +66,9 @@ h1{
 /* Escritorio */
 @media (min-width: 1025px) {
 
-:root{
-  font-size: 16px;
-}
+  :root {
+    font-size: 16px;
+  }
 
 
 }
@@ -120,12 +128,13 @@ h1{
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-  .Header-main{
-      display: flex;
-      width: 100%;
+  .Header-main {
+    display: flex;
+    width: 100%;
+
   }
 
- 
 
- 
+
+
 }
