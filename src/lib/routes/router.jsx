@@ -28,7 +28,7 @@ import SeccionPlayLists from "../../pages/home/SeccionListas.jsx";
 import Info from "../../pages/info/Info.jsx";
 
 import MiMusica from "../../pages/perfil/MiMusica.jsx";
-
+import EditarPerfil from "../../pages/perfil/EditarPerfil.jsx";
 
 
 
@@ -86,6 +86,11 @@ const router = createBrowserRouter([{
         {
             path:"/perfil",
             element: <Perfil />
+        },
+
+        {
+            path:"/edit",
+            element: <EditarPerfil />
         },
 
 

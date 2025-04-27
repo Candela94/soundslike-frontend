@@ -23,9 +23,8 @@ import { useUpdate } from '../../../hooks/useUpdate';
 
 const Perfil = () => {
 
-    const { userData, LogOut } = useContext(UserContext)
-    const { eliminarUsuario, eliminado } = useEliminarUsuario()
-    const { updateUsuario } = useUpdate();
+    const { userData } = useContext(UserContext)
+  
 
     const [editing, setEditing] = useState(false);
     const [editData, setEditData] = useState({
@@ -34,8 +33,6 @@ const Perfil = () => {
         email: ''
     });
 
-    const [confirmacion, setConfirmacion] = useState(false)
-
     console.log("userData en Perfil:", userData);
 
 
@@ -43,94 +40,50 @@ const Perfil = () => {
 
 
 
-    //Funcion para editar
-    const handleEdit = (info) => {
-        setEditing(true);
-        setEditData({
-            nombre: userData.nombre || '',
-            username: userData.username || '',
-            email: userData.email || ''
-        });
-    }
+
+    // const handleConfirmar = () => {
+    //     setConfirmacion(!confirmacion)
+    // }
 
 
-    const handleChange = (e) => {
-        setEditData({
-            ...editData,
-            [e.target.name]: e.target.value
-        });
-    }
+    // const handleCancelarConfirmacion = () => {
+    //     setConfirmacion(false)
+
+
+    // }
 
 
 
+    // const handleEliminar = () => {
 
-    const handleSave = async () => {
-        const userId = localStorage.getItem('userId');
-        if (userId) {
-            try {
-                await updateUsuario(userId, editData);
-                setEditing(false);
-            } catch (error) {
-                console.error("Error al actualizar usuario", error);
-            }
-        }
-    };
+    //     const userId = localStorage.getItem('userId')
 
 
+    //     if (userId) {
+    //         console.log('eliminando usuario con id:', userId);
+    //         eliminarUsuario({ id: userId });
+    //         setConfirmacion(false)
 
 
-    const handleCancel = () => {
-        setEditing(false);
-    };
+    //         //limpiamos localStorage 
+    //         localStorage.removeItem('userId');
+    //         localStorage.removeItem('userData');
+    //         localStorage.removeItem('token');
+    //         localStorage.removeItem('userRole');
+
+    //         LogOut()
 
 
+    //     } else {
+    //         console.error('No se pudo obtener el ID del usuario')
+    //     }
 
 
+    // }
 
-
-    const handleConfirmar = () => {
-        setConfirmacion(!confirmacion)
-    }
-
-
-    const handleCancelarConfirmacion = () => {
-        setConfirmacion(false)
-
-
-    }
-
-
-
-    const handleEliminar = () => {
-
-        const userId = localStorage.getItem('userId')
-
-
-        if (userId) {
-            console.log('eliminando usuario con id:', userId);
-            eliminarUsuario({ id: userId });
-            setConfirmacion(false)
-
-
-            //limpiamos localStorage 
-            localStorage.removeItem('userId');
-            localStorage.removeItem('userData');
-            localStorage.removeItem('token');
-            localStorage.removeItem('userRole');
-
-            LogOut()
-
-
-        } else {
-            console.error('No se pudo obtener el ID del usuario')
-        }
-
-
-    }
-
-    if (eliminado) {
-        return null;
-    }
+    // if (eliminado) {
+    //     return null;
+    // }
 
 
 
@@ -139,7 +92,7 @@ const Perfil = () => {
         <>
 
 
-            <div className="Main-perfil">
+            <main className="Main-perfil">
 
 
 
@@ -279,27 +232,9 @@ const Perfil = () => {
 
 
 
-                            <div className='Perfil-botones' style={{ display: 'flex', gap: '10px', marginTop: '1rem' }}>
-                                {editing ? (
-                                    <>
-                                        <Button variant='primary' onClick={handleSave}>Guardar</Button>
-                                        <Button variant='secondary' onClick={handleCancel}>Cancelar</Button>
-                                    </>
-                                ) : (
-                                    <Button variant='primary' onClick={handleEdit}><FiEdit /> Editar</Button>
-                                )}
-                            </div>
-
-
-
-
-
-
-
-
-
 
                         </ul>
+                        <NavLink to='/edit'>  <Button variant='primary'><FiEdit /> Editar</Button></NavLink>
 
                     </div>
 
@@ -307,10 +242,22 @@ const Perfil = () => {
 
 
 
-                </section>
 
 
-            </div>
+
+
+
+
+                </section >
+            </main>
+
+
+
+
+
+
+
+
 
         </>
     );
