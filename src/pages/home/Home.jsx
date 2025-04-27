@@ -40,6 +40,8 @@ const Home = () => {
     const pid = '6803d22a7dfe29dc736dccbf';
     const { canciones } = useFetchSongsList(pid)
 
+    console.log(import.meta.env.VITE_URL);
+
 
 
 

@@ -12,6 +12,7 @@ import { NotificacionesContext } from "../src/context/NotificacionesContext";
 export const useFetch = () => {
 
     const VITE_URL = import.meta.env.VITE_URL
+    console.log('VITE_URL:', VITE_URL);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [bibliotecas, setBibliotecas] = useState([])
@@ -88,14 +89,13 @@ export const useFetch = () => {
 export const useFetchPlayLists = () => {
 
     const VITE_URL = import.meta.env.VITE_URL
+    console.log(import.meta.env.VITE_URL); 
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [playlist, setPlaylist] = useState([])
     const {mostrarNotificacion} = useContext(NotificacionesContext)
     
-
-
 
     const obtenerPlayLists = async () => {
 
@@ -106,6 +106,7 @@ export const useFetchPlayLists = () => {
 
 
             const response = await fetch(`${VITE_URL}/api/v1/playlists?isAdmin=true`, {
+
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -168,6 +169,7 @@ export const useFetchPlayLists = () => {
 export const useFetchPlayListsId = () => {
 
     const VITE_URL = import.meta.env.VITE_URL
+    console.log('La url es:', VITE_URL)
 
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
