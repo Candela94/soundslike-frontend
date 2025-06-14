@@ -2,13 +2,13 @@
 
 import './formuadmin.css'
 import { useEffect } from 'react';
-import { Header } from '../../components/header/Header';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
-import { Button } from '../../components/buttons/Button';
+import { Header } from '@/components/header/Header';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation';
+import { Button } from '@/components/buttons/Button';
 import { useContext, useState } from 'react';
-import { Notificaciones } from '../../components/notificaciones-success-error/Notificaciones';
-import { NotificacionesContext } from '../../context/NotificacionesContext';
-import { UserContext } from '../../context/UserContext';
+import { Notificaciones } from '@/components/notificaciones-success-error/Notificaciones';
+import { NotificacionesContext } from '@/context/NotificacionesContext';
+import { UserContext } from '@/context/UserContext';
 import { NavLink, useNavigate } from 'react-router';
 
 
@@ -71,7 +71,15 @@ const Admin = () => {
             formData.append('tag', songData.tag);
             formData.append('imgprod', songData.imagen);
             formData.append('audio', songData.audio);
+
+
             const token = localStorage.getItem('token');
+
+            if (!token) {
+                mostrarNotificacion("error", "No tienes permisos de administrador");
+                navigate('/login');
+                return;
+            }
 
             const response = await fetch(`${VITE_URL}/api/v1/admin/uploads`, {
                 method: 'POST',
@@ -80,6 +88,15 @@ const Admin = () => {
                 },
                 body: formData
             })
+
+
+            const contentType = response.headers.get('content-type');
+        
+            if (!contentType || !contentType.includes('application/json')) {
+                console.error('Respuesta no es JSON:', await response.text());
+                throw new Error('El servidor devolvió una respuesta inválida');
+            }
+
 
             const result = await response.json();
             if (response.ok) {
