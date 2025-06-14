@@ -3,7 +3,7 @@ import './buttons.css'
 
 
 
-export const Button = ({variant, children}) => {
+export const Button = ({variant, children, type = 'button', onClick}) => {
 
     const btnClass = () => {
 
