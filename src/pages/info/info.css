@@ -46,3 +46,45 @@
     flex-direction: column;
     gap: 0.7rem;
 }
+
+
+
+
+
+
+/* media queries */
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .Header-main{
+        display: flex;
+    }
+
+
+   
+}
+
+
+
+
+/* Escritorio */
+@media (min-width: 1025px) {
+
+
+    .Header-main{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 2rem;
+    }
+    
+
+
+
+
+
+
+}

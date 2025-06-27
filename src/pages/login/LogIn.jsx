@@ -1,12 +1,12 @@
 import { useState, useContext } from "react";
-import { Button } from "../../components/buttons/Button.jsx";
-import { Header } from "../../components/header/Header.jsx";
-import { Notificaciones } from "../../components/notificaciones-success-error/Notificaciones.jsx";
-import { NotificacionesContext } from "../../context/NotificacionesContext.jsx";
-import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation.jsx";
+import { Button } from "@/components/buttons/Button.jsx";
+import { Header } from "@/components/header/Header.jsx";
+import { Notificaciones } from "@/components/notificaciones-success-error/Notificaciones.jsx";
+import { NotificacionesContext } from "@/context/NotificacionesContext.jsx";
+import { BottomNavigation } from "@/components/bottom-navigation-header/BottomNavigation.jsx";
 import { NavLink } from "react-router";
 import { useNavigate } from "react-router";
-import { UserContext } from "../../context/UserContext.jsx";
+import { UserContext } from "@/context/UserContext.jsx";
 
 const LogIn = () => {
 
@@ -99,7 +99,16 @@ const LogIn = () => {
     }
 
     return (
+
         <>
+
+
+<div className="Header-main">
+
+    <Header />
+
+
+
            
                 <main className="Main-login">
                 <div className="Notificacion-container">
@@ -123,7 +132,8 @@ const LogIn = () => {
 
                     </form>
                 </main>
-          
+                <BottomNavigation />
+                </div>
         </>
     )
 }

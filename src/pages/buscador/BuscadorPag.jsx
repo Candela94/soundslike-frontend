@@ -1,10 +1,10 @@
 
 import './buscadorpag.css'
-import { Buscador } from '../../components/buscador/Buscador.jsx';
-import { Header } from '../../components/header/Header.jsx';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation.jsx';
+import { Buscador } from '@/components/buscador/Buscador.jsx';
+import { Header } from '@/components/header/Header.jsx';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation.jsx';
 import { useFetchSongs } from '../../../hooks/usefetchSongs.jsx';
-import { Cancion } from '../../components/cancion/Cancion.jsx';
+import { Cancion } from '@/components/cancion/Cancion.jsx';
 import { useState } from 'react';
 
 const BuscadorPag = () => {
@@ -21,6 +21,11 @@ const BuscadorPag = () => {
 
     return (
         <>
+
+        <div className="Header-main">
+
+            <Header />
+        
          
                 <main className="Main-buscador">
                     <h2 className='Main-titulo'>Busca tu canción</h2>
@@ -66,6 +71,8 @@ const BuscadorPag = () => {
 
                 </main>
            
+                <BottomNavigation />
+                </div>
         </>
     );
 }

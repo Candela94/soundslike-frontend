@@ -1,12 +1,12 @@
 
 
-import { Header } from "../../components/header/Header";
-import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
+import { Header } from "@/components/header/Header";
+import { BottomNavigation } from "@/components/bottom-navigation-header/BottomNavigation";
 import './nuevalista.css'
-import { Button } from "../../components/buttons/Button.jsx";
+import { Button } from "@/components/buttons/Button.jsx";
 import { useState, useContext} from "react";
-import { NotificacionesContext } from "../../context/NotificacionesContext";
-import { Notificaciones } from "../../components/notificaciones-success-error/Notificaciones.jsx";
+import { NotificacionesContext } from "@/context/NotificacionesContext";
+import { Notificaciones } from "@/components/notificaciones-success-error/Notificaciones.jsx";
 import { useNavigate } from "react-router";
 
 const NuevaLista = () => {
@@ -93,6 +93,14 @@ const NuevaLista = () => {
 
     return ( 
         <>
+
+
+        <div className="Header-main">
+
+
+            <Header />
+
+         
              
         <main className="Main-lista">
 
@@ -110,6 +118,9 @@ const NuevaLista = () => {
 
         </main>
        
+
+        <BottomNavigation />
+        </div>
         </>
      );
 }

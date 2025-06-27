@@ -2,24 +2,24 @@
 
 import './home.css'
 
-import { CardTendencias } from '../../components/cards/Cards';
-import { Header } from '../../components/header/Header';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
+import { CardTendencias } from '@/components/cards/Cards';
+import { Header } from '@/components/header/Header';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation';
 
 import { IoMdHappy } from "react-icons/io";
 import { GoHeart } from "react-icons/go";
 import { FaBoltLightning } from "react-icons/fa6";
 import { MdNightlight } from "react-icons/md";
 import { FaRegLightbulb } from "react-icons/fa";
-import { Button } from '../../components/buttons/Button';
+import { Button } from '@/components/buttons/Button';
 import { MdOutlineNorthEast } from "react-icons/md";
 import { FiArrowRightCircle } from "react-icons/fi";
-import { CardRecomendaciones } from '../../components/cards/Cards';
+import { CardRecomendaciones } from '@/components/cards/Cards';
 
 
 import { NavLink } from 'react-router';
 import { useContext, useEffect, useState } from 'react';
-import { UserContext } from '../../context/UserContext';
+import { UserContext } from '@/context/UserContext';
 
 import { useFetchPlayLists, useFetchPlayListsId } from '../../../hooks/useFetch';
 import { useFetchSongs, useFetchSongsList } from '../../../hooks/usefetchSongs';
@@ -61,7 +61,9 @@ const Home = () => {
 
     return (
         <>
-           
+
+        <div className="Header-main">
+           <Header/>
                 <main className="Main-home">
 
                     <h1 className='Main-intro'>
@@ -214,6 +216,9 @@ const Home = () => {
 
 
                 </main>
+                <BottomNavigation />
+
+                </div>
         
         </>
     );

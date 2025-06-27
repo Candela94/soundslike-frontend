@@ -10,11 +10,11 @@ import { BsMusicNoteList } from "react-icons/bs";
 import { FaUserPen } from "react-icons/fa6";
 
 import { useContext } from 'react';
-import { Header } from '../../components/header/Header';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
-import { UserContext } from '../../context/UserContext';
+import { Header } from '@/components/header/Header';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation';
+import { UserContext } from '@/context/UserContext';
 import { NavLink } from 'react-router';
-import { Button } from '../../components/buttons/Button';
+import { Button } from '@/components/buttons/Button';
 
 
 const MiMusica = () => {
@@ -31,6 +31,11 @@ const MiMusica = () => {
 
     return (
         <>
+           
+           <div className="Header-main">
+
+            <Header />
+
            
 
                 <div className="Main-perfil">
@@ -129,6 +134,9 @@ const MiMusica = () => {
 
                 </div>
           
+
+                <BottomNavigation />
+                </div>
         </>
     );
 }

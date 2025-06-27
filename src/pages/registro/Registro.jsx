@@ -1,14 +1,14 @@
 
 import './registro.css'
-import { Button } from '../../components/buttons/Button.jsx';
+import { Button } from '@/components/buttons/Button.jsx';
 import { useState, useContext, useEffect } from 'react';
-import { UserContext } from '../../context/UserContext.jsx'
+import { UserContext } from '@/context/UserContext.jsx'
 
-import { Header } from '../../components/header/Header.jsx';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation.jsx';
+import { Header } from '@/components/header/Header.jsx';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation.jsx';
 // import { useFetch } from '../../../hooks/useFetch.jsx';
-import { NotificacionesContext } from '../../context/NotificacionesContext.jsx';
-import { Notificaciones } from '../../components/notificaciones-success-error/Notificaciones.jsx';
+import { NotificacionesContext } from '@/context/NotificacionesContext.jsx';
+import { Notificaciones } from '@/components/notificaciones-success-error/Notificaciones.jsx';
 import { NavLink, useNavigate } from 'react-router';
 
 
@@ -114,7 +114,16 @@ const Registro = () => {
 
 
     return (
+
         <>
+
+
+
+        <div className="Header-main">
+
+
+            <Header />
+        
             
                 <main className="Main-login">
                     <div className="Notificacion-container">
@@ -139,6 +148,9 @@ const Registro = () => {
 
                     </form>
                 </main>
+
+                <BottomNavigation />
+                </div>
            
         </>
     );

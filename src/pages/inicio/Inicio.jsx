@@ -2,11 +2,11 @@
 
 
 import './inicio.css'
-import { Button } from '../../components/buttons/Button';
+import { Button } from '@/components/buttons/Button';
 import { NavLink } from 'react-router';
 
-import { Header } from '../../components/header/Header';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
+import { Header } from '@/components/header/Header';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation';
 
 
 const Inicio = () => {
@@ -23,7 +23,6 @@ const Inicio = () => {
                
                 
 
-                <img src="../img/portada-rosa.jpg" alt="portada" className="Inicio-img" />
                 
                 <div className="Intro-texto">
                     <div className="Texto">

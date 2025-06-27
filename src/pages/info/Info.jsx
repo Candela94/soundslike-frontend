@@ -15,6 +15,13 @@ const Info = () => {
 
     <>
 
+    <div className="Header-main">
+
+
+      <Header />
+
+
+    
      
         <main className="Main-about">
 
@@ -80,6 +87,10 @@ const Info = () => {
 
 
         </main>
+
+
+        <BottomNavigation />
+        </div>
 
      
 

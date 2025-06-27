@@ -3,7 +3,10 @@ import { useUpdate } from "../../../hooks/useUpdate";
 import { FaUser } from "react-icons/fa6";
 import { MdOutlineEmail } from "react-icons/md";
 import { FaRegUser } from "react-icons/fa6";
-import { Button } from "../../components/buttons/Button";
+import { Button } from "@/components/buttons/Button";
+import { Header } from "@/components/header/Header";
+import { BottomNavigation } from "@/components/bottom-navigation-header/BottomNavigation";
+
 
 
 
@@ -58,69 +61,79 @@ const EditarPerfil = ({ userId }) => {
         <>
 
 
-<main className="Main-perfil">
-            <section className="Perfil-contenido">
+            <div className="Header-Main">
+
+                <Header />
+
+
+
+                <div className="Main-perfil">
+                    <section className="Perfil-contenido">
 
 
 
 
-                <form className="Perfil-info" style={{padding:'3rem', display:'flex', flexDirection:'column', gap:'1.5rem'}}>
+                        <form className="Perfil-info" style={{ padding: '3rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
-                    <div className='Perfil-item'>
-                        <FaRegUser />
-                        <div className="Perfil-input">
-                            <input className='Formulario-input'
-                                type="text"
-                                name="nombre"
-                                value={nombre}
-                                onChange={handleChange}
-                                placeholder="Nombre"
-                            />
-                        </div>
+                            <div className='Perfil-item'>
+                                <FaRegUser />
+                                <div className="Perfil-input">
+                                    <input className='Formulario-input'
+                                        type="text"
+                                        name="nombre"
+                                        value={nombre}
+                                        onChange={handleChange}
+                                        placeholder="Nombre"
+                                    />
+                                </div>
 
-                        </div>
-
-
-                        <div className='Perfil-item'>
-                            <FaUser />
-                            <div className="Perfil-input">
-                                <input className='Formulario-input'
-                                    type="text"
-                                    name="username"
-                                    value={username}
-                                    onChange={handleChange}
-                                    placeholder="Nombre de usuario"
-                                />
                             </div>
-                        </div>
 
 
-                        <div className='Perfil-item'>
-                            <MdOutlineEmail />
-                            <div className="Perfil-input">
-                                <input className='Formulario-input'
-                                    type="email"
-                                    name="email"
-                                    value={email}
-                                    onChange={handleChange}
-                                    placeholder="Email"
-                                />
+                            <div className='Perfil-item'>
+                                <FaUser />
+                                <div className="Perfil-input">
+                                    <input className='Formulario-input'
+                                        type="text"
+                                        name="username"
+                                        value={username}
+                                        onChange={handleChange}
+                                        placeholder="Nombre de usuario"
+                                    />
+                                </div>
                             </div>
-                        </div>
+
+
+                            <div className='Perfil-item'>
+                                <MdOutlineEmail />
+                                <div className="Perfil-input">
+                                    <input className='Formulario-input'
+                                        type="email"
+                                        name="email"
+                                        value={email}
+                                        onChange={handleChange}
+                                        placeholder="Email"
+                                    />
+                                </div>
+                            </div>
 
 
 
 
 
 
-                        <Button variant='primary' onClick={handleSubmit}> Guardar</Button>
+                            <Button variant='primary' onClick={handleSubmit}> Guardar</Button>
 
-                </form>
+                        </form>
 
 
 
-            </section >
-            </main>
+                    </section >
+                </div>
+
+
+                <BottomNavigation />
+            </div>
 
         </>
     );

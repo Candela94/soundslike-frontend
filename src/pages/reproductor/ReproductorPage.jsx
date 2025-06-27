@@ -1,12 +1,12 @@
 
 
 
-import { Header } from "../../components/header/Header";
+import { Header } from "@/components/header/Header";
 import './reproductorpage.css'
 
-import { CardReproduccion } from "../../components/card-reproduccion/CardReproduccion";
+import { CardReproduccion } from "@/components/card-reproduccion/CardReproduccion";
 
-import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
+import { BottomNavigation } from "@/components/bottom-navigation-header/BottomNavigation";
 
 import { useContext, useState, useEffect } from "react";
 
@@ -14,7 +14,7 @@ import { useContext, useState, useEffect } from "react";
 import { useFetch } from "../../../hooks/useFetch";
 import { BsChevronCompactDown } from "react-icons/bs";
 import { useAddSongsToPlaylist } from "../../../hooks/useAddSongs";
-import { NotificacionesContext } from "../../context/NotificacionesContext";
+import { NotificacionesContext } from "@/context/NotificacionesContext";
 import { usePlayer } from "../../context/PlayerContext";
 import { useFetchSongs } from "../../../hooks/usefetchSongs";
 
@@ -119,6 +119,12 @@ useEffect(() => {
         <>
 
 
+<div className="Header-main">
+
+
+    <Header />
+  
+
             <main className="Main-reproductor">
 
 
@@ -139,7 +145,8 @@ useEffect(() => {
 
             </main>
 
-
+            <BottomNavigation />
+            </div>
 
         </>
 

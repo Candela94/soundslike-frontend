@@ -23,15 +23,15 @@ function Layout() {
 
 
 
-      <div className="Header-main">
-        <Header />
+      {/* <div className="Header-main"> */}
+    
      
-          <Notificaciones />
+    <Notificaciones />
       
         <Outlet />
-      </div>
+      {/* </div> */}
 
-      <BottomNavigation />
+    
 
 
 

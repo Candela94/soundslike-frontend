@@ -4,22 +4,51 @@
 
 .Main-inicio{
     display: flex;
-    position: relative;
+  
     flex-direction: column;
     justify-content: center;
 
     align-items: center;
     width: 100%;
+    height: 100vh;
+
+   
+    background-image: url('../img/portada-rosa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    
    
 }
+
+
+
+/* Overlay */
+
+.Main-inicio::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 0;
+}
+
+
+
+
+
 
 .Intro-texto{
     display: flex;
     flex-direction: column;
-    position: absolute;
-    gap: 2rem;
+  gap: 2rem;
     z-index: 1;
     align-items: center;
+    position: relative;
     
     width: 100%;
     justify-content: center;
@@ -38,11 +67,15 @@
 
 
 .Main-h1Intro{
-    font-size: 5rem;
+    font-size: 4.5rem;
+    text-align: center;
+
+    word-wrap: break-word;
+
    
     font-family: genius;
     color: var(--txt);
-    letter-spacing: 7px;
+    letter-spacing: 5px;
   
 }
 

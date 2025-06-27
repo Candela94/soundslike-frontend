@@ -3,12 +3,12 @@
 
 
 import { useFetchSongsList } from "../../../hooks/usefetchSongs";
-import { Header } from '../../components/header/Header';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
+import { Header } from '@/components/header/Header';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation';
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
-import { Cancion } from "../../components/cancion/Cancion";
-import { usePlayer } from "../../context/PlayerContext";
+import { Cancion } from "@/components/cancion/Cancion";
+import { usePlayer } from "@/context/PlayerContext";
 import './home.css'
 
 
@@ -38,7 +38,7 @@ const SeccionPlayLists = () => {
 
     useEffect(() => {
         setIsListLoaded(false)
-    },[pid])
+    }, [pid])
 
 
 
@@ -48,66 +48,73 @@ const SeccionPlayLists = () => {
         <>
 
 
+            <div className="Header-main">
 
 
-            <main className="Main-cancionesListas">
-                <div className="Cabecera-img">
-                    <img src={coverImage || imgDefault} alt="portada" className="Cabecera-img" />
-
-                    <h1 className="Cabecera">SOUNDsLIKE {nombrePlaylist}</h1>
-                </div>
+                <Header />
 
 
 
 
-                <div className="Galeria-canciones">
+                <main className="Main-cancionesListas">
+                    <div className="Cabecera-img">
+                        <img src={coverImage || imgDefault} alt="portada" className="Cabecera-img" />
 
-                    {
-
-                        loading ? (
-
-                            <p>Cargando canciones</p>
-
-
-                        ) : error ? (
-
-
-                            <p>Error al cargar canciones</p>
+                        <h1 className="Cabecera">SOUNDsLIKE {nombrePlaylist}</h1>
+                    </div>
 
 
 
-                        ) : canciones.length > 0 ? (
 
-                            <ul className="Galeria-ul">
-                                {
+                    <div className="Galeria-canciones">
 
-                                    canciones.map((c,index) => {
-                                        return (
+                        {
 
-                                            <li className="Galeria-li" key={c._id}><Cancion imagen={c.imagen} nombre={c.nombre} artista={c.artista} audio={c.audio} allSongs={canciones} index={index} /></li>
+                            loading ? (
 
-
-                                        )
-                                    })
+                                <p>Cargando canciones</p>
 
 
+                            ) : error ? (
 
-                                }
-                            </ul>
 
-                        ) : (
-                            <p>No existen canciones</p>
-                        )
-                    }
-
-                </div>
+                                <p>Error al cargar canciones</p>
 
 
 
-            </main>
+                            ) : canciones.length > 0 ? (
+
+                                <ul className="Galeria-ul">
+                                    {
+
+                                        canciones.map((c, index) => {
+                                            return (
+
+                                                <li className="Galeria-li" key={c._id}><Cancion imagen={c.imagen} nombre={c.nombre} artista={c.artista} audio={c.audio} allSongs={canciones} index={index} /></li>
+
+
+                                            )
+                                        })
 
 
 
+                                    }
+                                </ul>
+
+                            ) : (
+                                <p>No existen canciones</p>
+                            )
+                        }
+
+                    </div>
+
+
+
+                </main>
+
+
+                <BottomNavigation />
+            </div>
 
         </>
     );
