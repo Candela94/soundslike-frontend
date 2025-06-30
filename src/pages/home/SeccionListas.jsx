@@ -33,7 +33,7 @@ const SeccionPlayLists = () => {
             setIsListLoaded(true)
 
         }
-    }, [canciones, loadList, isListLoaded]);
+    }, [canciones, loadList]);
 
 
     useEffect(() => {
