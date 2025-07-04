@@ -91,6 +91,7 @@ const Perfil = () => {
     return (
         <>
 
+<div className="Header-main">
 
             <main className="Main-perfil">
 
@@ -251,6 +252,8 @@ const Perfil = () => {
                 </section >
             </main>
 
+
+            </div>
 
 
 

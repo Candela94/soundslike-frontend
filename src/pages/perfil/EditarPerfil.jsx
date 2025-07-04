@@ -52,7 +52,7 @@ const EditarPerfil = ({ userId }) => {
 
         const updateUser = { nombre, email, username }
 
-        updateUsuario(updateUser, userId)
+        updateUsuario(userId, updateUser)
     }
 
 
@@ -122,7 +122,7 @@ const EditarPerfil = ({ userId }) => {
 
 
 
-                            <Button variant='primary' onClick={handleSubmit}> Guardar</Button>
+                            <Button variant='primary' onClick={handleSubmit}> {loading ? 'Guardando...' : 'Guardar'}</Button>
 
                         </form>
 

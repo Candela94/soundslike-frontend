@@ -60,7 +60,7 @@ export const useUpdate = () => {
 
     }
 
-    return (
+    return {
 
 
 
@@ -71,7 +71,7 @@ export const useUpdate = () => {
         error,
         updateUsuario
 
-    );
+};
 
 
 
