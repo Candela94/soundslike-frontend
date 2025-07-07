@@ -15,7 +15,6 @@ import { BottomNavigation } from '../../components/bottom-navigation-header/Bott
 import { UserContext } from '../../context/UserContext';
 import { NavLink, useRevalidator } from 'react-router';
 import { Button } from '../../components/buttons/Button';
-import { useEliminarUsuario } from '../../../hooks/useEliminar';
 import { FiEdit } from "react-icons/fi";
 import { useUpdate } from '../../../hooks/useUpdate';
 
@@ -23,10 +22,11 @@ import { useUpdate } from '../../../hooks/useUpdate';
 
 const Perfil = () => {
 
-    const { userData } = useContext(UserContext)
+    const { userData, setUserData } = useContext(UserContext)
     const userId = localStorage.getItem('userId');
 
     const { updateUsuario, loading, error } = useUpdate();
+   
 
 
 
@@ -63,13 +63,20 @@ const Perfil = () => {
         setEditData(prev => ({...prev, [name] : value}))
     }
 
-
-    const handleGuardar = (e) => {
+    const handleGuardar = async (e) => {
         e.preventDefault();
-        updateUsuario(userId, editData)
-        setEditing(false)
-    }
-
+        await updateUsuario(userId, editData);
+        
+        const updatedUser = {
+            ...userData,
+            ...editData
+        };
+    
+        setUserData(updatedUser);
+        localStorage.setItem('userData', JSON.stringify(updatedUser));
+        setEditing(false);
+    };
+    
 
 
 
@@ -142,6 +149,7 @@ const Perfil = () => {
                                                         value={editData.nombre}
                                                         onChange={handleChange}
                                                         placeholder="Nombre"
+                                                        className='Formulario-input'
                                                     />
                                                 ) : (
                                                     <p className="Perfil-texto">{editData.nombre}</p>
@@ -170,6 +178,7 @@ const Perfil = () => {
                                                         value={editData.username}
                                                         onChange={handleChange}
                                                         placeholder="Nombre de usuario"
+                                                        className='Formulario-input'
                                                     />
                                                 ) : (
                                                     <p className="Perfil-texto">{editData.username}</p>
@@ -200,6 +209,7 @@ const Perfil = () => {
                                                         value={editData.email}
                                                         onChange={handleChange}
                                                         placeholder="Email"
+                                                        className='Formulario-input'
                                                     />
                                                 ) : (
                                                     <p className="Perfil-texto">{editData.email}</p>
@@ -240,9 +250,13 @@ const Perfil = () => {
                                 </Button>
                             </div>
                         ) : (
-                            <Button variant='primary' onClick={() => setEditing(true)}>
+                            <button type='button' variant='primary' onClick={() => {
+                                
+                                console.log("Click en Editar"); // 👈 prueba
+
+                                setEditing(true)}}>
                                 <FiEdit /> Editar
-                            </Button>
+                            </button>
                         )}
 
                         {error && <p style={{ color: 'red' }}>{error}</p>}

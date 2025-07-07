@@ -48,7 +48,7 @@ const LogOut = () => setUserData(null)
 
 
     return(
-        <UserContext.Provider value={{userData, LogIn, LogOut}}>
+        <UserContext.Provider value={{userData, LogIn, LogOut, setUserData}}>
             {children}
         </UserContext.Provider>
     )
