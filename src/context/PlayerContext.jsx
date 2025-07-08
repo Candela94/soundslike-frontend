@@ -43,7 +43,7 @@ export const PlayerContextProvider = ({ children }) => {
 
 
     //Función para cargar la playlist 
-    const loadList = (songs, id = 0) => {
+    const loadList = (songs, id = 0, autoPlay = false) => {
    
         if (!songs || !songs.length ) {
             console.warn("Canción inválida o sin audio:", songs[id]);
@@ -54,6 +54,11 @@ export const PlayerContextProvider = ({ children }) => {
         setPlaylist(songs)
         setCurrentId(id)
         setCurrentSong(songs[id])
+
+
+        if(autoPlay) {
+            setIsPlaying(true)
+        }
        
     }
 
@@ -148,6 +153,7 @@ export const PlayerContextProvider = ({ children }) => {
 
 
         const loadedMetaData = () => {
+
             setDuration(audioRef.current.duration)
         }
 
@@ -163,13 +169,18 @@ export const PlayerContextProvider = ({ children }) => {
         if(!audio) return;
 
         audio.addEventListener('timeupdate', timeUpdate);
+
         audio.addEventListener('loadedmetadata', loadedMetaData);
+
         audio.addEventListener('ended', ended);
 
         // Limpiar los event listeners cuando se desmonte
+
         return () => {
             audio.removeEventListener('timeupdate', timeUpdate);
+
             audio.removeEventListener('loadedmetadata', loadedMetaData);
+
             audio.removeEventListener('ended', ended);
         };
 
@@ -200,6 +211,10 @@ export const PlayerContextProvider = ({ children }) => {
             
                 const handleCanPlay = () => {
 
+
+                    if(isPlaying){
+
+                   
                   audioRef.current.play().then(() => {
                     setIsPlaying(true)
 
@@ -209,6 +224,8 @@ export const PlayerContextProvider = ({ children }) => {
                     setIsPlaying(false)
                   })
 
+                }
+
 
                 audioRef.current.removeEventListener("canplay", handleCanPlay);
                 };
@@ -216,7 +233,7 @@ export const PlayerContextProvider = ({ children }) => {
                 audioRef.current.addEventListener("canplay", handleCanPlay);
             }
        
-    }, [currentSong]);
+    }, [currentSong,isPlaying]);
 
 
 

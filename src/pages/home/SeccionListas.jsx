@@ -29,7 +29,7 @@ const SeccionPlayLists = () => {
 
     useEffect(() => {
         if (canciones.length > 0) {
-            loadList(canciones, 0);
+            loadList(canciones, 0, false);
             setIsListLoaded(true)
 
         }

@@ -56,10 +56,15 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id, allSongs, index }
 
 
     //Funcion para cargar toda la lista de canciones y establecer el id de la canción
+    
     const handlePlay = () => {
-        loadList(allSongs, index)
-        togglePlay()
+        if (currentSong?._id !== allSongs[index]._id) {
+            loadList(allSongs, index, true);
+        } else {
+            togglePlay();
+        }
     }
+    
 
 
 
