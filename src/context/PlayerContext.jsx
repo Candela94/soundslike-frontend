@@ -54,11 +54,6 @@ export const PlayerContextProvider = ({ children }) => {
         setPlaylist(songs)
         setCurrentId(id)
         setCurrentSong(songs[id])
-
-
-        if(autoPlay) {
-            setIsPlaying(true)
-        }
        
     }
 
@@ -153,7 +148,6 @@ export const PlayerContextProvider = ({ children }) => {
 
 
         const loadedMetaData = () => {
-
             setDuration(audioRef.current.duration)
         }
 
@@ -169,9 +163,8 @@ export const PlayerContextProvider = ({ children }) => {
         if(!audio) return;
 
         audio.addEventListener('timeupdate', timeUpdate);
-
         audio.addEventListener('loadedmetadata', loadedMetaData);
-
+        
         audio.addEventListener('ended', ended);
 
         // Limpiar los event listeners cuando se desmonte
@@ -211,10 +204,6 @@ export const PlayerContextProvider = ({ children }) => {
             
                 const handleCanPlay = () => {
 
-
-                    if(isPlaying){
-
-                   
                   audioRef.current.play().then(() => {
                     setIsPlaying(true)
 
@@ -224,8 +213,6 @@ export const PlayerContextProvider = ({ children }) => {
                     setIsPlaying(false)
                   })
 
-                }
-
 
                 audioRef.current.removeEventListener("canplay", handleCanPlay);
                 };
@@ -233,7 +220,7 @@ export const PlayerContextProvider = ({ children }) => {
                 audioRef.current.addEventListener("canplay", handleCanPlay);
             }
        
-    }, [currentSong,isPlaying]);
+    }, [currentSong]);
 
 
 
