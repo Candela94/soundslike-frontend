@@ -37,7 +37,7 @@ const Home = () => {
     const { playlistId, obtenerPlaylistPorId } = useFetchPlayListsId()
 
 
-    const pid = '685ea0dc5cc83a71cfd89e58';
+    const pid = '686d84680f187a8a65a36caa';
     const { canciones } = useFetchSongsList(pid)
 
     console.log(import.meta.env.VITE_URL);
