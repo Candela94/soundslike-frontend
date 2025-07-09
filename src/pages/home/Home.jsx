@@ -194,7 +194,7 @@ const Home = () => {
 
                     <section className="Seccion-imagen">
 
-                        <img src="../img/imagen-cta.jpg" alt="imgCta" className="Img-cta" />
+                        <img src="../img/cta.jpg" alt="imgCta" className="Img-cta" />
                         <div className="Sounds-cta">
 
                             <h1 className="Soundslike">SOUNDsLike</h1>
