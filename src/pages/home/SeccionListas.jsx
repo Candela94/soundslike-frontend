@@ -27,13 +27,13 @@ const SeccionPlayLists = () => {
 
 
 
-    useEffect(() => {
-        if (canciones.length > 0) {
-            loadList(canciones, 0, false);
-            setIsListLoaded(true)
+    // useEffect(() => {
+    //     if (canciones.length > 0) {
+    //         loadList(canciones, 0, false);
+    //         setIsListLoaded(true)
 
-        }
-    }, [canciones, loadList]);
+    //     }
+    // }, [canciones, loadList]);
 
 
     useEffect(() => {
@@ -72,7 +72,7 @@ const SeccionPlayLists = () => {
 
                             loading ? (
 
-                                <p>Cargando canciones</p>
+                                <p>Cargando ...</p>
 
 
                             ) : error ? (

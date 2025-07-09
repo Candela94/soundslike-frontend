@@ -13,6 +13,9 @@ const PlayerContext = createContext();
 
 //Hook para usarlo en distintas partes 
 export const usePlayer = () => {
+
+
+
     const context = useContext(PlayerContext)
     if (!context) {
         throw new Error('useplayer debe ser usado dentro de PlayerContextProvider')
@@ -43,7 +46,7 @@ export const PlayerContextProvider = ({ children }) => {
 
 
     //Función para cargar la playlist 
-    const loadList = (songs, id = 0, autoPlay = false) => {
+    const loadList = (songs, id = 0) => {
    
         if (!songs || !songs.length ) {
             console.warn("Canción inválida o sin audio:", songs[id]);
