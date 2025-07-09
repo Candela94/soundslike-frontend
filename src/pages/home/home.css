@@ -15,10 +15,9 @@
 
 
 .Main-intro {
-    width: 90%;
-    font-family: apfel-black;
-    letter-spacing: px;
-
+  
+    font-family: montserrat-extrabold;
+ 
 
 }
 
@@ -28,9 +27,8 @@
 
 .Main-subheading {
 
-    font-family: apfel-black;
-    letter-spacing: 1px;
-
+    font-family:montserrat-extrabold;
+   
 }
 
 
@@ -107,8 +105,8 @@
 
 .Listas-titulo{
     color: var(--text);
-    font-family: apfel-black;
-    font-size: 2.5rem;
+    font-family: montserrat-extrabold;
+  
     text-align: center;
 }
 
@@ -206,6 +204,7 @@
 
 .Soundslike{
     font-family: genius;
+    text-align: center;
     color: var(--text);
     font-size: 3rem;
 
@@ -213,8 +212,9 @@
 
 .Sounds-texto{
     color: var(--text);
-    font-family: apfel-black;
-    letter-spacing: 0.7px;
+    font-family: montserrat-medium;
+    text-align: center;
+  
 }
 
 
@@ -355,8 +355,8 @@
     
     .Sounds-texto{
         color: var(--text);
-        font-family: apfel-black;
-        letter-spacing: 0.7px;
+       
+      
         font-size: 1.5rem;
     }
     
@@ -364,7 +364,7 @@
     
     .Listas-titulo{
         color: var(--text);
-        font-family: apfel-black;
+       
         font-size: 3rem;
     }
     
@@ -449,8 +449,7 @@
 
 .Sounds-texto{
     color: var(--text);
-    font-family: apfel-black;
-    letter-spacing: 0.7px;
+  
     font-size: 2rem;
 }
 
@@ -458,7 +457,7 @@
 
 .Listas-titulo{
     color: var(--text);
-    font-family: apfel-black;
+  
     font-size: 3rem;
 }
 

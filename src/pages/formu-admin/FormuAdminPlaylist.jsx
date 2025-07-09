@@ -1,9 +1,9 @@
-import { Header } from "../../components/header/Header";
-import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
-import { Button } from "../../components/buttons/Button";
+import { Header } from "@/components/header/Header";
+import { BottomNavigation } from "@/components/bottom-navigation-header/BottomNavigation";
+import { Button } from "@/components/buttons/Button";
 import { useContext, useState } from "react";
 import { NotificacionesContext } from "../../context/NotificacionesContext";
-import { Notificaciones } from "../../components/notificaciones-success-error/Notificaciones";
+import { Notificaciones } from "@/components/notificaciones-success-error/Notificaciones";
 import { NavLink } from "react-router";
 
 

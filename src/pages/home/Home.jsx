@@ -199,7 +199,7 @@ const Home = () => {
 
                             <h1 className="Soundslike">SOUNDsLike</h1>
 
-                            <h3 className='Sounds-texto'>Para los amantes de la música</h3>
+                            <h4 className='Sounds-texto'>Para los amantes de la música</h4>
 
                             <div className="Sounds-enlace">
 

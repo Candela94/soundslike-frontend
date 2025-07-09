@@ -1,8 +1,8 @@
 import './error.css'
 import { NavLink } from 'react-router';
-import { Button } from '../../components/buttons/Button';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
-import { Header } from '../../components/header/Header';
+import { Button } from '@/components/buttons/Button';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation';
+import { Header } from '@/components/header/Header';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 

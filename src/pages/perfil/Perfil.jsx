@@ -11,10 +11,10 @@ import { FaUser } from "react-icons/fa6";
 import { useContext, useEffect, useState } from 'react';
 import { IoClose } from "react-icons/io5";
 import { Header } from '@/components/header/Header';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation';
 import { UserContext } from '../../context/UserContext';
 import { NavLink, useRevalidator } from 'react-router';
-import { Button } from '../../components/buttons/Button';
+import { Button } from '@/components/buttons/Button';
 import { FiEdit } from "react-icons/fi";
 import { useUpdate } from '../../../hooks/useUpdate';
 
@@ -95,7 +95,7 @@ const Perfil = () => {
                     <div className="Perfil">
 
 
-                        <h1 className='Nombre-usuario'>¡Hola!, {userData?.username || 'Usuario'}</h1>
+                        <h1 className='Nombre-usuario'>Tu perfil, {userData?.username || 'Usuario'}</h1>
 
 
                     </div>
@@ -240,23 +240,27 @@ const Perfil = () => {
 
                         {editing ? (
 
-                            <div style={{ display: 'flex', gap: '1rem' }}>
+                            <div style={{ display: 'flex', gap: '3rem' , width: '100%', justifyContent:'center'}}>
 
+
+<Button variant='secondary' onClick={() => setEditing(false)}>
+                                    Cancelar
+                                </Button>
                                 <Button type="submit" variant='primary'>
                                     {loading ? 'Guardando...' : 'Guardar'}
                                 </Button>
-                                <Button variant='secondary' onClick={() => setEditing(false)}>
-                                    Cancelar
-                                </Button>
+                               
                             </div>
                         ) : (
-                            <button type='button' variant='primary' onClick={() => {
+
+                            <div className="Boton-editar">
+                            <button className= 'Btn-edit' type='button' variant='primary' onClick={() => {
                                 
                                 console.log("Click en Editar"); // 👈 prueba
 
                                 setEditing(true)}}>
-                                <FiEdit /> Editar
-                            </button>
+                                <FiEdit /> <p className="Btn">Editar</p>
+                            </button></div>
                         )}
 
                         {error && <p style={{ color: 'red' }}>{error}</p>}
@@ -273,6 +277,7 @@ const Perfil = () => {
                     </form >
                 </main>
 
+<BottomNavigation />
 
             </div>
 

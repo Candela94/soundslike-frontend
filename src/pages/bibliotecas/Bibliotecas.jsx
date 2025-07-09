@@ -4,13 +4,13 @@
 import './bibliotecas.css'
 
 import { useState } from 'react';
-import { Cancion, Listas } from '../../components/cancion/Cancion';
-import { Header } from '../../components/header/Header';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
-import { Button } from '../../components/buttons/Button.jsx';
+import { Cancion, Listas } from '@/components/cancion/Cancion';
+import { Header } from '@/components/header/Header';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation';
+import { Button } from '@/components/buttons/Button.jsx';
 import { NavLink } from 'react-router';
 import { useFetch } from '../../../hooks/useFetch.jsx';
-import SubHeader from '../../components/subheader/Subheader.jsx';
+import SubHeader from '@/components/subheader/Subheader.jsx';
 
 import { IoAddCircleSharp } from "react-icons/io5";
 
@@ -19,27 +19,27 @@ const Bibliotecas = () => {
 
 
 
-  
+
 
     const { bibliotecas, loading, error } = useFetch()
 
 
- 
+
 
 
 
     return (
         <>
 
-        
-<div className="Header-main">
 
-    <Header />
+            <div className="Header-main">
+
+                <Header />
 
                 <div className="Contenido">
 
                     <div className="Subheader-intro">
-                        <SubHeader style={{position:'sticky'}}/>
+                        <SubHeader style={{ position: 'sticky' }} />
                         <div className="Bibliotecas-intro">
                             <h1 className='Bibliotecas-titulo'>Mis listas</h1>
                             <NavLink to='/playlist'><IoAddCircleSharp className='Bibliotecas-icono' /></NavLink>
@@ -66,7 +66,7 @@ const Bibliotecas = () => {
                                         {
                                             bibliotecas.map((playlist) => (
 
-                                                  <li key={playlist._id} className='Galeria-li' ><Listas nombre={playlist.nombre} img={playlist.coverImage || '../img/sensenra.jpg'} pid={playlist._id}/></li>
+                                                <li key={playlist._id} className='Galeria-li' ><Listas nombre={playlist.nombre} img={playlist.coverImage || '../img/sensenra.jpg'} pid={playlist._id} /></li>
                                             ))}
                                     </ul>
 
@@ -90,9 +90,9 @@ const Bibliotecas = () => {
 
                     </main>
                 </div>
-          
-                </div>
-           <BottomNavigation />
+
+            </div>
+            <BottomNavigation />
         </>
     );
 }

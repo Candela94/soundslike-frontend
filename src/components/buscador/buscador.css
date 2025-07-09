@@ -11,6 +11,9 @@
     transition: box-shadow 0.3s ease;
     width: 70%;
     color: var(--text-secondary);
+
+    font-family: monsterrat-medium;
+    
 }
 
 

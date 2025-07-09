@@ -24,7 +24,7 @@
 
 
 .Nombre-usuario {
-    font-family: apfel-black;
+ 
     letter-spacing: 1px;
 }
 
@@ -106,6 +106,30 @@
     margin-top: 2rem;
 }
 
+
+
+
+.Btn-edit{
+    display: flex;
+    gap: 0.7rem;
+    font-size: 12px;
+    font-family:montserrat-medium;
+    background: none;
+    color: var(--text);
+    padding:0.9rem 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border:  0.5px solid var(--text);
+}
+
+.Boton-editar{
+   
+    display: flex;
+    justify-content: end;
+    padding-right: 2rem;
+    width: 100%;
+}
 
 /* Tablet */
 

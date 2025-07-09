@@ -28,7 +28,7 @@ const BuscadorPag = () => {
         
          
                 <main className="Main-buscador">
-                    <h2 className='Main-titulo'>Busca tu canción</h2>
+                    <h2 className='Main-titulo'>Encuentra tu canción</h2>
 
                     <Buscador setSearchTerm = {setSearchTerm}/>
 

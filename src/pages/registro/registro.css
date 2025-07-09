@@ -24,9 +24,11 @@
 }
 
 .Formulario-h1{
-    font-family: inter-black;
-    font-size: 3rem;
-    letter-spacing: 3px;
+
+    font-size: 2.5rem;
+    
+   
+ 
 }
 
 .Formulario-input{
@@ -38,6 +40,8 @@
     background: none ;
     color: var(--text);
     transition: background-color 0.5s ease, color 0.5s ease;
+    font-family: montserrat-medium;
+    font-size: 12px;
 }
 
 
