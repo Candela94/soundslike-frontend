@@ -1,10 +1,10 @@
 
-import { Header } from '../../components/header/Header';
-import SubHeader from '../../components/subheader/Subheader';
-import { CancionLike } from '../../components/cancion/Cancion';
+import { Header } from '@/components/header/Header';
+import SubHeader from '@/components/subheader/Subheader';
+import { CancionLike } from '@/components/cancion/Cancion';
 import './bibliotecas.css'
 import { NavLink } from 'react-router';
-import { BottomNavigation } from '../../components/bottom-navigation-header/BottomNavigation';
+import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNavigation';
 import { useFetchFavoritos } from '../../../hooks/useFavorites';
 import { useFavoritos } from '../../../hooks/useFavorites';
 import { useEffect } from 'react';
@@ -28,8 +28,9 @@ const Favoritos = () => {
 
         <>
 
-            {console.log(favoritos)}
-          
+           
+           <div className="Header-main">
+            <Header />
 
                 <div className="Contenido">
 
@@ -84,6 +85,9 @@ const Favoritos = () => {
 
 
                     </main>
+                </div>
+
+<BottomNavigation />
                 </div>
 
 

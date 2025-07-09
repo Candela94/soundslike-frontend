@@ -132,15 +132,6 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id, allSongs, index }
 
 
 
-    // const handlePlaySong = () => {
-    //     if(!audio) {
-    //         mostrarNotificacion('error', 'No hay audio disponible')
-    //     }
-    //     const selectedSong = {nombre, artista, imagen, audio, _id};
-    //     loadList([selectedSong],0)
-    //     togglePlay()
-    // }
-
     return (
 
 
@@ -306,88 +297,54 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id , allSongs
 
 
 export const CancionLike = ({ nombre, artista, imagen, audio, _id, allSongs, index }) => {
+    const { removeFav, favoritos } = useFavoritos();
+    const { getFavoritos } = useFetchFavoritos();
+    const { mostrarNotificacion } = useContext(NotificacionesContext);
+    const [isLike, setIsLike] = useState(false);
+    const [eliminada, setEliminada] = useState(false);
 
+    const { loadList, togglePlay, currentSong } = usePlayer();
 
-   
-    const { removeFav, favoritos } = useFavoritos()
-    const { getFavoritos } = useFetchFavoritos()
-    const { mostrarNotificacion } = useContext(NotificacionesContext)
-    const [isLike, setIsLike] = useState(false)
-
-    
-    
-    
-    const {loadList, togglePlay} = usePlayer()
-    
-    
     const handlePlay = () => {
-        loadList(allSongs, index)
-        togglePlay()
+        if (currentSong?._id !== allSongs[index]._id) {
+            loadList(allSongs, index, true);
+        } else {
+            togglePlay();
+        }
     }
 
-
     useEffect(() => {
-        const isFav = favoritos.some(fav => fav._id === _id)
-        setIsLike(isFav)
-    }, [favoritos, _id])
-
-
-
+        const isFav = favoritos.some(fav => fav._id === _id);
+        setIsLike(isFav);
+    }, [favoritos, _id]);
 
     const handleUnLike = async () => {
-
-        if (!currentSong?._id) return;
-
         try {
-            await removeFav(song._id);
-            setIsLike(false)
+            await removeFav(_id);
             mostrarNotificacion('success', 'Canción eliminada de favoritos');
-
+            setEliminada(true);
             await getFavoritos();
-
         } catch (error) {
             console.error(error);
             mostrarNotificacion("error", "Error al eliminar la canción de favoritos");
         }
-
     }
 
-
-
+    if (eliminada) return null;
 
     return (
-
-
-        <>
-            <div className="Cancion" tabIndex="0">
-
-                <div className="Cancion-imgTexto" onClick={handlePlay}>
-
-
-                    <img src={imagen} alt="portada" className="Cancion-img" />
-
-                    <div className="Cancion-info">
-                        <h4>{nombre}</h4>
-                        <p className="Cancion-artista">{artista} </p>
-                    </div>
-
+        <div className="Cancion" tabIndex="0">
+            <div className="Cancion-imgTexto" onClick={handlePlay}>
+                <img src={imagen} alt="portada" className="Cancion-img" />
+                <div className="Cancion-info">
+                    <h4>{nombre}</h4>
+                    <p className="Cancion-artista">{artista}</p>
                 </div>
-
-                <GoHeartFill onClick={handleUnLike} className="Cancion-icono" />
-
-
             </div>
-
-
-
-        </>
-
-
-
+            <GoHeartFill onClick={handleUnLike} className="Cancion-icono" />
+        </div>
     );
-}
-
-
+};
 
 
 

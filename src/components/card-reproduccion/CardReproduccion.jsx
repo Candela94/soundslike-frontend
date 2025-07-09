@@ -89,6 +89,22 @@ const handlePrev = () => {
 
 
 
+
+  useEffect(() => {
+
+
+    if(!currentSong || !currentSong._id || !favoritos) {
+
+      setIsLike(false);
+      return;
+    }
+
+
+    const isFav = favoritos.some(fv => fv._id === currentSong._id);
+    setIsLike(isFav)
+  }, [currentSong, favoritos])
+
+
   //Función para añadir canciones a una lista 
   const handleAdd = async (playlistId) => {
 
@@ -141,11 +157,13 @@ const handlePrev = () => {
 
 
 
+  
+
     try {
 
 
       await addFav(currentSong._id);
-      mostrarNotificacion('success', 'Canción añadida con éxito')
+      mostrarNotificacion('success', 'Canción añadida a favoritos')
       setIsLike(true)
 
     } catch (e) {
