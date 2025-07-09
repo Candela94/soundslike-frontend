@@ -18,7 +18,7 @@ export const Buscador = ({searchTerm, setSearchTerm}) => {
                 <input 
                 value={searchTerm}
                 onChange={handleChange}
-                type="search" className="Input-buscador" placeholder='Buscar' />
+                type="search" className="Input-buscador" placeholder='Buscar' style={{fontFamily:'montserrat-medium'}}/>
             </div>
             
         
