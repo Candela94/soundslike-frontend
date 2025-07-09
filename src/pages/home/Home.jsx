@@ -135,8 +135,8 @@ const Home = () => {
                             <div className="Listas-texto">
                                 <h2 className='Listas-titulo'>Crea tus propias listas</h2>
                                 <div className="Listas-btn">
-                                    <NavLink to='/playlist'><Button variant='secondary'>Crear una lista</Button></NavLink>
-                                    <NavLink to='/bibliotecas'><Button variant='solid'>Ir a mis listas</Button></NavLink>
+                                    <NavLink to='/playlist'><Button variant='secondary'>Ir a mis listas</Button></NavLink>
+                                    <NavLink to='/bibliotecas'><Button variant='solid'>Crear una lista</Button></NavLink>
                                 </div>
                             </div>
                         </div>
