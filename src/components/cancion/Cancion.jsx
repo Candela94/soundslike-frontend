@@ -69,22 +69,6 @@ export const Cancion = ({ nombre, artista, imagen, audio, _id, allSongs, index }
 
 
 
-    //         audioRef.current.src = audio;
-    //         audioRef.current.load();
-
-
-    //         audioRef.current.oncanplay = () => {
-
-    //             audioRef.current.play().catch(error => console.error("Error al reproducir", error))
-    //             setIsPlaying(true)
-    //         }
-    //     }
-
-    //     setCurrentSong({ nombre, artista, imagen, audio, _id })
-    //     console.log('Current song set:', { nombre, artista, imagen, audio, _id });
-    // }
-
-
 
 
     //Función para añadir canciones a una lista 
@@ -269,7 +253,7 @@ export const CancionAgregada = ({ nombre, artista, imagen, audio, _id , allSongs
                     confirmacion && (
                         <div className="Confirmacion-contenido">
                             <IoClose onClick={handleCancelarConfirmacion} className="Confirmacion-close" />
-                            <p>¿Seguro que quieres borrar esta canción?</p>
+                            <p className="Confirmacion-txt">¿Seguro que quieres borrar esta canción?</p>
 
 
                             <div onClick={handleEliminar} >

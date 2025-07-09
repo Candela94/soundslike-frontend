@@ -58,7 +58,7 @@ const Bibliotecas = () => {
                                         <p>Cargando bibliotecas </p>
                                     </div>
                                 ) : error ? (
-                                    <p>Error al cargar las bibliotecas: {error} </p>
+                                    <p>Error al cargar listas</p>
                                 ) : bibliotecas.length > 0 ? (
 
 
@@ -73,7 +73,7 @@ const Bibliotecas = () => {
 
 
                                 ) : (
-                                    <p className='Galeria-mensaje'>No tienes bibliotecas creadas</p>
+                                    <p className='Galeria-mensaje'>No tienes listas creadas</p>
                                 )
                             }
                         </div>

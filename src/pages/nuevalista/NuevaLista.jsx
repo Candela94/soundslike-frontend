@@ -72,7 +72,7 @@ const NuevaLista = () => {
 
             }  else {
 
-             mostrarNotificacion("error",  "Error al crear la lista");
+             mostrarNotificacion("error",  "Error al crear la lista, comprueba si estás registradx");
 
             }
 
