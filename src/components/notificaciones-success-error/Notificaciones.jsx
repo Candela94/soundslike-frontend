@@ -22,7 +22,7 @@ export const Notificaciones = ({children}) => {
         if(notificacion.message){
 
             setVisible(true);
-            const animacion = setTimeout(() => setVisible(false), 1800);
+            const animacion = setTimeout(() => setVisible(false), 2500);
             return () => clearTimeout(animacion)
         }
 
@@ -38,7 +38,7 @@ export const Notificaciones = ({children}) => {
         notificacionIcono = <FcOk />;
     } else if (notificacion.type === 'error') {
         notificacionType = 'Notificacion-error';
-        notificacionIcono = <MdOutlineCancel />;
+        notificacionIcono = <MdOutlineCancel style={{color:'DD5555'}}/>;
     } else if (notificacion.type === 'info') {
         notificacionType = 'Notificacion-info';
         notificacionIcono = <TbMoodSmileDizzy />; 

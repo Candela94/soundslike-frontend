@@ -5,8 +5,8 @@ import { BottomNavigation } from "@/components/bottom-navigation-header/BottomNa
 import './nuevalista.css'
 import { Button } from "@/components/buttons/Button.jsx";
 import { useState, useContext} from "react";
-import { NotificacionesContext } from "@/context/NotificacionesContext";
-import { Notificaciones } from "@/components/notificaciones-success-error/Notificaciones.jsx";
+
+import { NotificacionesContext } from "../../context/NotificacionesContext";
 import { useNavigate } from "react-router";
 
 const NuevaLista = () => {
