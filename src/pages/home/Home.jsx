@@ -68,9 +68,9 @@ const Home = () => {
 
                     <h1 className='Main-intro'>
                         {
-                            userData && userData.nombre
+                            userData && userData.username
 
-                                ? `¡Hola, ${userData.nombre}! ¿Qué te gustaría escuchar hoy?` : `¡Hola! Qué te gustaría escuchar hoy?`
+                                ? `¡Hola, ${userData.username}! ¿Qué te gustaría escuchar hoy?` : `¡Hola! Qué te gustaría escuchar hoy?`
                         }
                     </h1>
 

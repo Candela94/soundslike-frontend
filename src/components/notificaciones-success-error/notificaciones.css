@@ -8,13 +8,14 @@
 
 .Notificacion{
     padding: 2rem;
+    z-index: 9;
     display: flex;
     gap: 1rem;
-    border-radius:0 0 6px 6px;
+    border-radius:0 0 20px 20px;
     color: var(--text);
     animation: slideFadeIn 0.4s ease-out;
     position: sticky;
-    bottom: 0;
+    top: 3rem;
   
 }
 
@@ -36,7 +37,7 @@
 
 
 .Notificacion-success{
-    background-color: rgba(169 , 244, 63, 0.7);
+    background-color:var(--background-secondary)
     
   
 
@@ -44,10 +45,50 @@
 
 
 .Notificacion-error{
-    background-color: rgb(227, 124, 124);
+    background-color:var(--background-secondary);
 
 }
 
 .Notificacion-info {
     background-color: var(--background-secondary);
+}
+
+
+
+
+
+
+
+
+/* Tablet */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+
+  .Notificacion{
+    
+    position: sticky;
+    top: 0;
+  
+}
+
+}
+
+
+
+
+/* Escritorio */
+@media (min-width: 1025px) {
+
+
+  .Notificacion{
+    
+    position: sticky;
+    top: 0;
+  
+}
+
+
+
+
 }
