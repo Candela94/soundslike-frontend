@@ -49,7 +49,7 @@ export const Reproductor = () => {
             {!currentSong && (
                 <NavLink className="Mensaje-reproductor" to='/buscador'>
                     <div>
-                        <p>Buscar canciones</p>
+                      
                     </div>
                 </NavLink>
             )}
