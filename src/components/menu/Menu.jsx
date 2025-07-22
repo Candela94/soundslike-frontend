@@ -36,7 +36,7 @@ const handleLogut= () => {
     localStorage.removeItem("userId");
     LogOut()
 
-    mostrarNotificacion("info", '¡Hasta pronto!')
+    
    
     navigate("/login")
     onClose();
