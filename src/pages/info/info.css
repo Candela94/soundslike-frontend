@@ -1,7 +1,7 @@
 .Main-about{
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 1rem;
     margin-bottom: 12rem;
     margin-top: 1.5rem;
@@ -12,7 +12,7 @@
 .About-secciones{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .About-cabecera{
@@ -23,7 +23,7 @@
 }
 
 .About-subheader{
-    font-family: apfel-black;
+    font-family: montserrat-extrabold;
     text-align: center;
 }
 

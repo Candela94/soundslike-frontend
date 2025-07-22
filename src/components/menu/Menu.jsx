@@ -5,7 +5,7 @@ import { FaUser } from "react-icons/fa6";
 import { LuLogOut } from "react-icons/lu";
 import { FiSettings } from "react-icons/fi";
 import { FaQuestion } from "react-icons/fa";
-import { useContext, useState } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import { UserContext } from '../../context/UserContext';
 import { NotificacionesContext } from '../../context/NotificacionesContext';
 import { PlayerContextProvider } from '../../context/PlayerContext';
@@ -19,6 +19,8 @@ export const MenuLateral = ({opened, onClose}) => {
 const {LogOut, userData} =useContext(UserContext)
 const {mostrarNotificacion} = useContext(NotificacionesContext)
 const navigate = useNavigate()
+
+const menuRef = useRef(null)
 
 
 
@@ -51,13 +53,48 @@ const handleLogin = () => {
     navigate("/login");
 };
 
+
+
+//useEffect para hacer click al body y que el menú se cierre 
+
+useEffect(() => {
+
+
+    const handleClickOutside = (e) => {
+
+
+        if(menuRef.current && !menuRef.current.contains(e.target)) {
+
+            onClose()
+        }
+
+
+    }
+
+
+    if(opened) {
+
+        document.addEventListener('mousedown', handleClickOutside)
+    }
+
+
+
+
+
+
+}, [opened, onClose])
+
+
+
+
+
     return ( 
 
 
 
         <>
 
-        <div className= {`Menu-lateral ${opened ? 'open' : ''}`}> 
+        <div className= {`Menu-lateral ${opened ? 'open' : ''}`} ref={menuRef}> 
 
             <ul className="Menu-lateralUl">
 

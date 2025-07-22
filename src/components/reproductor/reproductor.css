@@ -18,10 +18,34 @@
 
 }
 
+
 .Reproductor-info{
   
      width: 100%;
+     display: flex;
+     flex-direction: column;
 }
+
+
+.Info-cancion{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.Cancion-artista{
+    font-size: 10px;
+}
+
+.Reproductor-img{
+
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
 
 
 
@@ -30,6 +54,10 @@
    
 }
 
+
+.Controls-icons{
+    font-size: 24px;
+}
 
 
 

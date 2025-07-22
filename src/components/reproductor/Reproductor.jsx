@@ -12,42 +12,46 @@ import { NavLink } from 'react-router';
 
 export const Reproductor = () => {
 
-    const {currentSong, isPlaying, togglePlay} = usePlayer()
 
-  
+
+
+
+    const { currentSong, isPlaying, togglePlay } = usePlayer();
+
+
+
 
 
     return (
-        <>
-
-            <div className="Reproductor">
-                {currentSong ? (
 
 
-                    <NavLink to='/reproductor' className='Reproductor-info'>  
 
+        <div className="Reproductor">
+            {currentSong && (
+                <>
 
-                        <h3>{currentSong.nombre}</h3>
-                        <p>{currentSong.artista}</p>
+                <div className="Info-cancion">
+                    <img src={currentSong.imagen} alt={currentSong.nombre} className="Reproductor-img" />
+                    <NavLink to='/reproductor' className='Reproductor-info'>
+                        <h4>{currentSong.nombre}</h4>
+                        <p style={{fontSize:'12px'}}>{currentSong.artista}</p>
                     </NavLink>
-                ) :
-                
-                <NavLink className="Mensaje-reproductor" to='/buscador'><div >
-                <p>Empieza a escuchar ahora</p></div></NavLink>
-                
-                }
 
+                    </div>
+                    <button className='Btn-control' onClick={togglePlay}>
+                        {isPlaying ? <HiMiniPause className='Controls-icons'/> : <TbPlayerPlayFilled className='Controls-icons'/>}
+                        
+                    </button>
+                </>
+            )}
 
-
-                <button  className='Btn-control' onClick={togglePlay}>{isPlaying ?  <HiMiniPause/> : <TbPlayerPlayFilled/>}</button>
-
-
-
-
-            </div>
-        </>
-
-
-
+            {!currentSong && (
+                <NavLink className="Mensaje-reproductor" to='/buscador'>
+                    <div>
+                        <p>Buscar canciones</p>
+                    </div>
+                </NavLink>
+            )}
+        </div>
     );
-}
+};
