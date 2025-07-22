@@ -5,13 +5,17 @@ import { useState } from "react";
 
 // Hook para obtener todos los favoritos
 
-
-
 export const useFetchFavoritos = () => {
+
+
+
     const VITE_URL = import.meta.env.VITE_URL;
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
     const [favoritos, setFavs] = useState([]);
+
+
+
 
     const getFavoritos = async () => {
         const token = localStorage.getItem('token');
@@ -49,7 +53,7 @@ export const useFetchFavoritos = () => {
 
 
         } catch(e) {
-            console.error('Error al obtener favoritos:', e.message);
+            console.error('Error al obtener favoritos:', );
             setError(e.message);
             throw e;
         } finally {
@@ -61,6 +65,8 @@ export const useFetchFavoritos = () => {
         favoritos, loading, error, getFavoritos
     };
 };
+
+
 
 // Hook completo que maneja añadir y eliminar favoritos
 export const useFavoritos = () => {

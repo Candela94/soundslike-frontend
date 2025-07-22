@@ -444,7 +444,7 @@ export const Listas = ({ nombre, pid }) => {
                     confirmacion && (
                         <div className="Confirmacion-contenido">
                             <IoClose onClick={handleCancelarConfirmacion} className="Confirmacion-close" />
-                            <p>¿Seguro que quieres borrar esta lista?</p>
+                            <p className="Confirmacion-mensaje" style={{textAlign:'center'}}>¿Seguro que quieres borrar esta lista?</p>
 
 
                             <div onClick={handleEliminar} >

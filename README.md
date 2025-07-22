@@ -3,8 +3,8 @@
 
 # Soundslike
 
-App de música en la que el usuario puede registrarse, loguearse y cerrar sesión.
-Esta app te permite crear listas, buscar canciones, añadirlas a favoritos o añadirlas a las listas que has creado 
+App de música en la que el usuario puede registrarse, loguearse, editar su información de usuario y cerrar sesión.
+Esta app te permite crear listas, buscar canciones, añadirlas a favoritos o añadirlas a las listas que has creado, al igual que eliminarlas
 
 ## Secciones
 - Home
