@@ -3,7 +3,7 @@
 
 const NoAutorizado = () => {
     return (
-        <div>
+        <div style={{margin:'1rem'}}>
             <h1>Acceso Denegado</h1>
             <p>No tienes permiso para acceder a esta página.</p>
         </div>

@@ -15,13 +15,13 @@ import { GoHeartFill } from "react-icons/go";
 import { useFetch } from '../../../hooks/useFetch';
 import { LuCirclePlus } from "react-icons/lu";
 import { Notificaciones } from '../notificaciones-success-error/Notificaciones';
-import { NotificacionesContext } from '../../context/NotificacionesContext';
+import { NotificacionesContext } from '@/context/NotificacionesContext';
 import { useAddSongsToPlaylist } from '../../../hooks/useAddSongs';
 
 import { useFetchFavoritos } from '../../../hooks/useFavorites';
 import { useFavoritos } from '../../../hooks/useFavorites';
 import { useFetchSongsList } from '../../../hooks/usefetchSongs';
-import { usePlayer } from '../../context/PlayerContext';
+import { usePlayer } from '@/context/PlayerContext';
 
 
 

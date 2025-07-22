@@ -1,7 +1,7 @@
 
 
-import { Header } from "../../components/header/Header";
-import { BottomNavigation } from "../../components/bottom-navigation-header/BottomNavigation";
+import { Header } from "@/components/header/Header";
+import { BottomNavigation } from "@/components/bottom-navigation-header/BottomNavigation";
 
 import './info.css'
 
@@ -33,7 +33,7 @@ const Info = () => {
 
 
 
-          <p className="About-text">SOUNDsLike es una plataforma de streaming musical moderna  diseñada para los verdaderos amantes de la música.
+          <p className="About-text">SOUNDsLike es una plataforma de streaming musical moderna  diseñada para lxs verdaderxs amantes de la música.
             Nuestra misión es ofrecerte una experiencia fluida, rápida y personalizada al momento de escuchar tus canciones favoritas.</p>
 
 
@@ -57,7 +57,7 @@ const Info = () => {
 
             <h2 className="About-subheader">🚀 ¿Qué la hace especial?</h2>
             <p className="About-text">
-              A diferencia de otras plataformas, <strong>SoundsLike</strong> está centrada en la simplicidad y la velocidad.
+              A diferencia de otras plataformas, <strong>SOUNDsLike</strong> está centrada en la simplicidad y la velocidad.
               Sin anuncios molestos, sin distracciones. Solo tú y tu música.
             </p>
             </div>

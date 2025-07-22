@@ -2,10 +2,11 @@ import './reproductor.css'
 import { FaPlay } from "react-icons/fa";
 import { useContext } from 'react';
 
-import { usePlayer } from '../../context/PlayerContext';
+import { usePlayer } from '@/context/PlayerContext';
 
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { HiMiniPause } from "react-icons/hi2";
+import { TbPlayerTrackNextFilled } from "react-icons/tb";
 import { NavLink } from 'react-router';
 
 
@@ -16,7 +17,7 @@ export const Reproductor = () => {
 
 
 
-    const { currentSong, isPlaying, togglePlay } = usePlayer();
+    const { currentSong, isPlaying, togglePlay, handleNext } = usePlayer();
 
 
 
@@ -40,8 +41,8 @@ export const Reproductor = () => {
                     </div>
                     <button className='Btn-control' onClick={togglePlay}>
                         {isPlaying ? <HiMiniPause className='Controls-icons'/> : <TbPlayerPlayFilled className='Controls-icons'/>}
-                        
                     </button>
+                        {/* <TbPlayerTrackNextFilled className='Controls-icons'  onClick={handleNext}/> */}
                 </>
             )}
 
