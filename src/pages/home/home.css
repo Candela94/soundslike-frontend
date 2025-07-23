@@ -6,7 +6,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    margin-bottom: 12rem;
+    margin-bottom: 9rem;
     padding: 1rem;
     position: relative;
 
@@ -15,12 +15,12 @@
 
 
 .Main-intro {
-  
+
     font-family: montserrat-extrabold;
     width: 85%;
     margin-top: 1.5rem;
-   
- 
+
+
 
 }
 
@@ -30,36 +30,72 @@
 
 .Main-subheading {
 
-    font-family:montserrat-extrabold;
-   
+    font-family: montserrat-extrabold;
+
 }
 
 
 
 
 .Galeria {
-   
+
     padding: 1rem;
-  
-  
-  
+    
+
+
+
 }
 
 
-.Galeria-tendencias > * {
+.Galeria-tendenciasSlider {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    padding-bottom: 1.5rem;
+}
+
+.Galeria-btn {
+    position: absolute;
+    list-style: none;
+    bottom: 0;
+    border: none;
+    background: none;
+    color: var(--text);
+    padding: 3rem 1rem 0 1rem;
+}
+
+
+
+.Galeria-btn.left {
+    left: 0;
+}
+
+.Galeria-btn.right {
+    right: 0;
+}
+
+
+
+
+
+
+.Galeria-tendencias>* {
     flex-shrink: 0;
     scroll-snap-align: start;
 }
 
 .Galeria-tendencias::-webkit-scrollbar {
- display: none;
+    display: none;
 }
 
 
 
 
 
-.Galeria-tendencias{
+
+
+.Galeria-tendencias {
     display: flex;
     width: 100%;
     overflow: hidden;
@@ -70,28 +106,28 @@
 
 
 
-.Listas-img{
+.Listas-img {
 
     width: 100%;
     height: 200px;
     position: relative;
     display: flex;
     flex-direction: column;
-    
-   
+
+
 }
 
-.Listas-imagen{
+.Listas-imagen {
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: 0.5;
     border-radius: 6px;
-    
+
 }
 
 
-.Listas-texto{
+.Listas-texto {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -101,47 +137,59 @@
     gap: 1rem;
     align-items: center;
     width: 100%;
-    
+
 }
 
 
 
-.Listas-titulo{
+.Listas-titulo {
     color: var(--text);
     font-family: montserrat-extrabold;
-  
+
     text-align: center;
 }
 
 
 
-.Listas-btn{
+.Listas-btn {
 
     display: flex;
     gap: 3rem;
-   
+
 }
 
 
 
 
-.Galeria-recomendaciones{
+.botones-recom {
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: aquamarine;
+
+}
+
+
+
+
+
+
+.Galeria-recomendaciones {
 
     display: flex;
     padding: 1rem;
 
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+
 }
 
 
-.Galeria-recomendaciones > * {
+.Galeria-ulRecomendaciones>* {
     flex-shrink: 0;
     scroll-snap-align: start;
 }
 
-.Galeria-recomendaciones::-webkit-scrollbar {
+.Galeria-ulRecomendaciones::-webkit-scrollbar {
     display: none;
 }
 
@@ -149,13 +197,26 @@
 
 
 
+.Galeria-recomSlider {
+    position: relative;
+
+    width: 100%;
+    padding-bottom: 2rem;
+    min-height: 200px;
+    /* background-color: red; */
+}
 
 
-.Galeria-ulRecomendaciones{
+.Galeria-ulRecomendaciones {
     display: flex;
     align-items: center;
-
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
+
+
 
 
 .Seccion-imagen {
@@ -165,12 +226,12 @@
     position: relative;
     height: 200px;
     border-radius: 10px;
-    
+
 
 }
 
 
-.Img-cta{
+.Img-cta {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -205,7 +266,7 @@
 
 }
 
-.Soundslike{
+.Soundslike {
     font-family: genius;
     text-align: center;
     color: var(--text);
@@ -213,11 +274,11 @@
 
 }
 
-.Sounds-texto{
+.Sounds-texto {
     color: var(--text);
     font-family: montserrat-medium;
     text-align: center;
-  
+
 }
 
 
@@ -231,7 +292,7 @@
 /* Seccion 'HECHO PARA TI' */
 
 
-.Main-cancionesListas{
+.Main-cancionesListas {
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -239,8 +300,8 @@
 }
 
 
-.Cabecera-img{
-    
+.Cabecera-img {
+
     height: 150px;
     display: flex;
     justify-content: center;
@@ -248,14 +309,14 @@
     position: sticky;
 }
 
-.Cabecera-img{
+.Cabecera-img {
     width: 100%;
     object-fit: cover;
-   
+
 
 }
 
-.Cabecera{
+.Cabecera {
     font-family: genius;
     letter-spacing: 1px;
     position: absolute;
@@ -281,17 +342,17 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
 
-    .Header-main{
+    .Header-main {
         display: flex;
     }
 
 
-    .Main-home{
+    .Main-home {
         overflow: hidden;
-        width: 100vw;
+        /* width: 100vw; */
     }
 
-   
+
 
 
     .Galeria {
@@ -299,9 +360,9 @@
         justify-content: space-between;
         padding: 2rem;
         gap: 0.5rem;
-      
 
-    
+
+
     }
 
 
@@ -317,7 +378,7 @@
 
 
 
-    .Galeria-options{
+    .Galeria-options {
         display: flex;
     }
 
@@ -325,7 +386,7 @@
         font-size: 2rem;
     }
 
-    .ctaButton{
+    .ctaButton {
         font-size: 32px;
     }
 
@@ -334,51 +395,52 @@
     }
 
 
-    .Main-intro{
+    .Main-intro {
         font-size: 2.5rem;
     }
-    .Main-subheading{
+
+    .Main-subheading {
         font-size: 2rem;
     }
 
 
 
-    .Main-cancionesListas{
+    .Main-cancionesListas {
         width: 100%;
     }
 
 
-    .Cabecera{
+    .Cabecera {
         font-size: 4rem;
         letter-spacing: 1.5px;
     }
 
 
 
-    .Soundslike{
+    .Soundslike {
         font-family: genius;
         color: var(--text);
         font-size: 4rem;
-    
+
     }
-    
-    .Sounds-texto{
+
+    .Sounds-texto {
         color: var(--text);
-       
-      
+
+
         font-size: 1.5rem;
     }
-    
-    
-    
-    .Listas-titulo{
+
+
+
+    .Listas-titulo {
         color: var(--text);
-       
+
         font-size: 3rem;
     }
-    
-  
-    
+
+
+
 }
 
 
@@ -388,31 +450,36 @@
 @media (min-width: 1025px) {
 
 
-    .Header-main{
+    .Header-main {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
+
         gap: 2rem;
     }
-    
 
-.Main-home{
-    padding-right: 7rem;
-}
+
+    .Main-home {
+      
+        width: 100%;
+        overflow: hidden;
+        padding-right: 1.5rem;
+        box-sizing: border-box;
+    }
+
 
     .Galeria {
         display: flex;
         justify-content: center;
         padding: 2rem;
         gap: 3rem;
-        
+
     }
-    
-
-  
 
 
-    .Galeria-options{
+
+
+
+    .Galeria-options {
         display: flex;
     }
 
@@ -424,21 +491,22 @@
 
 
 
-    .Main-intro{
+    .Main-intro {
         font-size: 3rem;
     }
-    .Main-subheading{
+
+    .Main-subheading {
         font-size: 2rem;
     }
-  
 
 
-    .Main-cancionesListas{
+
+    .Main-cancionesListas {
         width: 100%;
     }
 
 
-    .Cabecera{
+    .Cabecera {
         font-size: 4.5rem;
         letter-spacing: 1.5px;
     }
@@ -446,26 +514,26 @@
 
 
 
-.Soundslike{
-    font-family: genius;
-    color: var(--text);
-    font-size: 5rem;
+    .Soundslike {
+        font-family: genius;
+        color: var(--text);
+        font-size: 5rem;
 
-}
+    }
 
-.Sounds-texto{
-    color: var(--text);
-  
-    font-size: 2rem;
-}
+    .Sounds-texto {
+        color: var(--text);
+
+        font-size: 2rem;
+    }
 
 
 
-.Listas-titulo{
-    color: var(--text);
-  
-    font-size: 3rem;
-}
+    .Listas-titulo {
+        color: var(--text);
+
+        font-size: 3rem;
+    }
 
 
 
