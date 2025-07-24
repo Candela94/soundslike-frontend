@@ -134,7 +134,7 @@ const Listas = () => {
 
 
                                 </ul>
-                            ) : <div className='Mensaje'><p>No hay canciones disponibles</p>
+                            ) : <div className='Mensaje'><p>No tienes canciones en esta lista</p>
 
                                 <div className="Button">
                                     <NavLink to='/buscador'><Button variant='solid'>Buscar canciones</Button></NavLink></div>
