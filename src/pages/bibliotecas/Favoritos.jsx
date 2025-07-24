@@ -8,7 +8,7 @@ import { BottomNavigation } from '@/components/bottom-navigation-header/BottomNa
 import { useFetchFavoritos } from '../../../hooks/useFavorites';
 import { useFavoritos } from '../../../hooks/useFavorites';
 import { useEffect } from 'react';
-
+import { Button } from '@/components/buttons/Button.jsx';
 
 
 
@@ -54,7 +54,13 @@ const Favoritos = () => {
 
                                 ) : error ? (
 
-                                    <p>Error al cargar favoritos {error}</p>
+                                    <div className="Mensaje-listas">
+                                    <p className="Mensaje">No hay favoritos disponibles, ¿perteneces a SOUNDsLike?</p>
+                                    <div className="Mensaje-botones">
+                                    <NavLink to='/registro'><Button >Regístrate</Button></NavLink>
+                                    <NavLink to='/login'><Button variant = 'solid'>Iniciar sesion</Button></NavLink>
+                                    </div>
+                                   </div>
 
 
                                 ) :  Array.isArray(favoritos) && favoritos.length > 0 ? (

@@ -58,7 +58,13 @@ const Bibliotecas = () => {
                                         <p>Cargando bibliotecas </p>
                                     </div>
                                 ) : error ? (
-                                    <p>Error al cargar listas</p>
+                                    <div className="Mensaje-listas">
+                                    <p className="Mensaje">No hay listas disponibles, ¿perteneces a SOUNDsLike?</p>
+                                    <div className="Mensaje-botones">
+                                    <NavLink to='/registro'><Button >Regístrate</Button></NavLink>
+                                    <NavLink to='/login'><Button variant = 'solid'>Iniciar sesion</Button></NavLink>
+                                    </div>
+                                   </div>
                                 ) : bibliotecas.length > 0 ? (
 
 
