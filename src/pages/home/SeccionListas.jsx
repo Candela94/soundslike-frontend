@@ -90,7 +90,7 @@ const SeccionPlayLists = () => {
                                         canciones.map((c, index) => {
                                             return (
 
-                                                <li className="Galeria-li" key={c._id}><Cancion imagen={c.imagen} nombre={c.nombre} artista={c.artista} audio={c.audio} allSongs={canciones} index={index} /></li>
+                                                <li className="Galeria-li" key={c._id}><Cancion imagen={c.imagen} nombre={c.nombre} artista={c.artista} audio={c.audio} allSongs={canciones} index={index} _id={c._id}/></li>
 
 
                                             )
