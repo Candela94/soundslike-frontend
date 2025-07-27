@@ -114,17 +114,31 @@ const Home = () => {
 
                 {/* Sección Tendencias */}
                 <section className="Seccion-tendencias">
+
                     <h2 className='Main-subheading'>Lo último en SOUNDsLike</h2>
+
+
                     <div className="Galeria">
+
+
                         {loading ? (
                             <p>Cargando...</p>
                         ) : error ? (
                             <p>Error al cargar las listas</p>
+
+
                         ) : canciones?.length > 0 ? (
+
+
                             <div className="Galeria-tendenciasSlider">
+
+
+
                                 <ul className="Galeria-tendencias" ref={seccionRef}>
                                     {canciones.map((song, index) => (
+
                                         <li key={song._id} className="Galeria Galeria-li">
+
                                             <CardTendencias
                                                 imagen={song.imagen}
                                                 nombre={song.nombre}
@@ -136,20 +150,33 @@ const Home = () => {
                                             />
                                         </li>
                                     ))}
+
                                 </ul>
+
+
+
                                 <div className="botones">
                                     {showLeftArrow && (
                                         <button className="Galeria-btn left" onClick={scrollLeft}>
                                             <FaAngleLeft />
                                         </button>
+
+
+
                                     )}
                                     {showRightArrow && (
                                         <button className="Galeria-btn right" onClick={scrollRight}>
                                             <FaAngleRight />
                                         </button>
                                     )}
+
+
+                                    
                                 </div>
                             </div>
+
+
+
                         ) : (
                             <p>No hay canciones</p>
                         )}
@@ -158,14 +185,22 @@ const Home = () => {
 
                 {/* Sección Listas */}
                 <section className="Seccion-listas">
+
+
                     <div className="Listas-img">
                         <img src="../img/seccion-listas.jpg" alt="img" className="Listas-imagen" />
                         <div className="Listas-texto">
                             <h2 className='Listas-titulo'>Crea tus propias listas</h2>
+
+
                             <div className="Listas-btn">
+
+
                                 <NavLink to='/bibliotecas'>
                                     <Button variant='secondary'>Ir a mis listas</Button>
                                 </NavLink>
+
+
                                 <NavLink to='/playlist'>
                                     <Button variant='solid'>Crear una lista</Button>
                                 </NavLink>

@@ -17,7 +17,7 @@ export const Reproductor = () => {
 
 
 
-    const { currentSong, isPlaying, togglePlay, handleNext } = usePlayer();
+    const { currentSong, isPlaying, togglePlay, Next } = usePlayer();
 
 
 
@@ -39,10 +39,16 @@ export const Reproductor = () => {
                     </NavLink>
 
                     </div>
+                    <div className="Botones-control">
                     <button className='Btn-control' onClick={togglePlay}>
                         {isPlaying ? <HiMiniPause className='Controls-icons'/> : <TbPlayerPlayFilled className='Controls-icons'/>}
                     </button>
-                        {/* <TbPlayerTrackNextFilled className='Controls-icons'  onClick={handleNext}/> */}
+
+                    <button className='Btn-control' onClick={Next}>
+                    <TbPlayerTrackNextFilled className='Controls-icons'  />
+                    </button>
+                       
+                        </div>
                 </>
             )}
 

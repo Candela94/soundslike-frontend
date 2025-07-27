@@ -54,9 +54,14 @@
    
 }
 
+.Botones-control{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
 
 .Controls-icons{
-    font-size: 24px;
+    font-size: 20px;
 }
 
 
